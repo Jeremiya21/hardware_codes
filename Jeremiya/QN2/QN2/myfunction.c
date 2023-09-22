@@ -6,7 +6,7 @@
  */ 
 #include <atmel_start.h>
 #include <util/delay.h>
-#include "function.h"
+#include "myfunction.h"
 #include <stdint.h>
 #define __DELAY_BACKWARD_COMPATIBLE__
 void function(enum LED led,uint16_t delay_1)

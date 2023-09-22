@@ -55,7 +55,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../atmel_start.c \
 ../driver_isr.c \
-../function.c \
+../myfunction.c \
 ../main.c \
 ../src/bod.c \
 ../src/clkctrl.c \
@@ -74,7 +74,7 @@ ASM_SRCS +=
 OBJS +=  \
 atmel_start.o \
 driver_isr.o \
-function.o \
+myfunction.o \
 main.o \
 src/bod.o \
 src/clkctrl.o \
@@ -86,7 +86,7 @@ src/slpctrl.o
 OBJS_AS_ARGS +=  \
 atmel_start.o \
 driver_isr.o \
-function.o \
+myfunction.o \
 main.o \
 src/bod.o \
 src/clkctrl.o \
@@ -98,7 +98,7 @@ src/slpctrl.o
 C_DEPS +=  \
 atmel_start.d \
 driver_isr.d \
-function.d \
+myfunction.d \
 main.d \
 src/bod.d \
 src/clkctrl.d \
@@ -110,7 +110,7 @@ src/slpctrl.d
 C_DEPS_AS_ARGS +=  \
 atmel_start.d \
 driver_isr.d \
-function.d \
+myfunction.d \
 main.d \
 src/bod.d \
 src/clkctrl.d \
@@ -147,7 +147,7 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
-./function.o: .././function.c
+./myfunction.o: .././myfunction.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../Config" -I"../include" -I"../utils" -I"../utils/assembler" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega4808 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega4808" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
