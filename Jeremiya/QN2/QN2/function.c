@@ -7,8 +7,9 @@
 #include <atmel_start.h>
 #include <util/delay.h>
 #include "function.h"
-
-void function(enum LED led,uint32_t delay_1)
+#include <stdint.h>
+#define __DELAY_BACKWARD_COMPATIBLE__
+void function(enum LED led,uint16_t delay_1)
 {
 	if(led==R)
 	{

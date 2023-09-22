@@ -4,7 +4,7 @@ int main(void)
 {
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
-	delayfn(100,50,200);
+	delayfn(100,0,100);
 	return 0;
 	
 }

@@ -4,6 +4,6 @@ int main(void)
 {
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
-	function(R,10);
+	function(W,1000);
 	return 0;
 }
