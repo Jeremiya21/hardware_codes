@@ -1,5 +1,5 @@
 #include <atmel_start.h>
-#include "function.h"
+#include "myfunction.h"
 int main(void)
 {
 	/* Initializes MCU, drivers and middleware */

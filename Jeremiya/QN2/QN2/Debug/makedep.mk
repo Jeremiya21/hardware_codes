@@ -6,7 +6,7 @@ atmel_start.c
 
 driver_isr.c
 
-function.c
+myfunction.c
 
 main.c
 
