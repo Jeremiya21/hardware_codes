@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <util/delay.h>
 
-void functionCall(bool r,bool g,bool b,uint32_t *delay_R,uint32_t *delay_B,uint32_t *delay_G);
+void functionCall(bool *r,bool *g,bool *b,uint32_t *delay_R,uint32_t *delay_B,uint32_t *delay_G);
 void ToggleBlue(uint32_t *delay_B);
 void ToggleGreen(uint32_t *delay_G);
 void ToggleRed(bool r);

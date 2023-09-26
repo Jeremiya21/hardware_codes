@@ -7,15 +7,15 @@ int main(void)
 
 	/* Replace with your application code */
 	uint32_t delay_R,delay_G,delay_B;
-	delay_B=100;
-	delay_G=150;
-	delay_R=200;
+	delay_B=400;
+	delay_G=400;
+	delay_R=400;
 	bool r,g,b;
-	r=0;b=1;g=0;
+	r=1;b=1;g=1;
 	while (1) 
 	{
 		/* Replace with your application code */
-		functionCall(r,g,b,&delay_R,&delay_G,&delay_B);
+		functionCall(&r,&g,&b,&delay_R,&delay_G,&delay_B);
 	}
 	return 0;
 }

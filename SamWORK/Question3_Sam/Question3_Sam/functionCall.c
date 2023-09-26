@@ -8,20 +8,20 @@
 #include "functionCall.h"
 #include <stdlib.h>
 
-void functionCall(bool r,bool g,bool b,uint32_t *delay_R,uint32_t *delay_B,uint32_t *delay_G)
+void functionCall(bool *r,bool *g,bool *b,uint32_t *delay_R,uint32_t *delay_B,uint32_t *delay_G)
 {
 	int count_R=0,count_G=0,count_B=0;
-	if(r)
+	if(*r)
 	{
 		R0_MCU_toggle_level();
 		count_R++;
 	}
-	if(g)
+	if(*g)
 	{
 		G0_MCU_toggle_level();
 		count_G++;
 	}
-	if(b)
+	if(*b)
 	{
 		B0_MCU_toggle_level();
 		count_B++;
