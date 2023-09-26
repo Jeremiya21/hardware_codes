@@ -131,12 +131,12 @@ pads:
     configuration: null
 toolchain_options:
 - definition:
-    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.xc8:7.0.0
+    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.gcc:7.0.0
   configuration:
     compiler_config:
-      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
+      avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
     linker_config:
-      xc8_linker_miscellaneous_LinkerFlags: ''
+      avrgcc_linker_miscellaneous_LinkerFlags: ''
 - definition:
     identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Atmel.Studio:7.0.0
   configuration:
@@ -145,10 +145,10 @@ toolchain_options:
     linker_config:
       avrgcc_linker_miscellaneous_LinkerFlags: ''
 - definition:
-    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.gcc:7.0.0
+    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.xc8:7.0.0
   configuration:
     compiler_config:
-      avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
+      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
     linker_config:
-      avrgcc_linker_miscellaneous_LinkerFlags: ''
+      xc8_linker_miscellaneous_LinkerFlags: ''
 static_files: []
