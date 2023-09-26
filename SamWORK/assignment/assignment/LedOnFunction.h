@@ -8,7 +8,7 @@
 
 #ifndef LEDONFUNCTION_H_
 #define LEDONFUNCTION_H_
-
+#include <stdbool.h>
 
 
 void LedOnFunction(bool R,bool G,bool B,bool W);
