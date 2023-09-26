@@ -1,5 +1,6 @@
-LedOnFunction.d LedOnFunction.o: .././LedOnFunction.c ../atmel_start.h \
- ../include/driver_init.h ../utils/compiler.h \
+LedOnFunction.d LedOnFunction.o: .././LedOnFunction.c \
+ .././LedOnFunction.h ../atmel_start.h ../include/driver_init.h \
+ ../utils/compiler.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -21,6 +22,8 @@ LedOnFunction.d LedOnFunction.o: .././LedOnFunction.c ../atmel_start.h \
  ../Config/clock_config.h ../include/port.h ../include/atmel_start_pins.h \
  ../include/clkctrl.h ../include/cpuint.h ../include/slpctrl.h \
  ../include/bod.h ../include/atmel_start_pins.h
+
+.././LedOnFunction.h:
 
 ../atmel_start.h:
 

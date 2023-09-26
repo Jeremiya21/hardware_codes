@@ -534,17 +534,17 @@ END GROUP
  .debug_abbrev  0x00002385      0x19e src/driver_init.o
  .debug_abbrev  0x00002523       0xd6 src/slpctrl.o
 
-.debug_line     0x00000000      0xbda
+.debug_line     0x00000000      0xbe0
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x16f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega4808/avrxmega3/crtatmega4808.o
  .debug_line    0x0000016f       0x4a atmel_start.o
  .debug_line    0x000001b9      0x229 LedOnFunction.o
- .debug_line    0x000003e2       0x61 main.o
- .debug_line    0x00000443       0xa8 src/bod.o
- .debug_line    0x000004eb       0xac src/clkctrl.o
- .debug_line    0x00000597       0xab src/cpuint.o
- .debug_line    0x00000642      0x470 src/driver_init.o
- .debug_line    0x00000ab2      0x128 src/slpctrl.o
+ .debug_line    0x000003e2       0x67 main.o
+ .debug_line    0x00000449       0xa8 src/bod.o
+ .debug_line    0x000004f1       0xac src/clkctrl.o
+ .debug_line    0x0000059d       0xab src/cpuint.o
+ .debug_line    0x00000648      0x470 src/driver_init.o
+ .debug_line    0x00000ab8      0x128 src/slpctrl.o
 
 .debug_frame    0x00000000      0x420
  *(.debug_frame)

@@ -4,8 +4,7 @@
  * Created: 9/26/2023 9:39:51 AM
  *  Author: samsunny
  */ 
-#include <atmel_start.h>
-#include <stdbool.h>
+#include "LedOnFunction.h"
 
 void LedOnFunction(bool R,bool G, bool B, bool W)
 {
