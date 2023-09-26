@@ -1,0 +1,3184 @@
+
+My_Project_1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00802800  00802800  00001022  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000fce  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00001022  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001054  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000002f8  00000000  00000000  00001094  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000361c  00000000  00000000  0000138c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000025f7  00000000  00000000  000049a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00001290  00000000  00000000  00006f9f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000980  00000000  00000000  00008230  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000165e  00000000  00000000  00008bb0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000139c  00000000  00000000  0000a20e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000278  00000000  00000000  0000b5aa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 48 00 	jmp	0x90	; 0x90 <__ctors_end>
+   4:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   8:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  10:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  14:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  18:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  1c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  20:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  24:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  28:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  2c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  30:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  34:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  38:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  3c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  40:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  44:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  48:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  4c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  50:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  54:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  58:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  5c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  60:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  64:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  68:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  6c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  70:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  74:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  78:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  7c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  80:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  84:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  88:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  8c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+
+00000090 <__ctors_end>:
+  90:	11 24       	eor	r1, r1
+  92:	1f be       	out	0x3f, r1	; 63
+  94:	cf ef       	ldi	r28, 0xFF	; 255
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	df e3       	ldi	r29, 0x3F	; 63
+  9a:	de bf       	out	0x3e, r29	; 62
+  9c:	0e 94 2b 01 	call	0x256	; 0x256 <main>
+  a0:	0c 94 e5 07 	jmp	0xfca	; 0xfca <_exit>
+
+000000a4 <__bad_interrupt>:
+  a4:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a8 <atmel_start_init>:
+
+/**
+ * Initializes MCU, drivers and middleware in the project
+ **/
+void atmel_start_init(void)
+{
+  a8:	cf 93       	push	r28
+  aa:	df 93       	push	r29
+  ac:	cd b7       	in	r28, 0x3d	; 61
+  ae:	de b7       	in	r29, 0x3e	; 62
+	system_init();
+  b0:	0e 94 47 07 	call	0xe8e	; 0xe8e <system_init>
+}
+  b4:	00 00       	nop
+  b6:	df 91       	pop	r29
+  b8:	cf 91       	pop	r28
+  ba:	08 95       	ret
+
+000000bc <PORTA_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+  bc:	cf 93       	push	r28
+  be:	df 93       	push	r29
+  c0:	00 d0       	rcall	.+0      	; 0xc2 <PORTA_set_pin_level+0x6>
+  c2:	cd b7       	in	r28, 0x3d	; 61
+  c4:	de b7       	in	r29, 0x3e	; 62
+  c6:	89 83       	std	Y+1, r24	; 0x01
+  c8:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+  ca:	8a 81       	ldd	r24, Y+2	; 0x02
+  cc:	88 23       	and	r24, r24
+  ce:	a9 f0       	breq	.+42     	; 0xfa <PORTA_set_pin_level+0x3e>
+		VPORTA.OUT |= (1 << pin);
+  d0:	20 e0       	ldi	r18, 0x00	; 0
+  d2:	30 e0       	ldi	r19, 0x00	; 0
+  d4:	80 e0       	ldi	r24, 0x00	; 0
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+  d8:	fc 01       	movw	r30, r24
+  da:	81 81       	ldd	r24, Z+1	; 0x01
+  dc:	68 2f       	mov	r22, r24
+  de:	89 81       	ldd	r24, Y+1	; 0x01
+  e0:	48 2f       	mov	r20, r24
+  e2:	50 e0       	ldi	r21, 0x00	; 0
+  e4:	81 e0       	ldi	r24, 0x01	; 1
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	02 c0       	rjmp	.+4      	; 0xee <PORTA_set_pin_level+0x32>
+  ea:	88 0f       	add	r24, r24
+  ec:	99 1f       	adc	r25, r25
+  ee:	4a 95       	dec	r20
+  f0:	e2 f7       	brpl	.-8      	; 0xea <PORTA_set_pin_level+0x2e>
+  f2:	86 2b       	or	r24, r22
+  f4:	f9 01       	movw	r30, r18
+  f6:	81 83       	std	Z+1, r24	; 0x01
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+	}
+}
+  f8:	15 c0       	rjmp	.+42     	; 0x124 <__EEPROM_REGION_LENGTH__+0x24>
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+  fa:	20 e0       	ldi	r18, 0x00	; 0
+  fc:	30 e0       	ldi	r19, 0x00	; 0
+  fe:	80 e0       	ldi	r24, 0x00	; 0
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	fc 01       	movw	r30, r24
+ 104:	81 81       	ldd	r24, Z+1	; 0x01
+ 106:	68 2f       	mov	r22, r24
+ 108:	89 81       	ldd	r24, Y+1	; 0x01
+ 10a:	48 2f       	mov	r20, r24
+ 10c:	50 e0       	ldi	r21, 0x00	; 0
+ 10e:	81 e0       	ldi	r24, 0x01	; 1
+ 110:	90 e0       	ldi	r25, 0x00	; 0
+ 112:	02 c0       	rjmp	.+4      	; 0x118 <__EEPROM_REGION_LENGTH__+0x18>
+ 114:	88 0f       	add	r24, r24
+ 116:	99 1f       	adc	r25, r25
+ 118:	4a 95       	dec	r20
+ 11a:	e2 f7       	brpl	.-8      	; 0x114 <__EEPROM_REGION_LENGTH__+0x14>
+ 11c:	80 95       	com	r24
+ 11e:	86 23       	and	r24, r22
+ 120:	f9 01       	movw	r30, r18
+ 122:	81 83       	std	Z+1, r24	; 0x01
+	}
+}
+ 124:	00 00       	nop
+ 126:	0f 90       	pop	r0
+ 128:	0f 90       	pop	r0
+ 12a:	df 91       	pop	r29
+ 12c:	cf 91       	pop	r28
+ 12e:	08 95       	ret
+
+00000130 <PORTD_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+ 130:	cf 93       	push	r28
+ 132:	df 93       	push	r29
+ 134:	00 d0       	rcall	.+0      	; 0x136 <PORTD_set_pin_level+0x6>
+ 136:	cd b7       	in	r28, 0x3d	; 61
+ 138:	de b7       	in	r29, 0x3e	; 62
+ 13a:	89 83       	std	Y+1, r24	; 0x01
+ 13c:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 13e:	8a 81       	ldd	r24, Y+2	; 0x02
+ 140:	88 23       	and	r24, r24
+ 142:	a9 f0       	breq	.+42     	; 0x16e <PORTD_set_pin_level+0x3e>
+		VPORTD.OUT |= (1 << pin);
+ 144:	8c e0       	ldi	r24, 0x0C	; 12
+ 146:	90 e0       	ldi	r25, 0x00	; 0
+ 148:	2c e0       	ldi	r18, 0x0C	; 12
+ 14a:	30 e0       	ldi	r19, 0x00	; 0
+ 14c:	f9 01       	movw	r30, r18
+ 14e:	21 81       	ldd	r18, Z+1	; 0x01
+ 150:	62 2f       	mov	r22, r18
+ 152:	29 81       	ldd	r18, Y+1	; 0x01
+ 154:	42 2f       	mov	r20, r18
+ 156:	50 e0       	ldi	r21, 0x00	; 0
+ 158:	21 e0       	ldi	r18, 0x01	; 1
+ 15a:	30 e0       	ldi	r19, 0x00	; 0
+ 15c:	02 c0       	rjmp	.+4      	; 0x162 <PORTD_set_pin_level+0x32>
+ 15e:	22 0f       	add	r18, r18
+ 160:	33 1f       	adc	r19, r19
+ 162:	4a 95       	dec	r20
+ 164:	e2 f7       	brpl	.-8      	; 0x15e <PORTD_set_pin_level+0x2e>
+ 166:	26 2b       	or	r18, r22
+ 168:	fc 01       	movw	r30, r24
+ 16a:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+	}
+}
+ 16c:	15 c0       	rjmp	.+42     	; 0x198 <PORTD_set_pin_level+0x68>
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 16e:	8c e0       	ldi	r24, 0x0C	; 12
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	2c e0       	ldi	r18, 0x0C	; 12
+ 174:	30 e0       	ldi	r19, 0x00	; 0
+ 176:	f9 01       	movw	r30, r18
+ 178:	21 81       	ldd	r18, Z+1	; 0x01
+ 17a:	62 2f       	mov	r22, r18
+ 17c:	29 81       	ldd	r18, Y+1	; 0x01
+ 17e:	42 2f       	mov	r20, r18
+ 180:	50 e0       	ldi	r21, 0x00	; 0
+ 182:	21 e0       	ldi	r18, 0x01	; 1
+ 184:	30 e0       	ldi	r19, 0x00	; 0
+ 186:	02 c0       	rjmp	.+4      	; 0x18c <PORTD_set_pin_level+0x5c>
+ 188:	22 0f       	add	r18, r18
+ 18a:	33 1f       	adc	r19, r19
+ 18c:	4a 95       	dec	r20
+ 18e:	e2 f7       	brpl	.-8      	; 0x188 <PORTD_set_pin_level+0x58>
+ 190:	20 95       	com	r18
+ 192:	26 23       	and	r18, r22
+ 194:	fc 01       	movw	r30, r24
+ 196:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 198:	00 00       	nop
+ 19a:	0f 90       	pop	r0
+ 19c:	0f 90       	pop	r0
+ 19e:	df 91       	pop	r29
+ 1a0:	cf 91       	pop	r28
+ 1a2:	08 95       	ret
+
+000001a4 <W0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W0_MCU_set_level(const bool level)
+{
+ 1a4:	cf 93       	push	r28
+ 1a6:	df 93       	push	r29
+ 1a8:	1f 92       	push	r1
+ 1aa:	cd b7       	in	r28, 0x3d	; 61
+ 1ac:	de b7       	in	r29, 0x3e	; 62
+ 1ae:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(3, level);
+ 1b0:	69 81       	ldd	r22, Y+1	; 0x01
+ 1b2:	83 e0       	ldi	r24, 0x03	; 3
+ 1b4:	0e 94 5e 00 	call	0xbc	; 0xbc <PORTA_set_pin_level>
+}
+ 1b8:	00 00       	nop
+ 1ba:	0f 90       	pop	r0
+ 1bc:	df 91       	pop	r29
+ 1be:	cf 91       	pop	r28
+ 1c0:	08 95       	ret
+
+000001c2 <R0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R0_MCU_set_level(const bool level)
+{
+ 1c2:	cf 93       	push	r28
+ 1c4:	df 93       	push	r29
+ 1c6:	1f 92       	push	r1
+ 1c8:	cd b7       	in	r28, 0x3d	; 61
+ 1ca:	de b7       	in	r29, 0x3e	; 62
+ 1cc:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(0, level);
+ 1ce:	69 81       	ldd	r22, Y+1	; 0x01
+ 1d0:	80 e0       	ldi	r24, 0x00	; 0
+ 1d2:	0e 94 98 00 	call	0x130	; 0x130 <PORTD_set_pin_level>
+}
+ 1d6:	00 00       	nop
+ 1d8:	0f 90       	pop	r0
+ 1da:	df 91       	pop	r29
+ 1dc:	cf 91       	pop	r28
+ 1de:	08 95       	ret
+
+000001e0 <G0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G0_MCU_set_level(const bool level)
+{
+ 1e0:	cf 93       	push	r28
+ 1e2:	df 93       	push	r29
+ 1e4:	1f 92       	push	r1
+ 1e6:	cd b7       	in	r28, 0x3d	; 61
+ 1e8:	de b7       	in	r29, 0x3e	; 62
+ 1ea:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(1, level);
+ 1ec:	69 81       	ldd	r22, Y+1	; 0x01
+ 1ee:	81 e0       	ldi	r24, 0x01	; 1
+ 1f0:	0e 94 98 00 	call	0x130	; 0x130 <PORTD_set_pin_level>
+}
+ 1f4:	00 00       	nop
+ 1f6:	0f 90       	pop	r0
+ 1f8:	df 91       	pop	r29
+ 1fa:	cf 91       	pop	r28
+ 1fc:	08 95       	ret
+
+000001fe <B0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B0_MCU_set_level(const bool level)
+{
+ 1fe:	cf 93       	push	r28
+ 200:	df 93       	push	r29
+ 202:	1f 92       	push	r1
+ 204:	cd b7       	in	r28, 0x3d	; 61
+ 206:	de b7       	in	r29, 0x3e	; 62
+ 208:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(2, level);
+ 20a:	69 81       	ldd	r22, Y+1	; 0x01
+ 20c:	82 e0       	ldi	r24, 0x02	; 2
+ 20e:	0e 94 98 00 	call	0x130	; 0x130 <PORTD_set_pin_level>
+}
+ 212:	00 00       	nop
+ 214:	0f 90       	pop	r0
+ 216:	df 91       	pop	r29
+ 218:	cf 91       	pop	r28
+ 21a:	08 95       	ret
+
+0000021c <led_ON>:
+ * Created: 20-09-2023 14:06:46
+ *  Author: Nevil
+ */ 
+#include <atmel_start.h>
+#include <stdbool.h>
+void led_ON(bool W,bool R,bool G,bool B){
+ 21c:	cf 93       	push	r28
+ 21e:	df 93       	push	r29
+ 220:	00 d0       	rcall	.+0      	; 0x222 <led_ON+0x6>
+ 222:	00 d0       	rcall	.+0      	; 0x224 <led_ON+0x8>
+ 224:	cd b7       	in	r28, 0x3d	; 61
+ 226:	de b7       	in	r29, 0x3e	; 62
+ 228:	89 83       	std	Y+1, r24	; 0x01
+ 22a:	6a 83       	std	Y+2, r22	; 0x02
+ 22c:	4b 83       	std	Y+3, r20	; 0x03
+ 22e:	2c 83       	std	Y+4, r18	; 0x04
+	W0_MCU_set_level(W);
+ 230:	89 81       	ldd	r24, Y+1	; 0x01
+ 232:	0e 94 d2 00 	call	0x1a4	; 0x1a4 <W0_MCU_set_level>
+	R0_MCU_set_level(R);
+ 236:	8a 81       	ldd	r24, Y+2	; 0x02
+ 238:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <R0_MCU_set_level>
+	G0_MCU_set_level(G);
+ 23c:	8b 81       	ldd	r24, Y+3	; 0x03
+ 23e:	0e 94 f0 00 	call	0x1e0	; 0x1e0 <G0_MCU_set_level>
+	B0_MCU_set_level(B);
+ 242:	8c 81       	ldd	r24, Y+4	; 0x04
+ 244:	0e 94 ff 00 	call	0x1fe	; 0x1fe <B0_MCU_set_level>
+	
+}
+ 248:	00 00       	nop
+ 24a:	24 96       	adiw	r28, 0x04	; 4
+ 24c:	cd bf       	out	0x3d, r28	; 61
+ 24e:	de bf       	out	0x3e, r29	; 62
+ 250:	df 91       	pop	r29
+ 252:	cf 91       	pop	r28
+ 254:	08 95       	ret
+
+00000256 <main>:
+#include <atmel_start.h>
+#include "led_ON.h"
+int main(void)
+{
+ 256:	cf 93       	push	r28
+ 258:	df 93       	push	r29
+ 25a:	cd b7       	in	r28, 0x3d	; 61
+ 25c:	de b7       	in	r29, 0x3e	; 62
+	
+	/* Initializes MCU, drivers and middleware */
+	atmel_start_init();
+ 25e:	0e 94 54 00 	call	0xa8	; 0xa8 <atmel_start_init>
+	//W0_MCU_set_level(false);
+	/* Replace with your application code */
+	while (1) {
+		led_ON(0,1,1,1);
+ 262:	21 e0       	ldi	r18, 0x01	; 1
+ 264:	41 e0       	ldi	r20, 0x01	; 1
+ 266:	61 e0       	ldi	r22, 0x01	; 1
+ 268:	80 e0       	ldi	r24, 0x00	; 0
+ 26a:	0e 94 0e 01 	call	0x21c	; 0x21c <led_ON>
+		
+	}
+ 26e:	f9 cf       	rjmp	.-14     	; 0x262 <main+0xc>
+
+00000270 <BOD_init>:
+ * \brief Initialize Brownout Detector
+ *
+ * \return Initialization status.
+ */
+int8_t BOD_init()
+{
+ 270:	cf 93       	push	r28
+ 272:	df 93       	push	r29
+ 274:	cd b7       	in	r28, 0x3d	; 61
+ 276:	de b7       	in	r29, 0x3e	; 62
+	// BOD.INTCTRL = 0 << BOD_VLMIE_bp /* voltage level monitor interrrupt enable: disabled */
+	//		 | BOD_VLMCFG_BELOW_gc; /* Interrupt when supply goes below VLM level */
+
+	// BOD.VLMCTRLA = BOD_VLMLVL_5ABOVE_gc; /* VLM threshold 5% above BOD level */
+
+	return 0;
+ 278:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 27a:	df 91       	pop	r29
+ 27c:	cf 91       	pop	r28
+ 27e:	08 95       	ret
+
+00000280 <CLKCTRL_init>:
+ * \brief Initialize clkctrl interface
+ *
+ * \return Initialization status.
+ */
+int8_t CLKCTRL_init()
+{
+ 280:	cf 93       	push	r28
+ 282:	df 93       	push	r29
+ 284:	cd b7       	in	r28, 0x3d	; 61
+ 286:	de b7       	in	r29, 0x3e	; 62
+	// ccp_write_io((void*)&(CLKCTRL.MCLKCTRLA),CLKCTRL_CLKSEL_OSC20M_gc /* 20MHz Internal Oscillator (OSC20M) */
+	//		 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+
+	// ccp_write_io((void*)&(CLKCTRL.MCLKLOCK),0 << CLKCTRL_LOCKEN_bp /* lock enable: disabled */);
+
+	return 0;
+ 288:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 28a:	df 91       	pop	r29
+ 28c:	cf 91       	pop	r28
+ 28e:	08 95       	ret
+
+00000290 <CPUINT_init>:
+ * \brief Initialize cpuint interface
+ *
+ * \return Initialization status
+ */
+int8_t CPUINT_init()
+{
+ 290:	cf 93       	push	r28
+ 292:	df 93       	push	r29
+ 294:	cd b7       	in	r28, 0x3d	; 61
+ 296:	de b7       	in	r29, 0x3e	; 62
+
+	// CPUINT.LVL0PRI = 0x0 << CPUINT_LVL0PRI_gp; /* Interrupt Level Priority: 0x0 */
+
+	// CPUINT.LVL1VEC = 0x0 << CPUINT_LVL1VEC_gp; /* Interrupt Vector with High Priority: 0x0 */
+
+	return 0;
+ 298:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 29a:	df 91       	pop	r29
+ 29c:	cf 91       	pop	r28
+ 29e:	08 95       	ret
+
+000002a0 <PORTA_set_pin_pull_mode>:
+ *
+ * \param[in] pin       The pin number within port
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void PORTA_set_pin_pull_mode(const uint8_t pin, const enum port_pull_mode pull_mode)
+{
+ 2a0:	cf 93       	push	r28
+ 2a2:	df 93       	push	r29
+ 2a4:	00 d0       	rcall	.+0      	; 0x2a6 <PORTA_set_pin_pull_mode+0x6>
+ 2a6:	00 d0       	rcall	.+0      	; 0x2a8 <PORTA_set_pin_pull_mode+0x8>
+ 2a8:	cd b7       	in	r28, 0x3d	; 61
+ 2aa:	de b7       	in	r29, 0x3e	; 62
+ 2ac:	8b 83       	std	Y+3, r24	; 0x03
+ 2ae:	6c 83       	std	Y+4, r22	; 0x04
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTA + 0x10 + pin);
+ 2b0:	8b 81       	ldd	r24, Y+3	; 0x03
+ 2b2:	88 2f       	mov	r24, r24
+ 2b4:	90 e0       	ldi	r25, 0x00	; 0
+ 2b6:	80 5f       	subi	r24, 0xF0	; 240
+ 2b8:	9b 4f       	sbci	r25, 0xFB	; 251
+ 2ba:	89 83       	std	Y+1, r24	; 0x01
+ 2bc:	9a 83       	std	Y+2, r25	; 0x02
+
+	if (pull_mode == PORT_PULL_UP) {
+ 2be:	8c 81       	ldd	r24, Y+4	; 0x04
+ 2c0:	81 30       	cpi	r24, 0x01	; 1
+ 2c2:	59 f4       	brne	.+22     	; 0x2da <PORTA_set_pin_pull_mode+0x3a>
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+ 2c4:	89 81       	ldd	r24, Y+1	; 0x01
+ 2c6:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2c8:	fc 01       	movw	r30, r24
+ 2ca:	80 81       	ld	r24, Z
+ 2cc:	28 2f       	mov	r18, r24
+ 2ce:	28 60       	ori	r18, 0x08	; 8
+ 2d0:	89 81       	ldd	r24, Y+1	; 0x01
+ 2d2:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2d4:	fc 01       	movw	r30, r24
+ 2d6:	20 83       	st	Z, r18
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+	}
+}
+ 2d8:	0d c0       	rjmp	.+26     	; 0x2f4 <PORTA_set_pin_pull_mode+0x54>
+{
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTA + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+ 2da:	8c 81       	ldd	r24, Y+4	; 0x04
+ 2dc:	88 23       	and	r24, r24
+ 2de:	51 f4       	brne	.+20     	; 0x2f4 <PORTA_set_pin_pull_mode+0x54>
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 2e0:	89 81       	ldd	r24, Y+1	; 0x01
+ 2e2:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2e4:	fc 01       	movw	r30, r24
+ 2e6:	80 81       	ld	r24, Z
+ 2e8:	28 2f       	mov	r18, r24
+ 2ea:	27 7f       	andi	r18, 0xF7	; 247
+ 2ec:	89 81       	ldd	r24, Y+1	; 0x01
+ 2ee:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2f0:	fc 01       	movw	r30, r24
+ 2f2:	20 83       	st	Z, r18
+	}
+}
+ 2f4:	00 00       	nop
+ 2f6:	24 96       	adiw	r28, 0x04	; 4
+ 2f8:	cd bf       	out	0x3d, r28	; 61
+ 2fa:	de bf       	out	0x3e, r29	; 62
+ 2fc:	df 91       	pop	r29
+ 2fe:	cf 91       	pop	r28
+ 300:	08 95       	ret
+
+00000302 <PORTA_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTA_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 302:	cf 93       	push	r28
+ 304:	df 93       	push	r29
+ 306:	00 d0       	rcall	.+0      	; 0x308 <PORTA_set_pin_dir+0x6>
+ 308:	cd b7       	in	r28, 0x3d	; 61
+ 30a:	de b7       	in	r29, 0x3e	; 62
+ 30c:	89 83       	std	Y+1, r24	; 0x01
+ 30e:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 310:	8a 81       	ldd	r24, Y+2	; 0x02
+ 312:	88 2f       	mov	r24, r24
+ 314:	90 e0       	ldi	r25, 0x00	; 0
+ 316:	81 30       	cpi	r24, 0x01	; 1
+ 318:	91 05       	cpc	r25, r1
+ 31a:	e1 f0       	breq	.+56     	; 0x354 <PORTA_set_pin_dir+0x52>
+ 31c:	82 30       	cpi	r24, 0x02	; 2
+ 31e:	91 05       	cpc	r25, r1
+ 320:	71 f1       	breq	.+92     	; 0x37e <PORTA_set_pin_dir+0x7c>
+ 322:	89 2b       	or	r24, r25
+ 324:	09 f0       	breq	.+2      	; 0x328 <PORTA_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTA + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 326:	3b c0       	rjmp	.+118    	; 0x39e <PORTA_set_pin_dir+0x9c>
+ */
+static inline void PORTA_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+ 328:	20 e0       	ldi	r18, 0x00	; 0
+ 32a:	30 e0       	ldi	r19, 0x00	; 0
+ 32c:	80 e0       	ldi	r24, 0x00	; 0
+ 32e:	90 e0       	ldi	r25, 0x00	; 0
+ 330:	fc 01       	movw	r30, r24
+ 332:	80 81       	ld	r24, Z
+ 334:	68 2f       	mov	r22, r24
+ 336:	89 81       	ldd	r24, Y+1	; 0x01
+ 338:	48 2f       	mov	r20, r24
+ 33a:	50 e0       	ldi	r21, 0x00	; 0
+ 33c:	81 e0       	ldi	r24, 0x01	; 1
+ 33e:	90 e0       	ldi	r25, 0x00	; 0
+ 340:	02 c0       	rjmp	.+4      	; 0x346 <PORTA_set_pin_dir+0x44>
+ 342:	88 0f       	add	r24, r24
+ 344:	99 1f       	adc	r25, r25
+ 346:	4a 95       	dec	r20
+ 348:	e2 f7       	brpl	.-8      	; 0x342 <PORTA_set_pin_dir+0x40>
+ 34a:	80 95       	com	r24
+ 34c:	86 23       	and	r24, r22
+ 34e:	f9 01       	movw	r30, r18
+ 350:	80 83       	st	Z, r24
+		break;
+ 352:	25 c0       	rjmp	.+74     	; 0x39e <PORTA_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 354:	20 e0       	ldi	r18, 0x00	; 0
+ 356:	30 e0       	ldi	r19, 0x00	; 0
+ 358:	80 e0       	ldi	r24, 0x00	; 0
+ 35a:	90 e0       	ldi	r25, 0x00	; 0
+ 35c:	fc 01       	movw	r30, r24
+ 35e:	80 81       	ld	r24, Z
+ 360:	68 2f       	mov	r22, r24
+ 362:	89 81       	ldd	r24, Y+1	; 0x01
+ 364:	48 2f       	mov	r20, r24
+ 366:	50 e0       	ldi	r21, 0x00	; 0
+ 368:	81 e0       	ldi	r24, 0x01	; 1
+ 36a:	90 e0       	ldi	r25, 0x00	; 0
+ 36c:	02 c0       	rjmp	.+4      	; 0x372 <PORTA_set_pin_dir+0x70>
+ 36e:	88 0f       	add	r24, r24
+ 370:	99 1f       	adc	r25, r25
+ 372:	4a 95       	dec	r20
+ 374:	e2 f7       	brpl	.-8      	; 0x36e <PORTA_set_pin_dir+0x6c>
+ 376:	86 2b       	or	r24, r22
+ 378:	f9 01       	movw	r30, r18
+ 37a:	80 83       	st	Z, r24
+		break;
+ 37c:	10 c0       	rjmp	.+32     	; 0x39e <PORTA_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTA + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 37e:	89 81       	ldd	r24, Y+1	; 0x01
+ 380:	88 2f       	mov	r24, r24
+ 382:	90 e0       	ldi	r25, 0x00	; 0
+ 384:	80 5f       	subi	r24, 0xF0	; 240
+ 386:	9b 4f       	sbci	r25, 0xFB	; 251
+ 388:	29 81       	ldd	r18, Y+1	; 0x01
+ 38a:	22 2f       	mov	r18, r18
+ 38c:	30 e0       	ldi	r19, 0x00	; 0
+ 38e:	20 5f       	subi	r18, 0xF0	; 240
+ 390:	3b 4f       	sbci	r19, 0xFB	; 251
+ 392:	f9 01       	movw	r30, r18
+ 394:	20 81       	ld	r18, Z
+ 396:	28 60       	ori	r18, 0x08	; 8
+ 398:	fc 01       	movw	r30, r24
+ 39a:	20 83       	st	Z, r18
+		break;
+ 39c:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 39e:	00 00       	nop
+ 3a0:	0f 90       	pop	r0
+ 3a2:	0f 90       	pop	r0
+ 3a4:	df 91       	pop	r29
+ 3a6:	cf 91       	pop	r28
+ 3a8:	08 95       	ret
+
+000003aa <PORTA_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+ 3aa:	cf 93       	push	r28
+ 3ac:	df 93       	push	r29
+ 3ae:	00 d0       	rcall	.+0      	; 0x3b0 <PORTA_set_pin_level+0x6>
+ 3b0:	cd b7       	in	r28, 0x3d	; 61
+ 3b2:	de b7       	in	r29, 0x3e	; 62
+ 3b4:	89 83       	std	Y+1, r24	; 0x01
+ 3b6:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 3b8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3ba:	88 23       	and	r24, r24
+ 3bc:	a9 f0       	breq	.+42     	; 0x3e8 <PORTA_set_pin_level+0x3e>
+		VPORTA.OUT |= (1 << pin);
+ 3be:	20 e0       	ldi	r18, 0x00	; 0
+ 3c0:	30 e0       	ldi	r19, 0x00	; 0
+ 3c2:	80 e0       	ldi	r24, 0x00	; 0
+ 3c4:	90 e0       	ldi	r25, 0x00	; 0
+ 3c6:	fc 01       	movw	r30, r24
+ 3c8:	81 81       	ldd	r24, Z+1	; 0x01
+ 3ca:	68 2f       	mov	r22, r24
+ 3cc:	89 81       	ldd	r24, Y+1	; 0x01
+ 3ce:	48 2f       	mov	r20, r24
+ 3d0:	50 e0       	ldi	r21, 0x00	; 0
+ 3d2:	81 e0       	ldi	r24, 0x01	; 1
+ 3d4:	90 e0       	ldi	r25, 0x00	; 0
+ 3d6:	02 c0       	rjmp	.+4      	; 0x3dc <PORTA_set_pin_level+0x32>
+ 3d8:	88 0f       	add	r24, r24
+ 3da:	99 1f       	adc	r25, r25
+ 3dc:	4a 95       	dec	r20
+ 3de:	e2 f7       	brpl	.-8      	; 0x3d8 <PORTA_set_pin_level+0x2e>
+ 3e0:	86 2b       	or	r24, r22
+ 3e2:	f9 01       	movw	r30, r18
+ 3e4:	81 83       	std	Z+1, r24	; 0x01
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+	}
+}
+ 3e6:	15 c0       	rjmp	.+42     	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 3e8:	20 e0       	ldi	r18, 0x00	; 0
+ 3ea:	30 e0       	ldi	r19, 0x00	; 0
+ 3ec:	80 e0       	ldi	r24, 0x00	; 0
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	fc 01       	movw	r30, r24
+ 3f2:	81 81       	ldd	r24, Z+1	; 0x01
+ 3f4:	68 2f       	mov	r22, r24
+ 3f6:	89 81       	ldd	r24, Y+1	; 0x01
+ 3f8:	48 2f       	mov	r20, r24
+ 3fa:	50 e0       	ldi	r21, 0x00	; 0
+ 3fc:	81 e0       	ldi	r24, 0x01	; 1
+ 3fe:	90 e0       	ldi	r25, 0x00	; 0
+ 400:	02 c0       	rjmp	.+4      	; 0x406 <__LOCK_REGION_LENGTH__+0x6>
+ 402:	88 0f       	add	r24, r24
+ 404:	99 1f       	adc	r25, r25
+ 406:	4a 95       	dec	r20
+ 408:	e2 f7       	brpl	.-8      	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 40a:	80 95       	com	r24
+ 40c:	86 23       	and	r24, r22
+ 40e:	f9 01       	movw	r30, r18
+ 410:	81 83       	std	Z+1, r24	; 0x01
+	}
+}
+ 412:	00 00       	nop
+ 414:	0f 90       	pop	r0
+ 416:	0f 90       	pop	r0
+ 418:	df 91       	pop	r29
+ 41a:	cf 91       	pop	r28
+ 41c:	08 95       	ret
+
+0000041e <PORTC_set_pin_pull_mode>:
+ *
+ * \param[in] pin       The pin number within port
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void PORTC_set_pin_pull_mode(const uint8_t pin, const enum port_pull_mode pull_mode)
+{
+ 41e:	cf 93       	push	r28
+ 420:	df 93       	push	r29
+ 422:	00 d0       	rcall	.+0      	; 0x424 <PORTC_set_pin_pull_mode+0x6>
+ 424:	00 d0       	rcall	.+0      	; 0x426 <PORTC_set_pin_pull_mode+0x8>
+ 426:	cd b7       	in	r28, 0x3d	; 61
+ 428:	de b7       	in	r29, 0x3e	; 62
+ 42a:	8b 83       	std	Y+3, r24	; 0x03
+ 42c:	6c 83       	std	Y+4, r22	; 0x04
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTC + 0x10 + pin);
+ 42e:	8b 81       	ldd	r24, Y+3	; 0x03
+ 430:	88 2f       	mov	r24, r24
+ 432:	90 e0       	ldi	r25, 0x00	; 0
+ 434:	80 5b       	subi	r24, 0xB0	; 176
+ 436:	9b 4f       	sbci	r25, 0xFB	; 251
+ 438:	89 83       	std	Y+1, r24	; 0x01
+ 43a:	9a 83       	std	Y+2, r25	; 0x02
+
+	if (pull_mode == PORT_PULL_UP) {
+ 43c:	8c 81       	ldd	r24, Y+4	; 0x04
+ 43e:	81 30       	cpi	r24, 0x01	; 1
+ 440:	59 f4       	brne	.+22     	; 0x458 <PORTC_set_pin_pull_mode+0x3a>
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+ 442:	89 81       	ldd	r24, Y+1	; 0x01
+ 444:	9a 81       	ldd	r25, Y+2	; 0x02
+ 446:	fc 01       	movw	r30, r24
+ 448:	80 81       	ld	r24, Z
+ 44a:	28 2f       	mov	r18, r24
+ 44c:	28 60       	ori	r18, 0x08	; 8
+ 44e:	89 81       	ldd	r24, Y+1	; 0x01
+ 450:	9a 81       	ldd	r25, Y+2	; 0x02
+ 452:	fc 01       	movw	r30, r24
+ 454:	20 83       	st	Z, r18
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+	}
+}
+ 456:	0d c0       	rjmp	.+26     	; 0x472 <PORTC_set_pin_pull_mode+0x54>
+{
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTC + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+ 458:	8c 81       	ldd	r24, Y+4	; 0x04
+ 45a:	88 23       	and	r24, r24
+ 45c:	51 f4       	brne	.+20     	; 0x472 <PORTC_set_pin_pull_mode+0x54>
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 45e:	89 81       	ldd	r24, Y+1	; 0x01
+ 460:	9a 81       	ldd	r25, Y+2	; 0x02
+ 462:	fc 01       	movw	r30, r24
+ 464:	80 81       	ld	r24, Z
+ 466:	28 2f       	mov	r18, r24
+ 468:	27 7f       	andi	r18, 0xF7	; 247
+ 46a:	89 81       	ldd	r24, Y+1	; 0x01
+ 46c:	9a 81       	ldd	r25, Y+2	; 0x02
+ 46e:	fc 01       	movw	r30, r24
+ 470:	20 83       	st	Z, r18
+	}
+}
+ 472:	00 00       	nop
+ 474:	24 96       	adiw	r28, 0x04	; 4
+ 476:	cd bf       	out	0x3d, r28	; 61
+ 478:	de bf       	out	0x3e, r29	; 62
+ 47a:	df 91       	pop	r29
+ 47c:	cf 91       	pop	r28
+ 47e:	08 95       	ret
+
+00000480 <PORTC_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTC_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 480:	cf 93       	push	r28
+ 482:	df 93       	push	r29
+ 484:	00 d0       	rcall	.+0      	; 0x486 <PORTC_set_pin_dir+0x6>
+ 486:	cd b7       	in	r28, 0x3d	; 61
+ 488:	de b7       	in	r29, 0x3e	; 62
+ 48a:	89 83       	std	Y+1, r24	; 0x01
+ 48c:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 48e:	8a 81       	ldd	r24, Y+2	; 0x02
+ 490:	88 2f       	mov	r24, r24
+ 492:	90 e0       	ldi	r25, 0x00	; 0
+ 494:	81 30       	cpi	r24, 0x01	; 1
+ 496:	91 05       	cpc	r25, r1
+ 498:	e1 f0       	breq	.+56     	; 0x4d2 <PORTC_set_pin_dir+0x52>
+ 49a:	82 30       	cpi	r24, 0x02	; 2
+ 49c:	91 05       	cpc	r25, r1
+ 49e:	71 f1       	breq	.+92     	; 0x4fc <PORTC_set_pin_dir+0x7c>
+ 4a0:	89 2b       	or	r24, r25
+ 4a2:	09 f0       	breq	.+2      	; 0x4a6 <PORTC_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTC + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 4a4:	3b c0       	rjmp	.+118    	; 0x51c <PORTC_set_pin_dir+0x9c>
+ */
+static inline void PORTC_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTC.DIR &= ~(1 << pin);
+ 4a6:	88 e0       	ldi	r24, 0x08	; 8
+ 4a8:	90 e0       	ldi	r25, 0x00	; 0
+ 4aa:	28 e0       	ldi	r18, 0x08	; 8
+ 4ac:	30 e0       	ldi	r19, 0x00	; 0
+ 4ae:	f9 01       	movw	r30, r18
+ 4b0:	20 81       	ld	r18, Z
+ 4b2:	62 2f       	mov	r22, r18
+ 4b4:	29 81       	ldd	r18, Y+1	; 0x01
+ 4b6:	42 2f       	mov	r20, r18
+ 4b8:	50 e0       	ldi	r21, 0x00	; 0
+ 4ba:	21 e0       	ldi	r18, 0x01	; 1
+ 4bc:	30 e0       	ldi	r19, 0x00	; 0
+ 4be:	02 c0       	rjmp	.+4      	; 0x4c4 <PORTC_set_pin_dir+0x44>
+ 4c0:	22 0f       	add	r18, r18
+ 4c2:	33 1f       	adc	r19, r19
+ 4c4:	4a 95       	dec	r20
+ 4c6:	e2 f7       	brpl	.-8      	; 0x4c0 <PORTC_set_pin_dir+0x40>
+ 4c8:	20 95       	com	r18
+ 4ca:	26 23       	and	r18, r22
+ 4cc:	fc 01       	movw	r30, r24
+ 4ce:	20 83       	st	Z, r18
+		break;
+ 4d0:	25 c0       	rjmp	.+74     	; 0x51c <PORTC_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTC.DIR |= (1 << pin);
+ 4d2:	88 e0       	ldi	r24, 0x08	; 8
+ 4d4:	90 e0       	ldi	r25, 0x00	; 0
+ 4d6:	28 e0       	ldi	r18, 0x08	; 8
+ 4d8:	30 e0       	ldi	r19, 0x00	; 0
+ 4da:	f9 01       	movw	r30, r18
+ 4dc:	20 81       	ld	r18, Z
+ 4de:	62 2f       	mov	r22, r18
+ 4e0:	29 81       	ldd	r18, Y+1	; 0x01
+ 4e2:	42 2f       	mov	r20, r18
+ 4e4:	50 e0       	ldi	r21, 0x00	; 0
+ 4e6:	21 e0       	ldi	r18, 0x01	; 1
+ 4e8:	30 e0       	ldi	r19, 0x00	; 0
+ 4ea:	02 c0       	rjmp	.+4      	; 0x4f0 <PORTC_set_pin_dir+0x70>
+ 4ec:	22 0f       	add	r18, r18
+ 4ee:	33 1f       	adc	r19, r19
+ 4f0:	4a 95       	dec	r20
+ 4f2:	e2 f7       	brpl	.-8      	; 0x4ec <PORTC_set_pin_dir+0x6c>
+ 4f4:	26 2b       	or	r18, r22
+ 4f6:	fc 01       	movw	r30, r24
+ 4f8:	20 83       	st	Z, r18
+		break;
+ 4fa:	10 c0       	rjmp	.+32     	; 0x51c <PORTC_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTC + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 4fc:	89 81       	ldd	r24, Y+1	; 0x01
+ 4fe:	88 2f       	mov	r24, r24
+ 500:	90 e0       	ldi	r25, 0x00	; 0
+ 502:	80 5b       	subi	r24, 0xB0	; 176
+ 504:	9b 4f       	sbci	r25, 0xFB	; 251
+ 506:	29 81       	ldd	r18, Y+1	; 0x01
+ 508:	22 2f       	mov	r18, r18
+ 50a:	30 e0       	ldi	r19, 0x00	; 0
+ 50c:	20 5b       	subi	r18, 0xB0	; 176
+ 50e:	3b 4f       	sbci	r19, 0xFB	; 251
+ 510:	f9 01       	movw	r30, r18
+ 512:	20 81       	ld	r18, Z
+ 514:	28 60       	ori	r18, 0x08	; 8
+ 516:	fc 01       	movw	r30, r24
+ 518:	20 83       	st	Z, r18
+		break;
+ 51a:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 51c:	00 00       	nop
+ 51e:	0f 90       	pop	r0
+ 520:	0f 90       	pop	r0
+ 522:	df 91       	pop	r29
+ 524:	cf 91       	pop	r28
+ 526:	08 95       	ret
+
+00000528 <PORTC_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTC_set_pin_level(const uint8_t pin, const bool level)
+{
+ 528:	cf 93       	push	r28
+ 52a:	df 93       	push	r29
+ 52c:	00 d0       	rcall	.+0      	; 0x52e <PORTC_set_pin_level+0x6>
+ 52e:	cd b7       	in	r28, 0x3d	; 61
+ 530:	de b7       	in	r29, 0x3e	; 62
+ 532:	89 83       	std	Y+1, r24	; 0x01
+ 534:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 536:	8a 81       	ldd	r24, Y+2	; 0x02
+ 538:	88 23       	and	r24, r24
+ 53a:	a9 f0       	breq	.+42     	; 0x566 <PORTC_set_pin_level+0x3e>
+		VPORTC.OUT |= (1 << pin);
+ 53c:	88 e0       	ldi	r24, 0x08	; 8
+ 53e:	90 e0       	ldi	r25, 0x00	; 0
+ 540:	28 e0       	ldi	r18, 0x08	; 8
+ 542:	30 e0       	ldi	r19, 0x00	; 0
+ 544:	f9 01       	movw	r30, r18
+ 546:	21 81       	ldd	r18, Z+1	; 0x01
+ 548:	62 2f       	mov	r22, r18
+ 54a:	29 81       	ldd	r18, Y+1	; 0x01
+ 54c:	42 2f       	mov	r20, r18
+ 54e:	50 e0       	ldi	r21, 0x00	; 0
+ 550:	21 e0       	ldi	r18, 0x01	; 1
+ 552:	30 e0       	ldi	r19, 0x00	; 0
+ 554:	02 c0       	rjmp	.+4      	; 0x55a <PORTC_set_pin_level+0x32>
+ 556:	22 0f       	add	r18, r18
+ 558:	33 1f       	adc	r19, r19
+ 55a:	4a 95       	dec	r20
+ 55c:	e2 f7       	brpl	.-8      	; 0x556 <PORTC_set_pin_level+0x2e>
+ 55e:	26 2b       	or	r18, r22
+ 560:	fc 01       	movw	r30, r24
+ 562:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTC.OUT &= ~(1 << pin);
+	}
+}
+ 564:	15 c0       	rjmp	.+42     	; 0x590 <PORTC_set_pin_level+0x68>
+static inline void PORTC_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTC.OUT |= (1 << pin);
+	} else {
+		VPORTC.OUT &= ~(1 << pin);
+ 566:	88 e0       	ldi	r24, 0x08	; 8
+ 568:	90 e0       	ldi	r25, 0x00	; 0
+ 56a:	28 e0       	ldi	r18, 0x08	; 8
+ 56c:	30 e0       	ldi	r19, 0x00	; 0
+ 56e:	f9 01       	movw	r30, r18
+ 570:	21 81       	ldd	r18, Z+1	; 0x01
+ 572:	62 2f       	mov	r22, r18
+ 574:	29 81       	ldd	r18, Y+1	; 0x01
+ 576:	42 2f       	mov	r20, r18
+ 578:	50 e0       	ldi	r21, 0x00	; 0
+ 57a:	21 e0       	ldi	r18, 0x01	; 1
+ 57c:	30 e0       	ldi	r19, 0x00	; 0
+ 57e:	02 c0       	rjmp	.+4      	; 0x584 <PORTC_set_pin_level+0x5c>
+ 580:	22 0f       	add	r18, r18
+ 582:	33 1f       	adc	r19, r19
+ 584:	4a 95       	dec	r20
+ 586:	e2 f7       	brpl	.-8      	; 0x580 <PORTC_set_pin_level+0x58>
+ 588:	20 95       	com	r18
+ 58a:	26 23       	and	r18, r22
+ 58c:	fc 01       	movw	r30, r24
+ 58e:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 590:	00 00       	nop
+ 592:	0f 90       	pop	r0
+ 594:	0f 90       	pop	r0
+ 596:	df 91       	pop	r29
+ 598:	cf 91       	pop	r28
+ 59a:	08 95       	ret
+
+0000059c <PORTD_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTD_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 59c:	cf 93       	push	r28
+ 59e:	df 93       	push	r29
+ 5a0:	00 d0       	rcall	.+0      	; 0x5a2 <PORTD_set_pin_dir+0x6>
+ 5a2:	cd b7       	in	r28, 0x3d	; 61
+ 5a4:	de b7       	in	r29, 0x3e	; 62
+ 5a6:	89 83       	std	Y+1, r24	; 0x01
+ 5a8:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 5aa:	8a 81       	ldd	r24, Y+2	; 0x02
+ 5ac:	88 2f       	mov	r24, r24
+ 5ae:	90 e0       	ldi	r25, 0x00	; 0
+ 5b0:	81 30       	cpi	r24, 0x01	; 1
+ 5b2:	91 05       	cpc	r25, r1
+ 5b4:	e1 f0       	breq	.+56     	; 0x5ee <PORTD_set_pin_dir+0x52>
+ 5b6:	82 30       	cpi	r24, 0x02	; 2
+ 5b8:	91 05       	cpc	r25, r1
+ 5ba:	71 f1       	breq	.+92     	; 0x618 <PORTD_set_pin_dir+0x7c>
+ 5bc:	89 2b       	or	r24, r25
+ 5be:	09 f0       	breq	.+2      	; 0x5c2 <PORTD_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTD + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 5c0:	3b c0       	rjmp	.+118    	; 0x638 <PORTD_set_pin_dir+0x9c>
+ */
+static inline void PORTD_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+ 5c2:	8c e0       	ldi	r24, 0x0C	; 12
+ 5c4:	90 e0       	ldi	r25, 0x00	; 0
+ 5c6:	2c e0       	ldi	r18, 0x0C	; 12
+ 5c8:	30 e0       	ldi	r19, 0x00	; 0
+ 5ca:	f9 01       	movw	r30, r18
+ 5cc:	20 81       	ld	r18, Z
+ 5ce:	62 2f       	mov	r22, r18
+ 5d0:	29 81       	ldd	r18, Y+1	; 0x01
+ 5d2:	42 2f       	mov	r20, r18
+ 5d4:	50 e0       	ldi	r21, 0x00	; 0
+ 5d6:	21 e0       	ldi	r18, 0x01	; 1
+ 5d8:	30 e0       	ldi	r19, 0x00	; 0
+ 5da:	02 c0       	rjmp	.+4      	; 0x5e0 <PORTD_set_pin_dir+0x44>
+ 5dc:	22 0f       	add	r18, r18
+ 5de:	33 1f       	adc	r19, r19
+ 5e0:	4a 95       	dec	r20
+ 5e2:	e2 f7       	brpl	.-8      	; 0x5dc <PORTD_set_pin_dir+0x40>
+ 5e4:	20 95       	com	r18
+ 5e6:	26 23       	and	r18, r22
+ 5e8:	fc 01       	movw	r30, r24
+ 5ea:	20 83       	st	Z, r18
+		break;
+ 5ec:	25 c0       	rjmp	.+74     	; 0x638 <PORTD_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 5ee:	8c e0       	ldi	r24, 0x0C	; 12
+ 5f0:	90 e0       	ldi	r25, 0x00	; 0
+ 5f2:	2c e0       	ldi	r18, 0x0C	; 12
+ 5f4:	30 e0       	ldi	r19, 0x00	; 0
+ 5f6:	f9 01       	movw	r30, r18
+ 5f8:	20 81       	ld	r18, Z
+ 5fa:	62 2f       	mov	r22, r18
+ 5fc:	29 81       	ldd	r18, Y+1	; 0x01
+ 5fe:	42 2f       	mov	r20, r18
+ 600:	50 e0       	ldi	r21, 0x00	; 0
+ 602:	21 e0       	ldi	r18, 0x01	; 1
+ 604:	30 e0       	ldi	r19, 0x00	; 0
+ 606:	02 c0       	rjmp	.+4      	; 0x60c <PORTD_set_pin_dir+0x70>
+ 608:	22 0f       	add	r18, r18
+ 60a:	33 1f       	adc	r19, r19
+ 60c:	4a 95       	dec	r20
+ 60e:	e2 f7       	brpl	.-8      	; 0x608 <PORTD_set_pin_dir+0x6c>
+ 610:	26 2b       	or	r18, r22
+ 612:	fc 01       	movw	r30, r24
+ 614:	20 83       	st	Z, r18
+		break;
+ 616:	10 c0       	rjmp	.+32     	; 0x638 <PORTD_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTD + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 618:	89 81       	ldd	r24, Y+1	; 0x01
+ 61a:	88 2f       	mov	r24, r24
+ 61c:	90 e0       	ldi	r25, 0x00	; 0
+ 61e:	80 59       	subi	r24, 0x90	; 144
+ 620:	9b 4f       	sbci	r25, 0xFB	; 251
+ 622:	29 81       	ldd	r18, Y+1	; 0x01
+ 624:	22 2f       	mov	r18, r18
+ 626:	30 e0       	ldi	r19, 0x00	; 0
+ 628:	20 59       	subi	r18, 0x90	; 144
+ 62a:	3b 4f       	sbci	r19, 0xFB	; 251
+ 62c:	f9 01       	movw	r30, r18
+ 62e:	20 81       	ld	r18, Z
+ 630:	28 60       	ori	r18, 0x08	; 8
+ 632:	fc 01       	movw	r30, r24
+ 634:	20 83       	st	Z, r18
+		break;
+ 636:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 638:	00 00       	nop
+ 63a:	0f 90       	pop	r0
+ 63c:	0f 90       	pop	r0
+ 63e:	df 91       	pop	r29
+ 640:	cf 91       	pop	r28
+ 642:	08 95       	ret
+
+00000644 <PORTD_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+ 644:	cf 93       	push	r28
+ 646:	df 93       	push	r29
+ 648:	00 d0       	rcall	.+0      	; 0x64a <PORTD_set_pin_level+0x6>
+ 64a:	cd b7       	in	r28, 0x3d	; 61
+ 64c:	de b7       	in	r29, 0x3e	; 62
+ 64e:	89 83       	std	Y+1, r24	; 0x01
+ 650:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 652:	8a 81       	ldd	r24, Y+2	; 0x02
+ 654:	88 23       	and	r24, r24
+ 656:	a9 f0       	breq	.+42     	; 0x682 <PORTD_set_pin_level+0x3e>
+		VPORTD.OUT |= (1 << pin);
+ 658:	8c e0       	ldi	r24, 0x0C	; 12
+ 65a:	90 e0       	ldi	r25, 0x00	; 0
+ 65c:	2c e0       	ldi	r18, 0x0C	; 12
+ 65e:	30 e0       	ldi	r19, 0x00	; 0
+ 660:	f9 01       	movw	r30, r18
+ 662:	21 81       	ldd	r18, Z+1	; 0x01
+ 664:	62 2f       	mov	r22, r18
+ 666:	29 81       	ldd	r18, Y+1	; 0x01
+ 668:	42 2f       	mov	r20, r18
+ 66a:	50 e0       	ldi	r21, 0x00	; 0
+ 66c:	21 e0       	ldi	r18, 0x01	; 1
+ 66e:	30 e0       	ldi	r19, 0x00	; 0
+ 670:	02 c0       	rjmp	.+4      	; 0x676 <PORTD_set_pin_level+0x32>
+ 672:	22 0f       	add	r18, r18
+ 674:	33 1f       	adc	r19, r19
+ 676:	4a 95       	dec	r20
+ 678:	e2 f7       	brpl	.-8      	; 0x672 <PORTD_set_pin_level+0x2e>
+ 67a:	26 2b       	or	r18, r22
+ 67c:	fc 01       	movw	r30, r24
+ 67e:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+	}
+}
+ 680:	15 c0       	rjmp	.+42     	; 0x6ac <PORTD_set_pin_level+0x68>
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 682:	8c e0       	ldi	r24, 0x0C	; 12
+ 684:	90 e0       	ldi	r25, 0x00	; 0
+ 686:	2c e0       	ldi	r18, 0x0C	; 12
+ 688:	30 e0       	ldi	r19, 0x00	; 0
+ 68a:	f9 01       	movw	r30, r18
+ 68c:	21 81       	ldd	r18, Z+1	; 0x01
+ 68e:	62 2f       	mov	r22, r18
+ 690:	29 81       	ldd	r18, Y+1	; 0x01
+ 692:	42 2f       	mov	r20, r18
+ 694:	50 e0       	ldi	r21, 0x00	; 0
+ 696:	21 e0       	ldi	r18, 0x01	; 1
+ 698:	30 e0       	ldi	r19, 0x00	; 0
+ 69a:	02 c0       	rjmp	.+4      	; 0x6a0 <PORTD_set_pin_level+0x5c>
+ 69c:	22 0f       	add	r18, r18
+ 69e:	33 1f       	adc	r19, r19
+ 6a0:	4a 95       	dec	r20
+ 6a2:	e2 f7       	brpl	.-8      	; 0x69c <PORTD_set_pin_level+0x58>
+ 6a4:	20 95       	com	r18
+ 6a6:	26 23       	and	r18, r22
+ 6a8:	fc 01       	movw	r30, r24
+ 6aa:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 6ac:	00 00       	nop
+ 6ae:	0f 90       	pop	r0
+ 6b0:	0f 90       	pop	r0
+ 6b2:	df 91       	pop	r29
+ 6b4:	cf 91       	pop	r28
+ 6b6:	08 95       	ret
+
+000006b8 <PORTF_set_pin_pull_mode>:
+ *
+ * \param[in] pin       The pin number within port
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void PORTF_set_pin_pull_mode(const uint8_t pin, const enum port_pull_mode pull_mode)
+{
+ 6b8:	cf 93       	push	r28
+ 6ba:	df 93       	push	r29
+ 6bc:	00 d0       	rcall	.+0      	; 0x6be <PORTF_set_pin_pull_mode+0x6>
+ 6be:	00 d0       	rcall	.+0      	; 0x6c0 <PORTF_set_pin_pull_mode+0x8>
+ 6c0:	cd b7       	in	r28, 0x3d	; 61
+ 6c2:	de b7       	in	r29, 0x3e	; 62
+ 6c4:	8b 83       	std	Y+3, r24	; 0x03
+ 6c6:	6c 83       	std	Y+4, r22	; 0x04
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTF + 0x10 + pin);
+ 6c8:	8b 81       	ldd	r24, Y+3	; 0x03
+ 6ca:	88 2f       	mov	r24, r24
+ 6cc:	90 e0       	ldi	r25, 0x00	; 0
+ 6ce:	80 55       	subi	r24, 0x50	; 80
+ 6d0:	9b 4f       	sbci	r25, 0xFB	; 251
+ 6d2:	89 83       	std	Y+1, r24	; 0x01
+ 6d4:	9a 83       	std	Y+2, r25	; 0x02
+
+	if (pull_mode == PORT_PULL_UP) {
+ 6d6:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6d8:	81 30       	cpi	r24, 0x01	; 1
+ 6da:	59 f4       	brne	.+22     	; 0x6f2 <PORTF_set_pin_pull_mode+0x3a>
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+ 6dc:	89 81       	ldd	r24, Y+1	; 0x01
+ 6de:	9a 81       	ldd	r25, Y+2	; 0x02
+ 6e0:	fc 01       	movw	r30, r24
+ 6e2:	80 81       	ld	r24, Z
+ 6e4:	28 2f       	mov	r18, r24
+ 6e6:	28 60       	ori	r18, 0x08	; 8
+ 6e8:	89 81       	ldd	r24, Y+1	; 0x01
+ 6ea:	9a 81       	ldd	r25, Y+2	; 0x02
+ 6ec:	fc 01       	movw	r30, r24
+ 6ee:	20 83       	st	Z, r18
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+	}
+}
+ 6f0:	0d c0       	rjmp	.+26     	; 0x70c <PORTF_set_pin_pull_mode+0x54>
+{
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTF + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+ 6f2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 6f4:	88 23       	and	r24, r24
+ 6f6:	51 f4       	brne	.+20     	; 0x70c <PORTF_set_pin_pull_mode+0x54>
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 6f8:	89 81       	ldd	r24, Y+1	; 0x01
+ 6fa:	9a 81       	ldd	r25, Y+2	; 0x02
+ 6fc:	fc 01       	movw	r30, r24
+ 6fe:	80 81       	ld	r24, Z
+ 700:	28 2f       	mov	r18, r24
+ 702:	27 7f       	andi	r18, 0xF7	; 247
+ 704:	89 81       	ldd	r24, Y+1	; 0x01
+ 706:	9a 81       	ldd	r25, Y+2	; 0x02
+ 708:	fc 01       	movw	r30, r24
+ 70a:	20 83       	st	Z, r18
+	}
+}
+ 70c:	00 00       	nop
+ 70e:	24 96       	adiw	r28, 0x04	; 4
+ 710:	cd bf       	out	0x3d, r28	; 61
+ 712:	de bf       	out	0x3e, r29	; 62
+ 714:	df 91       	pop	r29
+ 716:	cf 91       	pop	r28
+ 718:	08 95       	ret
+
+0000071a <PORTF_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTF_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 71a:	cf 93       	push	r28
+ 71c:	df 93       	push	r29
+ 71e:	00 d0       	rcall	.+0      	; 0x720 <PORTF_set_pin_dir+0x6>
+ 720:	cd b7       	in	r28, 0x3d	; 61
+ 722:	de b7       	in	r29, 0x3e	; 62
+ 724:	89 83       	std	Y+1, r24	; 0x01
+ 726:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 728:	8a 81       	ldd	r24, Y+2	; 0x02
+ 72a:	88 2f       	mov	r24, r24
+ 72c:	90 e0       	ldi	r25, 0x00	; 0
+ 72e:	81 30       	cpi	r24, 0x01	; 1
+ 730:	91 05       	cpc	r25, r1
+ 732:	e1 f0       	breq	.+56     	; 0x76c <PORTF_set_pin_dir+0x52>
+ 734:	82 30       	cpi	r24, 0x02	; 2
+ 736:	91 05       	cpc	r25, r1
+ 738:	71 f1       	breq	.+92     	; 0x796 <PORTF_set_pin_dir+0x7c>
+ 73a:	89 2b       	or	r24, r25
+ 73c:	09 f0       	breq	.+2      	; 0x740 <PORTF_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTF + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 73e:	3b c0       	rjmp	.+118    	; 0x7b6 <PORTF_set_pin_dir+0x9c>
+ */
+static inline void PORTF_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+ 740:	84 e1       	ldi	r24, 0x14	; 20
+ 742:	90 e0       	ldi	r25, 0x00	; 0
+ 744:	24 e1       	ldi	r18, 0x14	; 20
+ 746:	30 e0       	ldi	r19, 0x00	; 0
+ 748:	f9 01       	movw	r30, r18
+ 74a:	20 81       	ld	r18, Z
+ 74c:	62 2f       	mov	r22, r18
+ 74e:	29 81       	ldd	r18, Y+1	; 0x01
+ 750:	42 2f       	mov	r20, r18
+ 752:	50 e0       	ldi	r21, 0x00	; 0
+ 754:	21 e0       	ldi	r18, 0x01	; 1
+ 756:	30 e0       	ldi	r19, 0x00	; 0
+ 758:	02 c0       	rjmp	.+4      	; 0x75e <PORTF_set_pin_dir+0x44>
+ 75a:	22 0f       	add	r18, r18
+ 75c:	33 1f       	adc	r19, r19
+ 75e:	4a 95       	dec	r20
+ 760:	e2 f7       	brpl	.-8      	; 0x75a <PORTF_set_pin_dir+0x40>
+ 762:	20 95       	com	r18
+ 764:	26 23       	and	r18, r22
+ 766:	fc 01       	movw	r30, r24
+ 768:	20 83       	st	Z, r18
+		break;
+ 76a:	25 c0       	rjmp	.+74     	; 0x7b6 <PORTF_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 76c:	84 e1       	ldi	r24, 0x14	; 20
+ 76e:	90 e0       	ldi	r25, 0x00	; 0
+ 770:	24 e1       	ldi	r18, 0x14	; 20
+ 772:	30 e0       	ldi	r19, 0x00	; 0
+ 774:	f9 01       	movw	r30, r18
+ 776:	20 81       	ld	r18, Z
+ 778:	62 2f       	mov	r22, r18
+ 77a:	29 81       	ldd	r18, Y+1	; 0x01
+ 77c:	42 2f       	mov	r20, r18
+ 77e:	50 e0       	ldi	r21, 0x00	; 0
+ 780:	21 e0       	ldi	r18, 0x01	; 1
+ 782:	30 e0       	ldi	r19, 0x00	; 0
+ 784:	02 c0       	rjmp	.+4      	; 0x78a <PORTF_set_pin_dir+0x70>
+ 786:	22 0f       	add	r18, r18
+ 788:	33 1f       	adc	r19, r19
+ 78a:	4a 95       	dec	r20
+ 78c:	e2 f7       	brpl	.-8      	; 0x786 <PORTF_set_pin_dir+0x6c>
+ 78e:	26 2b       	or	r18, r22
+ 790:	fc 01       	movw	r30, r24
+ 792:	20 83       	st	Z, r18
+		break;
+ 794:	10 c0       	rjmp	.+32     	; 0x7b6 <PORTF_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTF + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 796:	89 81       	ldd	r24, Y+1	; 0x01
+ 798:	88 2f       	mov	r24, r24
+ 79a:	90 e0       	ldi	r25, 0x00	; 0
+ 79c:	80 55       	subi	r24, 0x50	; 80
+ 79e:	9b 4f       	sbci	r25, 0xFB	; 251
+ 7a0:	29 81       	ldd	r18, Y+1	; 0x01
+ 7a2:	22 2f       	mov	r18, r18
+ 7a4:	30 e0       	ldi	r19, 0x00	; 0
+ 7a6:	20 55       	subi	r18, 0x50	; 80
+ 7a8:	3b 4f       	sbci	r19, 0xFB	; 251
+ 7aa:	f9 01       	movw	r30, r18
+ 7ac:	20 81       	ld	r18, Z
+ 7ae:	28 60       	ori	r18, 0x08	; 8
+ 7b0:	fc 01       	movw	r30, r24
+ 7b2:	20 83       	st	Z, r18
+		break;
+ 7b4:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 7b6:	00 00       	nop
+ 7b8:	0f 90       	pop	r0
+ 7ba:	0f 90       	pop	r0
+ 7bc:	df 91       	pop	r29
+ 7be:	cf 91       	pop	r28
+ 7c0:	08 95       	ret
+
+000007c2 <PORTF_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+ 7c2:	cf 93       	push	r28
+ 7c4:	df 93       	push	r29
+ 7c6:	00 d0       	rcall	.+0      	; 0x7c8 <PORTF_set_pin_level+0x6>
+ 7c8:	cd b7       	in	r28, 0x3d	; 61
+ 7ca:	de b7       	in	r29, 0x3e	; 62
+ 7cc:	89 83       	std	Y+1, r24	; 0x01
+ 7ce:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 7d0:	8a 81       	ldd	r24, Y+2	; 0x02
+ 7d2:	88 23       	and	r24, r24
+ 7d4:	a9 f0       	breq	.+42     	; 0x800 <PORTF_set_pin_level+0x3e>
+		VPORTF.OUT |= (1 << pin);
+ 7d6:	84 e1       	ldi	r24, 0x14	; 20
+ 7d8:	90 e0       	ldi	r25, 0x00	; 0
+ 7da:	24 e1       	ldi	r18, 0x14	; 20
+ 7dc:	30 e0       	ldi	r19, 0x00	; 0
+ 7de:	f9 01       	movw	r30, r18
+ 7e0:	21 81       	ldd	r18, Z+1	; 0x01
+ 7e2:	62 2f       	mov	r22, r18
+ 7e4:	29 81       	ldd	r18, Y+1	; 0x01
+ 7e6:	42 2f       	mov	r20, r18
+ 7e8:	50 e0       	ldi	r21, 0x00	; 0
+ 7ea:	21 e0       	ldi	r18, 0x01	; 1
+ 7ec:	30 e0       	ldi	r19, 0x00	; 0
+ 7ee:	02 c0       	rjmp	.+4      	; 0x7f4 <PORTF_set_pin_level+0x32>
+ 7f0:	22 0f       	add	r18, r18
+ 7f2:	33 1f       	adc	r19, r19
+ 7f4:	4a 95       	dec	r20
+ 7f6:	e2 f7       	brpl	.-8      	; 0x7f0 <PORTF_set_pin_level+0x2e>
+ 7f8:	26 2b       	or	r18, r22
+ 7fa:	fc 01       	movw	r30, r24
+ 7fc:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+	}
+}
+ 7fe:	15 c0       	rjmp	.+42     	; 0x82a <PORTF_set_pin_level+0x68>
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 800:	84 e1       	ldi	r24, 0x14	; 20
+ 802:	90 e0       	ldi	r25, 0x00	; 0
+ 804:	24 e1       	ldi	r18, 0x14	; 20
+ 806:	30 e0       	ldi	r19, 0x00	; 0
+ 808:	f9 01       	movw	r30, r18
+ 80a:	21 81       	ldd	r18, Z+1	; 0x01
+ 80c:	62 2f       	mov	r22, r18
+ 80e:	29 81       	ldd	r18, Y+1	; 0x01
+ 810:	42 2f       	mov	r20, r18
+ 812:	50 e0       	ldi	r21, 0x00	; 0
+ 814:	21 e0       	ldi	r18, 0x01	; 1
+ 816:	30 e0       	ldi	r19, 0x00	; 0
+ 818:	02 c0       	rjmp	.+4      	; 0x81e <PORTF_set_pin_level+0x5c>
+ 81a:	22 0f       	add	r18, r18
+ 81c:	33 1f       	adc	r19, r19
+ 81e:	4a 95       	dec	r20
+ 820:	e2 f7       	brpl	.-8      	; 0x81a <PORTF_set_pin_level+0x58>
+ 822:	20 95       	com	r18
+ 824:	26 23       	and	r18, r22
+ 826:	fc 01       	movw	r30, r24
+ 828:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 82a:	00 00       	nop
+ 82c:	0f 90       	pop	r0
+ 82e:	0f 90       	pop	r0
+ 830:	df 91       	pop	r29
+ 832:	cf 91       	pop	r28
+ 834:	08 95       	ret
+
+00000836 <PA0_set_pull_mode>:
+ * modes are defined by device used
+ *
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void PA0_set_pull_mode(const enum port_pull_mode pull_mode)
+{
+ 836:	cf 93       	push	r28
+ 838:	df 93       	push	r29
+ 83a:	1f 92       	push	r1
+ 83c:	cd b7       	in	r28, 0x3d	; 61
+ 83e:	de b7       	in	r29, 0x3e	; 62
+ 840:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_pull_mode(0, pull_mode);
+ 842:	69 81       	ldd	r22, Y+1	; 0x01
+ 844:	80 e0       	ldi	r24, 0x00	; 0
+ 846:	0e 94 50 01 	call	0x2a0	; 0x2a0 <PORTA_set_pin_pull_mode>
+}
+ 84a:	00 00       	nop
+ 84c:	0f 90       	pop	r0
+ 84e:	df 91       	pop	r29
+ 850:	cf 91       	pop	r28
+ 852:	08 95       	ret
+
+00000854 <PA0_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PA0_set_dir(const enum port_dir dir)
+{
+ 854:	cf 93       	push	r28
+ 856:	df 93       	push	r29
+ 858:	1f 92       	push	r1
+ 85a:	cd b7       	in	r28, 0x3d	; 61
+ 85c:	de b7       	in	r29, 0x3e	; 62
+ 85e:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(0, dir);
+ 860:	69 81       	ldd	r22, Y+1	; 0x01
+ 862:	80 e0       	ldi	r24, 0x00	; 0
+ 864:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 868:	00 00       	nop
+ 86a:	0f 90       	pop	r0
+ 86c:	df 91       	pop	r29
+ 86e:	cf 91       	pop	r28
+ 870:	08 95       	ret
+
+00000872 <BUZZER_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void BUZZER_MCU_set_dir(const enum port_dir dir)
+{
+ 872:	cf 93       	push	r28
+ 874:	df 93       	push	r29
+ 876:	1f 92       	push	r1
+ 878:	cd b7       	in	r28, 0x3d	; 61
+ 87a:	de b7       	in	r29, 0x3e	; 62
+ 87c:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(2, dir);
+ 87e:	69 81       	ldd	r22, Y+1	; 0x01
+ 880:	82 e0       	ldi	r24, 0x02	; 2
+ 882:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 886:	00 00       	nop
+ 888:	0f 90       	pop	r0
+ 88a:	df 91       	pop	r29
+ 88c:	cf 91       	pop	r28
+ 88e:	08 95       	ret
+
+00000890 <BUZZER_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void BUZZER_MCU_set_level(const bool level)
+{
+ 890:	cf 93       	push	r28
+ 892:	df 93       	push	r29
+ 894:	1f 92       	push	r1
+ 896:	cd b7       	in	r28, 0x3d	; 61
+ 898:	de b7       	in	r29, 0x3e	; 62
+ 89a:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(2, level);
+ 89c:	69 81       	ldd	r22, Y+1	; 0x01
+ 89e:	82 e0       	ldi	r24, 0x02	; 2
+ 8a0:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 8a4:	00 00       	nop
+ 8a6:	0f 90       	pop	r0
+ 8a8:	df 91       	pop	r29
+ 8aa:	cf 91       	pop	r28
+ 8ac:	08 95       	ret
+
+000008ae <W0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void W0_MCU_set_dir(const enum port_dir dir)
+{
+ 8ae:	cf 93       	push	r28
+ 8b0:	df 93       	push	r29
+ 8b2:	1f 92       	push	r1
+ 8b4:	cd b7       	in	r28, 0x3d	; 61
+ 8b6:	de b7       	in	r29, 0x3e	; 62
+ 8b8:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(3, dir);
+ 8ba:	69 81       	ldd	r22, Y+1	; 0x01
+ 8bc:	83 e0       	ldi	r24, 0x03	; 3
+ 8be:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 8c2:	00 00       	nop
+ 8c4:	0f 90       	pop	r0
+ 8c6:	df 91       	pop	r29
+ 8c8:	cf 91       	pop	r28
+ 8ca:	08 95       	ret
+
+000008cc <W0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W0_MCU_set_level(const bool level)
+{
+ 8cc:	cf 93       	push	r28
+ 8ce:	df 93       	push	r29
+ 8d0:	1f 92       	push	r1
+ 8d2:	cd b7       	in	r28, 0x3d	; 61
+ 8d4:	de b7       	in	r29, 0x3e	; 62
+ 8d6:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(3, level);
+ 8d8:	69 81       	ldd	r22, Y+1	; 0x01
+ 8da:	83 e0       	ldi	r24, 0x03	; 3
+ 8dc:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 8e0:	00 00       	nop
+ 8e2:	0f 90       	pop	r0
+ 8e4:	df 91       	pop	r29
+ 8e6:	cf 91       	pop	r28
+ 8e8:	08 95       	ret
+
+000008ea <W1_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void W1_MCU_set_dir(const enum port_dir dir)
+{
+ 8ea:	cf 93       	push	r28
+ 8ec:	df 93       	push	r29
+ 8ee:	1f 92       	push	r1
+ 8f0:	cd b7       	in	r28, 0x3d	; 61
+ 8f2:	de b7       	in	r29, 0x3e	; 62
+ 8f4:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(4, dir);
+ 8f6:	69 81       	ldd	r22, Y+1	; 0x01
+ 8f8:	84 e0       	ldi	r24, 0x04	; 4
+ 8fa:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 8fe:	00 00       	nop
+ 900:	0f 90       	pop	r0
+ 902:	df 91       	pop	r29
+ 904:	cf 91       	pop	r28
+ 906:	08 95       	ret
+
+00000908 <W1_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W1_MCU_set_level(const bool level)
+{
+ 908:	cf 93       	push	r28
+ 90a:	df 93       	push	r29
+ 90c:	1f 92       	push	r1
+ 90e:	cd b7       	in	r28, 0x3d	; 61
+ 910:	de b7       	in	r29, 0x3e	; 62
+ 912:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(4, level);
+ 914:	69 81       	ldd	r22, Y+1	; 0x01
+ 916:	84 e0       	ldi	r24, 0x04	; 4
+ 918:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 91c:	00 00       	nop
+ 91e:	0f 90       	pop	r0
+ 920:	df 91       	pop	r29
+ 922:	cf 91       	pop	r28
+ 924:	08 95       	ret
+
+00000926 <W2_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void W2_MCU_set_dir(const enum port_dir dir)
+{
+ 926:	cf 93       	push	r28
+ 928:	df 93       	push	r29
+ 92a:	1f 92       	push	r1
+ 92c:	cd b7       	in	r28, 0x3d	; 61
+ 92e:	de b7       	in	r29, 0x3e	; 62
+ 930:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(5, dir);
+ 932:	69 81       	ldd	r22, Y+1	; 0x01
+ 934:	85 e0       	ldi	r24, 0x05	; 5
+ 936:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 93a:	00 00       	nop
+ 93c:	0f 90       	pop	r0
+ 93e:	df 91       	pop	r29
+ 940:	cf 91       	pop	r28
+ 942:	08 95       	ret
+
+00000944 <W2_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W2_MCU_set_level(const bool level)
+{
+ 944:	cf 93       	push	r28
+ 946:	df 93       	push	r29
+ 948:	1f 92       	push	r1
+ 94a:	cd b7       	in	r28, 0x3d	; 61
+ 94c:	de b7       	in	r29, 0x3e	; 62
+ 94e:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(5, level);
+ 950:	69 81       	ldd	r22, Y+1	; 0x01
+ 952:	85 e0       	ldi	r24, 0x05	; 5
+ 954:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 958:	00 00       	nop
+ 95a:	0f 90       	pop	r0
+ 95c:	df 91       	pop	r29
+ 95e:	cf 91       	pop	r28
+ 960:	08 95       	ret
+
+00000962 <W3_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void W3_MCU_set_dir(const enum port_dir dir)
+{
+ 962:	cf 93       	push	r28
+ 964:	df 93       	push	r29
+ 966:	1f 92       	push	r1
+ 968:	cd b7       	in	r28, 0x3d	; 61
+ 96a:	de b7       	in	r29, 0x3e	; 62
+ 96c:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(6, dir);
+ 96e:	69 81       	ldd	r22, Y+1	; 0x01
+ 970:	86 e0       	ldi	r24, 0x06	; 6
+ 972:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 976:	00 00       	nop
+ 978:	0f 90       	pop	r0
+ 97a:	df 91       	pop	r29
+ 97c:	cf 91       	pop	r28
+ 97e:	08 95       	ret
+
+00000980 <W3_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W3_MCU_set_level(const bool level)
+{
+ 980:	cf 93       	push	r28
+ 982:	df 93       	push	r29
+ 984:	1f 92       	push	r1
+ 986:	cd b7       	in	r28, 0x3d	; 61
+ 988:	de b7       	in	r29, 0x3e	; 62
+ 98a:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(6, level);
+ 98c:	69 81       	ldd	r22, Y+1	; 0x01
+ 98e:	86 e0       	ldi	r24, 0x06	; 6
+ 990:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 994:	00 00       	nop
+ 996:	0f 90       	pop	r0
+ 998:	df 91       	pop	r29
+ 99a:	cf 91       	pop	r28
+ 99c:	08 95       	ret
+
+0000099e <TXEN_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void TXEN_set_dir(const enum port_dir dir)
+{
+ 99e:	cf 93       	push	r28
+ 9a0:	df 93       	push	r29
+ 9a2:	1f 92       	push	r1
+ 9a4:	cd b7       	in	r28, 0x3d	; 61
+ 9a6:	de b7       	in	r29, 0x3e	; 62
+ 9a8:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(7, dir);
+ 9aa:	69 81       	ldd	r22, Y+1	; 0x01
+ 9ac:	87 e0       	ldi	r24, 0x07	; 7
+ 9ae:	0e 94 81 01 	call	0x302	; 0x302 <PORTA_set_pin_dir>
+}
+ 9b2:	00 00       	nop
+ 9b4:	0f 90       	pop	r0
+ 9b6:	df 91       	pop	r29
+ 9b8:	cf 91       	pop	r28
+ 9ba:	08 95       	ret
+
+000009bc <TXEN_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void TXEN_set_level(const bool level)
+{
+ 9bc:	cf 93       	push	r28
+ 9be:	df 93       	push	r29
+ 9c0:	1f 92       	push	r1
+ 9c2:	cd b7       	in	r28, 0x3d	; 61
+ 9c4:	de b7       	in	r29, 0x3e	; 62
+ 9c6:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(7, level);
+ 9c8:	69 81       	ldd	r22, Y+1	; 0x01
+ 9ca:	87 e0       	ldi	r24, 0x07	; 7
+ 9cc:	0e 94 d5 01 	call	0x3aa	; 0x3aa <PORTA_set_pin_level>
+}
+ 9d0:	00 00       	nop
+ 9d2:	0f 90       	pop	r0
+ 9d4:	df 91       	pop	r29
+ 9d6:	cf 91       	pop	r28
+ 9d8:	08 95       	ret
+
+000009da <TX_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void TX_set_dir(const enum port_dir dir)
+{
+ 9da:	cf 93       	push	r28
+ 9dc:	df 93       	push	r29
+ 9de:	1f 92       	push	r1
+ 9e0:	cd b7       	in	r28, 0x3d	; 61
+ 9e2:	de b7       	in	r29, 0x3e	; 62
+ 9e4:	89 83       	std	Y+1, r24	; 0x01
+	PORTC_set_pin_dir(0, dir);
+ 9e6:	69 81       	ldd	r22, Y+1	; 0x01
+ 9e8:	80 e0       	ldi	r24, 0x00	; 0
+ 9ea:	0e 94 40 02 	call	0x480	; 0x480 <PORTC_set_pin_dir>
+}
+ 9ee:	00 00       	nop
+ 9f0:	0f 90       	pop	r0
+ 9f2:	df 91       	pop	r29
+ 9f4:	cf 91       	pop	r28
+ 9f6:	08 95       	ret
+
+000009f8 <TX_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void TX_set_level(const bool level)
+{
+ 9f8:	cf 93       	push	r28
+ 9fa:	df 93       	push	r29
+ 9fc:	1f 92       	push	r1
+ 9fe:	cd b7       	in	r28, 0x3d	; 61
+ a00:	de b7       	in	r29, 0x3e	; 62
+ a02:	89 83       	std	Y+1, r24	; 0x01
+	PORTC_set_pin_level(0, level);
+ a04:	69 81       	ldd	r22, Y+1	; 0x01
+ a06:	80 e0       	ldi	r24, 0x00	; 0
+ a08:	0e 94 94 02 	call	0x528	; 0x528 <PORTC_set_pin_level>
+}
+ a0c:	00 00       	nop
+ a0e:	0f 90       	pop	r0
+ a10:	df 91       	pop	r29
+ a12:	cf 91       	pop	r28
+ a14:	08 95       	ret
+
+00000a16 <RX_set_pull_mode>:
+ * modes are defined by device used
+ *
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void RX_set_pull_mode(const enum port_pull_mode pull_mode)
+{
+ a16:	cf 93       	push	r28
+ a18:	df 93       	push	r29
+ a1a:	1f 92       	push	r1
+ a1c:	cd b7       	in	r28, 0x3d	; 61
+ a1e:	de b7       	in	r29, 0x3e	; 62
+ a20:	89 83       	std	Y+1, r24	; 0x01
+	PORTC_set_pin_pull_mode(1, pull_mode);
+ a22:	69 81       	ldd	r22, Y+1	; 0x01
+ a24:	81 e0       	ldi	r24, 0x01	; 1
+ a26:	0e 94 0f 02 	call	0x41e	; 0x41e <PORTC_set_pin_pull_mode>
+}
+ a2a:	00 00       	nop
+ a2c:	0f 90       	pop	r0
+ a2e:	df 91       	pop	r29
+ a30:	cf 91       	pop	r28
+ a32:	08 95       	ret
+
+00000a34 <RX_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void RX_set_dir(const enum port_dir dir)
+{
+ a34:	cf 93       	push	r28
+ a36:	df 93       	push	r29
+ a38:	1f 92       	push	r1
+ a3a:	cd b7       	in	r28, 0x3d	; 61
+ a3c:	de b7       	in	r29, 0x3e	; 62
+ a3e:	89 83       	std	Y+1, r24	; 0x01
+	PORTC_set_pin_dir(1, dir);
+ a40:	69 81       	ldd	r22, Y+1	; 0x01
+ a42:	81 e0       	ldi	r24, 0x01	; 1
+ a44:	0e 94 40 02 	call	0x480	; 0x480 <PORTC_set_pin_dir>
+}
+ a48:	00 00       	nop
+ a4a:	0f 90       	pop	r0
+ a4c:	df 91       	pop	r29
+ a4e:	cf 91       	pop	r28
+ a50:	08 95       	ret
+
+00000a52 <R0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R0_MCU_set_dir(const enum port_dir dir)
+{
+ a52:	cf 93       	push	r28
+ a54:	df 93       	push	r29
+ a56:	1f 92       	push	r1
+ a58:	cd b7       	in	r28, 0x3d	; 61
+ a5a:	de b7       	in	r29, 0x3e	; 62
+ a5c:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(0, dir);
+ a5e:	69 81       	ldd	r22, Y+1	; 0x01
+ a60:	80 e0       	ldi	r24, 0x00	; 0
+ a62:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ a66:	00 00       	nop
+ a68:	0f 90       	pop	r0
+ a6a:	df 91       	pop	r29
+ a6c:	cf 91       	pop	r28
+ a6e:	08 95       	ret
+
+00000a70 <R0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R0_MCU_set_level(const bool level)
+{
+ a70:	cf 93       	push	r28
+ a72:	df 93       	push	r29
+ a74:	1f 92       	push	r1
+ a76:	cd b7       	in	r28, 0x3d	; 61
+ a78:	de b7       	in	r29, 0x3e	; 62
+ a7a:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(0, level);
+ a7c:	69 81       	ldd	r22, Y+1	; 0x01
+ a7e:	80 e0       	ldi	r24, 0x00	; 0
+ a80:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ a84:	00 00       	nop
+ a86:	0f 90       	pop	r0
+ a88:	df 91       	pop	r29
+ a8a:	cf 91       	pop	r28
+ a8c:	08 95       	ret
+
+00000a8e <G0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void G0_MCU_set_dir(const enum port_dir dir)
+{
+ a8e:	cf 93       	push	r28
+ a90:	df 93       	push	r29
+ a92:	1f 92       	push	r1
+ a94:	cd b7       	in	r28, 0x3d	; 61
+ a96:	de b7       	in	r29, 0x3e	; 62
+ a98:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(1, dir);
+ a9a:	69 81       	ldd	r22, Y+1	; 0x01
+ a9c:	81 e0       	ldi	r24, 0x01	; 1
+ a9e:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ aa2:	00 00       	nop
+ aa4:	0f 90       	pop	r0
+ aa6:	df 91       	pop	r29
+ aa8:	cf 91       	pop	r28
+ aaa:	08 95       	ret
+
+00000aac <G0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G0_MCU_set_level(const bool level)
+{
+ aac:	cf 93       	push	r28
+ aae:	df 93       	push	r29
+ ab0:	1f 92       	push	r1
+ ab2:	cd b7       	in	r28, 0x3d	; 61
+ ab4:	de b7       	in	r29, 0x3e	; 62
+ ab6:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(1, level);
+ ab8:	69 81       	ldd	r22, Y+1	; 0x01
+ aba:	81 e0       	ldi	r24, 0x01	; 1
+ abc:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ ac0:	00 00       	nop
+ ac2:	0f 90       	pop	r0
+ ac4:	df 91       	pop	r29
+ ac6:	cf 91       	pop	r28
+ ac8:	08 95       	ret
+
+00000aca <B0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void B0_MCU_set_dir(const enum port_dir dir)
+{
+ aca:	cf 93       	push	r28
+ acc:	df 93       	push	r29
+ ace:	1f 92       	push	r1
+ ad0:	cd b7       	in	r28, 0x3d	; 61
+ ad2:	de b7       	in	r29, 0x3e	; 62
+ ad4:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(2, dir);
+ ad6:	69 81       	ldd	r22, Y+1	; 0x01
+ ad8:	82 e0       	ldi	r24, 0x02	; 2
+ ada:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ ade:	00 00       	nop
+ ae0:	0f 90       	pop	r0
+ ae2:	df 91       	pop	r29
+ ae4:	cf 91       	pop	r28
+ ae6:	08 95       	ret
+
+00000ae8 <B0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B0_MCU_set_level(const bool level)
+{
+ ae8:	cf 93       	push	r28
+ aea:	df 93       	push	r29
+ aec:	1f 92       	push	r1
+ aee:	cd b7       	in	r28, 0x3d	; 61
+ af0:	de b7       	in	r29, 0x3e	; 62
+ af2:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(2, level);
+ af4:	69 81       	ldd	r22, Y+1	; 0x01
+ af6:	82 e0       	ldi	r24, 0x02	; 2
+ af8:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ afc:	00 00       	nop
+ afe:	0f 90       	pop	r0
+ b00:	df 91       	pop	r29
+ b02:	cf 91       	pop	r28
+ b04:	08 95       	ret
+
+00000b06 <R1_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R1_MCU_set_dir(const enum port_dir dir)
+{
+ b06:	cf 93       	push	r28
+ b08:	df 93       	push	r29
+ b0a:	1f 92       	push	r1
+ b0c:	cd b7       	in	r28, 0x3d	; 61
+ b0e:	de b7       	in	r29, 0x3e	; 62
+ b10:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(3, dir);
+ b12:	69 81       	ldd	r22, Y+1	; 0x01
+ b14:	83 e0       	ldi	r24, 0x03	; 3
+ b16:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ b1a:	00 00       	nop
+ b1c:	0f 90       	pop	r0
+ b1e:	df 91       	pop	r29
+ b20:	cf 91       	pop	r28
+ b22:	08 95       	ret
+
+00000b24 <R1_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R1_MCU_set_level(const bool level)
+{
+ b24:	cf 93       	push	r28
+ b26:	df 93       	push	r29
+ b28:	1f 92       	push	r1
+ b2a:	cd b7       	in	r28, 0x3d	; 61
+ b2c:	de b7       	in	r29, 0x3e	; 62
+ b2e:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(3, level);
+ b30:	69 81       	ldd	r22, Y+1	; 0x01
+ b32:	83 e0       	ldi	r24, 0x03	; 3
+ b34:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ b38:	00 00       	nop
+ b3a:	0f 90       	pop	r0
+ b3c:	df 91       	pop	r29
+ b3e:	cf 91       	pop	r28
+ b40:	08 95       	ret
+
+00000b42 <G1_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void G1_MCU_set_dir(const enum port_dir dir)
+{
+ b42:	cf 93       	push	r28
+ b44:	df 93       	push	r29
+ b46:	1f 92       	push	r1
+ b48:	cd b7       	in	r28, 0x3d	; 61
+ b4a:	de b7       	in	r29, 0x3e	; 62
+ b4c:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(4, dir);
+ b4e:	69 81       	ldd	r22, Y+1	; 0x01
+ b50:	84 e0       	ldi	r24, 0x04	; 4
+ b52:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ b56:	00 00       	nop
+ b58:	0f 90       	pop	r0
+ b5a:	df 91       	pop	r29
+ b5c:	cf 91       	pop	r28
+ b5e:	08 95       	ret
+
+00000b60 <G1_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G1_MCU_set_level(const bool level)
+{
+ b60:	cf 93       	push	r28
+ b62:	df 93       	push	r29
+ b64:	1f 92       	push	r1
+ b66:	cd b7       	in	r28, 0x3d	; 61
+ b68:	de b7       	in	r29, 0x3e	; 62
+ b6a:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(4, level);
+ b6c:	69 81       	ldd	r22, Y+1	; 0x01
+ b6e:	84 e0       	ldi	r24, 0x04	; 4
+ b70:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ b74:	00 00       	nop
+ b76:	0f 90       	pop	r0
+ b78:	df 91       	pop	r29
+ b7a:	cf 91       	pop	r28
+ b7c:	08 95       	ret
+
+00000b7e <B1_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void B1_MCU_set_dir(const enum port_dir dir)
+{
+ b7e:	cf 93       	push	r28
+ b80:	df 93       	push	r29
+ b82:	1f 92       	push	r1
+ b84:	cd b7       	in	r28, 0x3d	; 61
+ b86:	de b7       	in	r29, 0x3e	; 62
+ b88:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(5, dir);
+ b8a:	69 81       	ldd	r22, Y+1	; 0x01
+ b8c:	85 e0       	ldi	r24, 0x05	; 5
+ b8e:	0e 94 ce 02 	call	0x59c	; 0x59c <PORTD_set_pin_dir>
+}
+ b92:	00 00       	nop
+ b94:	0f 90       	pop	r0
+ b96:	df 91       	pop	r29
+ b98:	cf 91       	pop	r28
+ b9a:	08 95       	ret
+
+00000b9c <B1_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B1_MCU_set_level(const bool level)
+{
+ b9c:	cf 93       	push	r28
+ b9e:	df 93       	push	r29
+ ba0:	1f 92       	push	r1
+ ba2:	cd b7       	in	r28, 0x3d	; 61
+ ba4:	de b7       	in	r29, 0x3e	; 62
+ ba6:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(5, level);
+ ba8:	69 81       	ldd	r22, Y+1	; 0x01
+ baa:	85 e0       	ldi	r24, 0x05	; 5
+ bac:	0e 94 22 03 	call	0x644	; 0x644 <PORTD_set_pin_level>
+}
+ bb0:	00 00       	nop
+ bb2:	0f 90       	pop	r0
+ bb4:	df 91       	pop	r29
+ bb6:	cf 91       	pop	r28
+ bb8:	08 95       	ret
+
+00000bba <R2_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R2_MCU_set_dir(const enum port_dir dir)
+{
+ bba:	cf 93       	push	r28
+ bbc:	df 93       	push	r29
+ bbe:	1f 92       	push	r1
+ bc0:	cd b7       	in	r28, 0x3d	; 61
+ bc2:	de b7       	in	r29, 0x3e	; 62
+ bc4:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(0, dir);
+ bc6:	69 81       	ldd	r22, Y+1	; 0x01
+ bc8:	80 e0       	ldi	r24, 0x00	; 0
+ bca:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ bce:	00 00       	nop
+ bd0:	0f 90       	pop	r0
+ bd2:	df 91       	pop	r29
+ bd4:	cf 91       	pop	r28
+ bd6:	08 95       	ret
+
+00000bd8 <R2_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R2_MCU_set_level(const bool level)
+{
+ bd8:	cf 93       	push	r28
+ bda:	df 93       	push	r29
+ bdc:	1f 92       	push	r1
+ bde:	cd b7       	in	r28, 0x3d	; 61
+ be0:	de b7       	in	r29, 0x3e	; 62
+ be2:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(0, level);
+ be4:	69 81       	ldd	r22, Y+1	; 0x01
+ be6:	80 e0       	ldi	r24, 0x00	; 0
+ be8:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ bec:	00 00       	nop
+ bee:	0f 90       	pop	r0
+ bf0:	df 91       	pop	r29
+ bf2:	cf 91       	pop	r28
+ bf4:	08 95       	ret
+
+00000bf6 <G2_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void G2_MCU_set_dir(const enum port_dir dir)
+{
+ bf6:	cf 93       	push	r28
+ bf8:	df 93       	push	r29
+ bfa:	1f 92       	push	r1
+ bfc:	cd b7       	in	r28, 0x3d	; 61
+ bfe:	de b7       	in	r29, 0x3e	; 62
+ c00:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(1, dir);
+ c02:	69 81       	ldd	r22, Y+1	; 0x01
+ c04:	81 e0       	ldi	r24, 0x01	; 1
+ c06:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ c0a:	00 00       	nop
+ c0c:	0f 90       	pop	r0
+ c0e:	df 91       	pop	r29
+ c10:	cf 91       	pop	r28
+ c12:	08 95       	ret
+
+00000c14 <G2_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G2_MCU_set_level(const bool level)
+{
+ c14:	cf 93       	push	r28
+ c16:	df 93       	push	r29
+ c18:	1f 92       	push	r1
+ c1a:	cd b7       	in	r28, 0x3d	; 61
+ c1c:	de b7       	in	r29, 0x3e	; 62
+ c1e:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(1, level);
+ c20:	69 81       	ldd	r22, Y+1	; 0x01
+ c22:	81 e0       	ldi	r24, 0x01	; 1
+ c24:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ c28:	00 00       	nop
+ c2a:	0f 90       	pop	r0
+ c2c:	df 91       	pop	r29
+ c2e:	cf 91       	pop	r28
+ c30:	08 95       	ret
+
+00000c32 <B2_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void B2_MCU_set_dir(const enum port_dir dir)
+{
+ c32:	cf 93       	push	r28
+ c34:	df 93       	push	r29
+ c36:	1f 92       	push	r1
+ c38:	cd b7       	in	r28, 0x3d	; 61
+ c3a:	de b7       	in	r29, 0x3e	; 62
+ c3c:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(2, dir);
+ c3e:	69 81       	ldd	r22, Y+1	; 0x01
+ c40:	82 e0       	ldi	r24, 0x02	; 2
+ c42:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ c46:	00 00       	nop
+ c48:	0f 90       	pop	r0
+ c4a:	df 91       	pop	r29
+ c4c:	cf 91       	pop	r28
+ c4e:	08 95       	ret
+
+00000c50 <B2_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B2_MCU_set_level(const bool level)
+{
+ c50:	cf 93       	push	r28
+ c52:	df 93       	push	r29
+ c54:	1f 92       	push	r1
+ c56:	cd b7       	in	r28, 0x3d	; 61
+ c58:	de b7       	in	r29, 0x3e	; 62
+ c5a:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(2, level);
+ c5c:	69 81       	ldd	r22, Y+1	; 0x01
+ c5e:	82 e0       	ldi	r24, 0x02	; 2
+ c60:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ c64:	00 00       	nop
+ c66:	0f 90       	pop	r0
+ c68:	df 91       	pop	r29
+ c6a:	cf 91       	pop	r28
+ c6c:	08 95       	ret
+
+00000c6e <R3_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R3_MCU_set_dir(const enum port_dir dir)
+{
+ c6e:	cf 93       	push	r28
+ c70:	df 93       	push	r29
+ c72:	1f 92       	push	r1
+ c74:	cd b7       	in	r28, 0x3d	; 61
+ c76:	de b7       	in	r29, 0x3e	; 62
+ c78:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(3, dir);
+ c7a:	69 81       	ldd	r22, Y+1	; 0x01
+ c7c:	83 e0       	ldi	r24, 0x03	; 3
+ c7e:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ c82:	00 00       	nop
+ c84:	0f 90       	pop	r0
+ c86:	df 91       	pop	r29
+ c88:	cf 91       	pop	r28
+ c8a:	08 95       	ret
+
+00000c8c <R3_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R3_MCU_set_level(const bool level)
+{
+ c8c:	cf 93       	push	r28
+ c8e:	df 93       	push	r29
+ c90:	1f 92       	push	r1
+ c92:	cd b7       	in	r28, 0x3d	; 61
+ c94:	de b7       	in	r29, 0x3e	; 62
+ c96:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(3, level);
+ c98:	69 81       	ldd	r22, Y+1	; 0x01
+ c9a:	83 e0       	ldi	r24, 0x03	; 3
+ c9c:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ ca0:	00 00       	nop
+ ca2:	0f 90       	pop	r0
+ ca4:	df 91       	pop	r29
+ ca6:	cf 91       	pop	r28
+ ca8:	08 95       	ret
+
+00000caa <G3_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void G3_MCU_set_dir(const enum port_dir dir)
+{
+ caa:	cf 93       	push	r28
+ cac:	df 93       	push	r29
+ cae:	1f 92       	push	r1
+ cb0:	cd b7       	in	r28, 0x3d	; 61
+ cb2:	de b7       	in	r29, 0x3e	; 62
+ cb4:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(4, dir);
+ cb6:	69 81       	ldd	r22, Y+1	; 0x01
+ cb8:	84 e0       	ldi	r24, 0x04	; 4
+ cba:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ cbe:	00 00       	nop
+ cc0:	0f 90       	pop	r0
+ cc2:	df 91       	pop	r29
+ cc4:	cf 91       	pop	r28
+ cc6:	08 95       	ret
+
+00000cc8 <G3_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G3_MCU_set_level(const bool level)
+{
+ cc8:	cf 93       	push	r28
+ cca:	df 93       	push	r29
+ ccc:	1f 92       	push	r1
+ cce:	cd b7       	in	r28, 0x3d	; 61
+ cd0:	de b7       	in	r29, 0x3e	; 62
+ cd2:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(4, level);
+ cd4:	69 81       	ldd	r22, Y+1	; 0x01
+ cd6:	84 e0       	ldi	r24, 0x04	; 4
+ cd8:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ cdc:	00 00       	nop
+ cde:	0f 90       	pop	r0
+ ce0:	df 91       	pop	r29
+ ce2:	cf 91       	pop	r28
+ ce4:	08 95       	ret
+
+00000ce6 <B3_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void B3_MCU_set_dir(const enum port_dir dir)
+{
+ ce6:	cf 93       	push	r28
+ ce8:	df 93       	push	r29
+ cea:	1f 92       	push	r1
+ cec:	cd b7       	in	r28, 0x3d	; 61
+ cee:	de b7       	in	r29, 0x3e	; 62
+ cf0:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(5, dir);
+ cf2:	69 81       	ldd	r22, Y+1	; 0x01
+ cf4:	85 e0       	ldi	r24, 0x05	; 5
+ cf6:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ cfa:	00 00       	nop
+ cfc:	0f 90       	pop	r0
+ cfe:	df 91       	pop	r29
+ d00:	cf 91       	pop	r28
+ d02:	08 95       	ret
+
+00000d04 <B3_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B3_MCU_set_level(const bool level)
+{
+ d04:	cf 93       	push	r28
+ d06:	df 93       	push	r29
+ d08:	1f 92       	push	r1
+ d0a:	cd b7       	in	r28, 0x3d	; 61
+ d0c:	de b7       	in	r29, 0x3e	; 62
+ d0e:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(5, level);
+ d10:	69 81       	ldd	r22, Y+1	; 0x01
+ d12:	85 e0       	ldi	r24, 0x05	; 5
+ d14:	0e 94 e1 03 	call	0x7c2	; 0x7c2 <PORTF_set_pin_level>
+}
+ d18:	00 00       	nop
+ d1a:	0f 90       	pop	r0
+ d1c:	df 91       	pop	r29
+ d1e:	cf 91       	pop	r28
+ d20:	08 95       	ret
+
+00000d22 <RESET_set_pull_mode>:
+ * modes are defined by device used
+ *
+ * \param[in] pull_mode Pin pull mode
+ */
+static inline void RESET_set_pull_mode(const enum port_pull_mode pull_mode)
+{
+ d22:	cf 93       	push	r28
+ d24:	df 93       	push	r29
+ d26:	1f 92       	push	r1
+ d28:	cd b7       	in	r28, 0x3d	; 61
+ d2a:	de b7       	in	r29, 0x3e	; 62
+ d2c:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_pull_mode(6, pull_mode);
+ d2e:	69 81       	ldd	r22, Y+1	; 0x01
+ d30:	86 e0       	ldi	r24, 0x06	; 6
+ d32:	0e 94 5c 03 	call	0x6b8	; 0x6b8 <PORTF_set_pin_pull_mode>
+}
+ d36:	00 00       	nop
+ d38:	0f 90       	pop	r0
+ d3a:	df 91       	pop	r29
+ d3c:	cf 91       	pop	r28
+ d3e:	08 95       	ret
+
+00000d40 <RESET_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void RESET_set_dir(const enum port_dir dir)
+{
+ d40:	cf 93       	push	r28
+ d42:	df 93       	push	r29
+ d44:	1f 92       	push	r1
+ d46:	cd b7       	in	r28, 0x3d	; 61
+ d48:	de b7       	in	r29, 0x3e	; 62
+ d4a:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(6, dir);
+ d4c:	69 81       	ldd	r22, Y+1	; 0x01
+ d4e:	86 e0       	ldi	r24, 0x06	; 6
+ d50:	0e 94 8d 03 	call	0x71a	; 0x71a <PORTF_set_pin_dir>
+}
+ d54:	00 00       	nop
+ d56:	0f 90       	pop	r0
+ d58:	df 91       	pop	r29
+ d5a:	cf 91       	pop	r28
+ d5c:	08 95       	ret
+
+00000d5e <mcu_init>:
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void mcu_init(void)
+{
+ d5e:	cf 93       	push	r28
+ d60:	df 93       	push	r29
+ d62:	cd b7       	in	r28, 0x3d	; 61
+ d64:	de b7       	in	r29, 0x3e	; 62
+ d66:	26 97       	sbiw	r28, 0x06	; 6
+ d68:	cd bf       	out	0x3d, r28	; 61
+ d6a:	de bf       	out	0x3e, r29	; 62
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ d6c:	19 82       	std	Y+1, r1	; 0x01
+ d6e:	12 c0       	rjmp	.+36     	; 0xd94 <mcu_init+0x36>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ d70:	89 81       	ldd	r24, Y+1	; 0x01
+ d72:	88 2f       	mov	r24, r24
+ d74:	90 e0       	ldi	r25, 0x00	; 0
+ d76:	80 5f       	subi	r24, 0xF0	; 240
+ d78:	9b 4f       	sbci	r25, 0xFB	; 251
+ d7a:	29 81       	ldd	r18, Y+1	; 0x01
+ d7c:	22 2f       	mov	r18, r18
+ d7e:	30 e0       	ldi	r19, 0x00	; 0
+ d80:	20 5f       	subi	r18, 0xF0	; 240
+ d82:	3b 4f       	sbci	r19, 0xFB	; 251
+ d84:	f9 01       	movw	r30, r18
+ d86:	20 81       	ld	r18, Z
+ d88:	28 60       	ori	r18, 0x08	; 8
+ d8a:	fc 01       	movw	r30, r24
+ d8c:	20 83       	st	Z, r18
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ d8e:	89 81       	ldd	r24, Y+1	; 0x01
+ d90:	8f 5f       	subi	r24, 0xFF	; 255
+ d92:	89 83       	std	Y+1, r24	; 0x01
+ d94:	89 81       	ldd	r24, Y+1	; 0x01
+ d96:	88 30       	cpi	r24, 0x08	; 8
+ d98:	58 f3       	brcs	.-42     	; 0xd70 <mcu_init+0x12>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ d9a:	1a 82       	std	Y+2, r1	; 0x02
+ d9c:	12 c0       	rjmp	.+36     	; 0xdc2 <mcu_init+0x64>
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ d9e:	8a 81       	ldd	r24, Y+2	; 0x02
+ da0:	88 2f       	mov	r24, r24
+ da2:	90 e0       	ldi	r25, 0x00	; 0
+ da4:	80 5d       	subi	r24, 0xD0	; 208
+ da6:	9b 4f       	sbci	r25, 0xFB	; 251
+ da8:	2a 81       	ldd	r18, Y+2	; 0x02
+ daa:	22 2f       	mov	r18, r18
+ dac:	30 e0       	ldi	r19, 0x00	; 0
+ dae:	20 5d       	subi	r18, 0xD0	; 208
+ db0:	3b 4f       	sbci	r19, 0xFB	; 251
+ db2:	f9 01       	movw	r30, r18
+ db4:	20 81       	ld	r18, Z
+ db6:	28 60       	ori	r18, 0x08	; 8
+ db8:	fc 01       	movw	r30, r24
+ dba:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ dbc:	8a 81       	ldd	r24, Y+2	; 0x02
+ dbe:	8f 5f       	subi	r24, 0xFF	; 255
+ dc0:	8a 83       	std	Y+2, r24	; 0x02
+ dc2:	8a 81       	ldd	r24, Y+2	; 0x02
+ dc4:	88 30       	cpi	r24, 0x08	; 8
+ dc6:	58 f3       	brcs	.-42     	; 0xd9e <mcu_init+0x40>
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ dc8:	1b 82       	std	Y+3, r1	; 0x03
+ dca:	12 c0       	rjmp	.+36     	; 0xdf0 <mcu_init+0x92>
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ dcc:	8b 81       	ldd	r24, Y+3	; 0x03
+ dce:	88 2f       	mov	r24, r24
+ dd0:	90 e0       	ldi	r25, 0x00	; 0
+ dd2:	80 5b       	subi	r24, 0xB0	; 176
+ dd4:	9b 4f       	sbci	r25, 0xFB	; 251
+ dd6:	2b 81       	ldd	r18, Y+3	; 0x03
+ dd8:	22 2f       	mov	r18, r18
+ dda:	30 e0       	ldi	r19, 0x00	; 0
+ ddc:	20 5b       	subi	r18, 0xB0	; 176
+ dde:	3b 4f       	sbci	r19, 0xFB	; 251
+ de0:	f9 01       	movw	r30, r18
+ de2:	20 81       	ld	r18, Z
+ de4:	28 60       	ori	r18, 0x08	; 8
+ de6:	fc 01       	movw	r30, r24
+ de8:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ dea:	8b 81       	ldd	r24, Y+3	; 0x03
+ dec:	8f 5f       	subi	r24, 0xFF	; 255
+ dee:	8b 83       	std	Y+3, r24	; 0x03
+ df0:	8b 81       	ldd	r24, Y+3	; 0x03
+ df2:	88 30       	cpi	r24, 0x08	; 8
+ df4:	58 f3       	brcs	.-42     	; 0xdcc <mcu_init+0x6e>
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ df6:	1c 82       	std	Y+4, r1	; 0x04
+ df8:	12 c0       	rjmp	.+36     	; 0xe1e <mcu_init+0xc0>
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ dfa:	8c 81       	ldd	r24, Y+4	; 0x04
+ dfc:	88 2f       	mov	r24, r24
+ dfe:	90 e0       	ldi	r25, 0x00	; 0
+ e00:	80 59       	subi	r24, 0x90	; 144
+ e02:	9b 4f       	sbci	r25, 0xFB	; 251
+ e04:	2c 81       	ldd	r18, Y+4	; 0x04
+ e06:	22 2f       	mov	r18, r18
+ e08:	30 e0       	ldi	r19, 0x00	; 0
+ e0a:	20 59       	subi	r18, 0x90	; 144
+ e0c:	3b 4f       	sbci	r19, 0xFB	; 251
+ e0e:	f9 01       	movw	r30, r18
+ e10:	20 81       	ld	r18, Z
+ e12:	28 60       	ori	r18, 0x08	; 8
+ e14:	fc 01       	movw	r30, r24
+ e16:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ e18:	8c 81       	ldd	r24, Y+4	; 0x04
+ e1a:	8f 5f       	subi	r24, 0xFF	; 255
+ e1c:	8c 83       	std	Y+4, r24	; 0x04
+ e1e:	8c 81       	ldd	r24, Y+4	; 0x04
+ e20:	88 30       	cpi	r24, 0x08	; 8
+ e22:	58 f3       	brcs	.-42     	; 0xdfa <mcu_init+0x9c>
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ e24:	1d 82       	std	Y+5, r1	; 0x05
+ e26:	12 c0       	rjmp	.+36     	; 0xe4c <mcu_init+0xee>
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ e28:	8d 81       	ldd	r24, Y+5	; 0x05
+ e2a:	88 2f       	mov	r24, r24
+ e2c:	90 e0       	ldi	r25, 0x00	; 0
+ e2e:	80 57       	subi	r24, 0x70	; 112
+ e30:	9b 4f       	sbci	r25, 0xFB	; 251
+ e32:	2d 81       	ldd	r18, Y+5	; 0x05
+ e34:	22 2f       	mov	r18, r18
+ e36:	30 e0       	ldi	r19, 0x00	; 0
+ e38:	20 57       	subi	r18, 0x70	; 112
+ e3a:	3b 4f       	sbci	r19, 0xFB	; 251
+ e3c:	f9 01       	movw	r30, r18
+ e3e:	20 81       	ld	r18, Z
+ e40:	28 60       	ori	r18, 0x08	; 8
+ e42:	fc 01       	movw	r30, r24
+ e44:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ e46:	8d 81       	ldd	r24, Y+5	; 0x05
+ e48:	8f 5f       	subi	r24, 0xFF	; 255
+ e4a:	8d 83       	std	Y+5, r24	; 0x05
+ e4c:	8d 81       	ldd	r24, Y+5	; 0x05
+ e4e:	88 30       	cpi	r24, 0x08	; 8
+ e50:	58 f3       	brcs	.-42     	; 0xe28 <mcu_init+0xca>
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ e52:	1e 82       	std	Y+6, r1	; 0x06
+ e54:	12 c0       	rjmp	.+36     	; 0xe7a <mcu_init+0x11c>
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ e56:	8e 81       	ldd	r24, Y+6	; 0x06
+ e58:	88 2f       	mov	r24, r24
+ e5a:	90 e0       	ldi	r25, 0x00	; 0
+ e5c:	80 55       	subi	r24, 0x50	; 80
+ e5e:	9b 4f       	sbci	r25, 0xFB	; 251
+ e60:	2e 81       	ldd	r18, Y+6	; 0x06
+ e62:	22 2f       	mov	r18, r18
+ e64:	30 e0       	ldi	r19, 0x00	; 0
+ e66:	20 55       	subi	r18, 0x50	; 80
+ e68:	3b 4f       	sbci	r19, 0xFB	; 251
+ e6a:	f9 01       	movw	r30, r18
+ e6c:	20 81       	ld	r18, Z
+ e6e:	28 60       	ori	r18, 0x08	; 8
+ e70:	fc 01       	movw	r30, r24
+ e72:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ e74:	8e 81       	ldd	r24, Y+6	; 0x06
+ e76:	8f 5f       	subi	r24, 0xFF	; 255
+ e78:	8e 83       	std	Y+6, r24	; 0x06
+ e7a:	8e 81       	ldd	r24, Y+6	; 0x06
+ e7c:	88 30       	cpi	r24, 0x08	; 8
+ e7e:	58 f3       	brcs	.-42     	; 0xe56 <mcu_init+0xf8>
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+}
+ e80:	00 00       	nop
+ e82:	26 96       	adiw	r28, 0x06	; 6
+ e84:	cd bf       	out	0x3d, r28	; 61
+ e86:	de bf       	out	0x3e, r29	; 62
+ e88:	df 91       	pop	r29
+ e8a:	cf 91       	pop	r28
+ e8c:	08 95       	ret
+
+00000e8e <system_init>:
+
+/**
+ * \brief System initialization
+ */
+void system_init()
+{
+ e8e:	cf 93       	push	r28
+ e90:	df 93       	push	r29
+ e92:	cd b7       	in	r28, 0x3d	; 61
+ e94:	de b7       	in	r29, 0x3e	; 62
+	mcu_init();
+ e96:	0e 94 af 06 	call	0xd5e	; 0xd5e <mcu_init>
+
+	/* PORT setting on PA0 */
+
+	// Set pin direction to input
+	PA0_set_dir(PORT_DIR_IN);
+ e9a:	80 e0       	ldi	r24, 0x00	; 0
+ e9c:	0e 94 2a 04 	call	0x854	; 0x854 <PA0_set_dir>
+
+	PA0_set_pull_mode(
+ ea0:	80 e0       	ldi	r24, 0x00	; 0
+ ea2:	0e 94 1b 04 	call	0x836	; 0x836 <PA0_set_pull_mode>
+
+	/* PORT setting on PA2 */
+
+	// Set pin direction to output
+
+	BUZZER_MCU_set_level(
+ ea6:	80 e0       	ldi	r24, 0x00	; 0
+ ea8:	0e 94 48 04 	call	0x890	; 0x890 <BUZZER_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	BUZZER_MCU_set_dir(PORT_DIR_OUT);
+ eac:	81 e0       	ldi	r24, 0x01	; 1
+ eae:	0e 94 39 04 	call	0x872	; 0x872 <BUZZER_MCU_set_dir>
+
+	/* PORT setting on PA3 */
+
+	// Set pin direction to output
+
+	W0_MCU_set_level(
+ eb2:	80 e0       	ldi	r24, 0x00	; 0
+ eb4:	0e 94 66 04 	call	0x8cc	; 0x8cc <W0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	W0_MCU_set_dir(PORT_DIR_OUT);
+ eb8:	81 e0       	ldi	r24, 0x01	; 1
+ eba:	0e 94 57 04 	call	0x8ae	; 0x8ae <W0_MCU_set_dir>
+
+	/* PORT setting on PA4 */
+
+	// Set pin direction to output
+
+	W1_MCU_set_level(
+ ebe:	80 e0       	ldi	r24, 0x00	; 0
+ ec0:	0e 94 84 04 	call	0x908	; 0x908 <W1_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	W1_MCU_set_dir(PORT_DIR_OUT);
+ ec4:	81 e0       	ldi	r24, 0x01	; 1
+ ec6:	0e 94 75 04 	call	0x8ea	; 0x8ea <W1_MCU_set_dir>
+
+	/* PORT setting on PA5 */
+
+	// Set pin direction to output
+
+	W2_MCU_set_level(
+ eca:	80 e0       	ldi	r24, 0x00	; 0
+ ecc:	0e 94 a2 04 	call	0x944	; 0x944 <W2_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	W2_MCU_set_dir(PORT_DIR_OUT);
+ ed0:	81 e0       	ldi	r24, 0x01	; 1
+ ed2:	0e 94 93 04 	call	0x926	; 0x926 <W2_MCU_set_dir>
+
+	/* PORT setting on PA6 */
+
+	// Set pin direction to output
+
+	W3_MCU_set_level(
+ ed6:	80 e0       	ldi	r24, 0x00	; 0
+ ed8:	0e 94 c0 04 	call	0x980	; 0x980 <W3_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	W3_MCU_set_dir(PORT_DIR_OUT);
+ edc:	81 e0       	ldi	r24, 0x01	; 1
+ ede:	0e 94 b1 04 	call	0x962	; 0x962 <W3_MCU_set_dir>
+
+	/* PORT setting on PA7 */
+
+	// Set pin direction to output
+
+	TXEN_set_level(
+ ee2:	80 e0       	ldi	r24, 0x00	; 0
+ ee4:	0e 94 de 04 	call	0x9bc	; 0x9bc <TXEN_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	TXEN_set_dir(PORT_DIR_OUT);
+ ee8:	81 e0       	ldi	r24, 0x01	; 1
+ eea:	0e 94 cf 04 	call	0x99e	; 0x99e <TXEN_set_dir>
+
+	/* PORT setting on PC0 */
+
+	// Set pin direction to output
+
+	TX_set_level(
+ eee:	80 e0       	ldi	r24, 0x00	; 0
+ ef0:	0e 94 fc 04 	call	0x9f8	; 0x9f8 <TX_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	TX_set_dir(PORT_DIR_OUT);
+ ef4:	81 e0       	ldi	r24, 0x01	; 1
+ ef6:	0e 94 ed 04 	call	0x9da	; 0x9da <TX_set_dir>
+
+	/* PORT setting on PC1 */
+
+	// Set pin direction to input
+	RX_set_dir(PORT_DIR_IN);
+ efa:	80 e0       	ldi	r24, 0x00	; 0
+ efc:	0e 94 1a 05 	call	0xa34	; 0xa34 <RX_set_dir>
+
+	RX_set_pull_mode(
+ f00:	80 e0       	ldi	r24, 0x00	; 0
+ f02:	0e 94 0b 05 	call	0xa16	; 0xa16 <RX_set_pull_mode>
+
+	/* PORT setting on PD0 */
+
+	// Set pin direction to output
+
+	R0_MCU_set_level(
+ f06:	80 e0       	ldi	r24, 0x00	; 0
+ f08:	0e 94 38 05 	call	0xa70	; 0xa70 <R0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R0_MCU_set_dir(PORT_DIR_OUT);
+ f0c:	81 e0       	ldi	r24, 0x01	; 1
+ f0e:	0e 94 29 05 	call	0xa52	; 0xa52 <R0_MCU_set_dir>
+
+	/* PORT setting on PD1 */
+
+	// Set pin direction to output
+
+	G0_MCU_set_level(
+ f12:	80 e0       	ldi	r24, 0x00	; 0
+ f14:	0e 94 56 05 	call	0xaac	; 0xaac <G0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	G0_MCU_set_dir(PORT_DIR_OUT);
+ f18:	81 e0       	ldi	r24, 0x01	; 1
+ f1a:	0e 94 47 05 	call	0xa8e	; 0xa8e <G0_MCU_set_dir>
+
+	/* PORT setting on PD2 */
+
+	// Set pin direction to output
+
+	B0_MCU_set_level(
+ f1e:	80 e0       	ldi	r24, 0x00	; 0
+ f20:	0e 94 74 05 	call	0xae8	; 0xae8 <B0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	B0_MCU_set_dir(PORT_DIR_OUT);
+ f24:	81 e0       	ldi	r24, 0x01	; 1
+ f26:	0e 94 65 05 	call	0xaca	; 0xaca <B0_MCU_set_dir>
+
+	/* PORT setting on PD3 */
+
+	// Set pin direction to output
+
+	R1_MCU_set_level(
+ f2a:	80 e0       	ldi	r24, 0x00	; 0
+ f2c:	0e 94 92 05 	call	0xb24	; 0xb24 <R1_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R1_MCU_set_dir(PORT_DIR_OUT);
+ f30:	81 e0       	ldi	r24, 0x01	; 1
+ f32:	0e 94 83 05 	call	0xb06	; 0xb06 <R1_MCU_set_dir>
+
+	/* PORT setting on PD4 */
+
+	// Set pin direction to output
+
+	G1_MCU_set_level(
+ f36:	80 e0       	ldi	r24, 0x00	; 0
+ f38:	0e 94 b0 05 	call	0xb60	; 0xb60 <G1_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	G1_MCU_set_dir(PORT_DIR_OUT);
+ f3c:	81 e0       	ldi	r24, 0x01	; 1
+ f3e:	0e 94 a1 05 	call	0xb42	; 0xb42 <G1_MCU_set_dir>
+
+	/* PORT setting on PD5 */
+
+	// Set pin direction to output
+
+	B1_MCU_set_level(
+ f42:	80 e0       	ldi	r24, 0x00	; 0
+ f44:	0e 94 ce 05 	call	0xb9c	; 0xb9c <B1_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	B1_MCU_set_dir(PORT_DIR_OUT);
+ f48:	81 e0       	ldi	r24, 0x01	; 1
+ f4a:	0e 94 bf 05 	call	0xb7e	; 0xb7e <B1_MCU_set_dir>
+
+	/* PORT setting on PF0 */
+
+	// Set pin direction to output
+
+	R2_MCU_set_level(
+ f4e:	80 e0       	ldi	r24, 0x00	; 0
+ f50:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <R2_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R2_MCU_set_dir(PORT_DIR_OUT);
+ f54:	81 e0       	ldi	r24, 0x01	; 1
+ f56:	0e 94 dd 05 	call	0xbba	; 0xbba <R2_MCU_set_dir>
+
+	/* PORT setting on PF1 */
+
+	// Set pin direction to output
+
+	G2_MCU_set_level(
+ f5a:	80 e0       	ldi	r24, 0x00	; 0
+ f5c:	0e 94 0a 06 	call	0xc14	; 0xc14 <G2_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	G2_MCU_set_dir(PORT_DIR_OUT);
+ f60:	81 e0       	ldi	r24, 0x01	; 1
+ f62:	0e 94 fb 05 	call	0xbf6	; 0xbf6 <G2_MCU_set_dir>
+
+	/* PORT setting on PF2 */
+
+	// Set pin direction to output
+
+	B2_MCU_set_level(
+ f66:	80 e0       	ldi	r24, 0x00	; 0
+ f68:	0e 94 28 06 	call	0xc50	; 0xc50 <B2_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	B2_MCU_set_dir(PORT_DIR_OUT);
+ f6c:	81 e0       	ldi	r24, 0x01	; 1
+ f6e:	0e 94 19 06 	call	0xc32	; 0xc32 <B2_MCU_set_dir>
+
+	/* PORT setting on PF3 */
+
+	// Set pin direction to output
+
+	R3_MCU_set_level(
+ f72:	80 e0       	ldi	r24, 0x00	; 0
+ f74:	0e 94 46 06 	call	0xc8c	; 0xc8c <R3_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R3_MCU_set_dir(PORT_DIR_OUT);
+ f78:	81 e0       	ldi	r24, 0x01	; 1
+ f7a:	0e 94 37 06 	call	0xc6e	; 0xc6e <R3_MCU_set_dir>
+
+	/* PORT setting on PF4 */
+
+	// Set pin direction to output
+
+	G3_MCU_set_level(
+ f7e:	80 e0       	ldi	r24, 0x00	; 0
+ f80:	0e 94 64 06 	call	0xcc8	; 0xcc8 <G3_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	G3_MCU_set_dir(PORT_DIR_OUT);
+ f84:	81 e0       	ldi	r24, 0x01	; 1
+ f86:	0e 94 55 06 	call	0xcaa	; 0xcaa <G3_MCU_set_dir>
+
+	/* PORT setting on PF5 */
+
+	// Set pin direction to output
+
+	B3_MCU_set_level(
+ f8a:	80 e0       	ldi	r24, 0x00	; 0
+ f8c:	0e 94 82 06 	call	0xd04	; 0xd04 <B3_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	B3_MCU_set_dir(PORT_DIR_OUT);
+ f90:	81 e0       	ldi	r24, 0x01	; 1
+ f92:	0e 94 73 06 	call	0xce6	; 0xce6 <B3_MCU_set_dir>
+
+	/* PORT setting on PF6 */
+
+	// Set pin direction to input
+	RESET_set_dir(PORT_DIR_IN);
+ f96:	80 e0       	ldi	r24, 0x00	; 0
+ f98:	0e 94 a0 06 	call	0xd40	; 0xd40 <RESET_set_dir>
+
+	RESET_set_pull_mode(
+ f9c:	80 e0       	ldi	r24, 0x00	; 0
+ f9e:	0e 94 91 06 	call	0xd22	; 0xd22 <RESET_set_pull_mode>
+	    // <id> pad_pull_config
+	    // <PORT_PULL_OFF"> Off
+	    // <PORT_PULL_UP"> Pull-up
+	    PORT_PULL_OFF);
+
+	CLKCTRL_init();
+ fa2:	0e 94 40 01 	call	0x280	; 0x280 <CLKCTRL_init>
+
+	CPUINT_init();
+ fa6:	0e 94 48 01 	call	0x290	; 0x290 <CPUINT_init>
+
+	SLPCTRL_init();
+ faa:	0e 94 dd 07 	call	0xfba	; 0xfba <SLPCTRL_init>
+
+	BOD_init();
+ fae:	0e 94 38 01 	call	0x270	; 0x270 <BOD_init>
+}
+ fb2:	00 00       	nop
+ fb4:	df 91       	pop	r29
+ fb6:	cf 91       	pop	r28
+ fb8:	08 95       	ret
+
+00000fba <SLPCTRL_init>:
+ * \brief Initialize Sleep Controller
+ *
+ * \return Initialization status.
+ */
+int8_t SLPCTRL_init()
+{
+ fba:	cf 93       	push	r28
+ fbc:	df 93       	push	r29
+ fbe:	cd b7       	in	r28, 0x3d	; 61
+ fc0:	de b7       	in	r29, 0x3e	; 62
+
+	// SLPCTRL.CTRLA = 0 << SLPCTRL_SEN_bp /* Sleep enable: disabled */
+	//		 | SLPCTRL_SMODE_IDLE_gc; /* Idle mode */
+
+	return 0;
+ fc2:	80 e0       	ldi	r24, 0x00	; 0
+}
+ fc4:	df 91       	pop	r29
+ fc6:	cf 91       	pop	r28
+ fc8:	08 95       	ret
+
+00000fca <_exit>:
+ fca:	f8 94       	cli
+
+00000fcc <__stop_program>:
+ fcc:	ff cf       	rjmp	.-2      	; 0xfcc <__stop_program>

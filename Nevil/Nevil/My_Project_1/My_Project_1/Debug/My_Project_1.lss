@@ -1,0 +1,1315 @@
+
+My_Project_1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00802800  00802800  0000068e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000063a  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000068e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000006c0  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000130  00000000  00000000  00000700  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000041dd  00000000  00000000  00000830  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000027e8  00000000  00000000  00004a0d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000c3c  00000000  00000000  000071f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000018c  00000000  00000000  00007e34  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000016bc  00000000  00000000  00007fc0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000009c6  00000000  00000000  0000967c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000a0  00000000  00000000  0000a042  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 48 00 	jmp	0x90	; 0x90 <__ctors_end>
+   4:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   8:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  10:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  14:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  18:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  1c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  20:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  24:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  28:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  2c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  30:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  34:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  38:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  3c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  40:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  44:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  48:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  4c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  50:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  54:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  58:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  5c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  60:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  64:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  68:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  6c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  70:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  74:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  78:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  7c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  80:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  84:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  88:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  8c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+
+00000090 <__ctors_end>:
+  90:	11 24       	eor	r1, r1
+  92:	1f be       	out	0x3f, r1	; 63
+  94:	cf ef       	ldi	r28, 0xFF	; 255
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	df e3       	ldi	r29, 0x3F	; 63
+  9a:	de bf       	out	0x3e, r29	; 62
+  9c:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <main>
+  a0:	0c 94 1b 03 	jmp	0x636	; 0x636 <_exit>
+
+000000a4 <__bad_interrupt>:
+  a4:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a8 <atmel_start_init>:
+/**
+ * Initializes MCU, drivers and middleware in the project
+ **/
+void atmel_start_init(void)
+{
+	system_init();
+  a8:	0e 94 2c 01 	call	0x258	; 0x258 <system_init>
+  ac:	08 95       	ret
+
+000000ae <led_on>:
+ *  Author: nevil
+ */ 
+
+#include "func.h"
+void led_on(uint16_t delay_val)
+{
+  ae:	8f 92       	push	r8
+  b0:	9f 92       	push	r9
+  b2:	af 92       	push	r10
+  b4:	bf 92       	push	r11
+  b6:	cf 92       	push	r12
+  b8:	df 92       	push	r13
+  ba:	ef 92       	push	r14
+  bc:	ff 92       	push	r15
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+  be:	2d b1       	in	r18, 0x0d	; 13
+  c0:	21 60       	ori	r18, 0x01	; 1
+  c2:	2d b9       	out	0x0d, r18	; 13
+	R0_MCU_set_level(true);
+	_delay_ms(delay_val);
+  c4:	bc 01       	movw	r22, r24
+  c6:	80 e0       	ldi	r24, 0x00	; 0
+  c8:	90 e0       	ldi	r25, 0x00	; 0
+  ca:	0e 94 f7 01 	call	0x3ee	; 0x3ee <__floatunsisf>
+  ce:	4b 01       	movw	r8, r22
+  d0:	5c 01       	movw	r10, r24
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+
+#else
+	uint16_t __ticks;
+	__tmp = ((F_CPU) / 4e3) * __ms;
+  d2:	20 e0       	ldi	r18, 0x00	; 0
+  d4:	30 e4       	ldi	r19, 0x40	; 64
+  d6:	4c e9       	ldi	r20, 0x9C	; 156
+  d8:	55 e4       	ldi	r21, 0x45	; 69
+  da:	0e 94 86 02 	call	0x50c	; 0x50c <__mulsf3>
+  de:	6b 01       	movw	r12, r22
+  e0:	7c 01       	movw	r14, r24
+	if (__tmp < 1.0)
+  e2:	20 e0       	ldi	r18, 0x00	; 0
+  e4:	30 e0       	ldi	r19, 0x00	; 0
+  e6:	40 e8       	ldi	r20, 0x80	; 128
+  e8:	5f e3       	ldi	r21, 0x3F	; 63
+  ea:	0e 94 c3 01 	call	0x386	; 0x386 <__cmpsf2>
+  ee:	88 23       	and	r24, r24
+  f0:	24 f1       	brlt	.+72     	; 0x13a <__EEPROM_REGION_LENGTH__+0x3a>
+		__ticks = 1;
+	else if (__tmp > 65535)
+  f2:	20 e0       	ldi	r18, 0x00	; 0
+  f4:	3f ef       	ldi	r19, 0xFF	; 255
+  f6:	4f e7       	ldi	r20, 0x7F	; 127
+  f8:	57 e4       	ldi	r21, 0x47	; 71
+  fa:	c7 01       	movw	r24, r14
+  fc:	b6 01       	movw	r22, r12
+  fe:	0e 94 81 02 	call	0x502	; 0x502 <__gesf2>
+ 102:	18 16       	cp	r1, r24
+ 104:	ac f4       	brge	.+42     	; 0x130 <__EEPROM_REGION_LENGTH__+0x30>
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+ 106:	20 e0       	ldi	r18, 0x00	; 0
+ 108:	30 e0       	ldi	r19, 0x00	; 0
+ 10a:	40 e2       	ldi	r20, 0x20	; 32
+ 10c:	51 e4       	ldi	r21, 0x41	; 65
+ 10e:	c5 01       	movw	r24, r10
+ 110:	b4 01       	movw	r22, r8
+ 112:	0e 94 86 02 	call	0x50c	; 0x50c <__mulsf3>
+ 116:	0e 94 c8 01 	call	0x390	; 0x390 <__fixunssfsi>
+ 11a:	06 c0       	rjmp	.+12     	; 0x128 <__EEPROM_REGION_LENGTH__+0x28>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 11c:	84 ef       	ldi	r24, 0xF4	; 244
+ 11e:	91 e0       	ldi	r25, 0x01	; 1
+ 120:	01 97       	sbiw	r24, 0x01	; 1
+ 122:	f1 f7       	brne	.-4      	; 0x120 <__EEPROM_REGION_LENGTH__+0x20>
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 124:	61 50       	subi	r22, 0x01	; 1
+ 126:	71 09       	sbc	r23, r1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 128:	61 15       	cp	r22, r1
+ 12a:	71 05       	cpc	r23, r1
+ 12c:	b9 f7       	brne	.-18     	; 0x11c <__EEPROM_REGION_LENGTH__+0x1c>
+ 12e:	0a c0       	rjmp	.+20     	; 0x144 <__EEPROM_REGION_LENGTH__+0x44>
+			__ticks --;
+		}
+		return;
+	}
+	else
+		__ticks = (uint16_t)__tmp;
+ 130:	c7 01       	movw	r24, r14
+ 132:	b6 01       	movw	r22, r12
+ 134:	0e 94 c8 01 	call	0x390	; 0x390 <__fixunssfsi>
+ 138:	02 c0       	rjmp	.+4      	; 0x13e <__EEPROM_REGION_LENGTH__+0x3e>
+
+#else
+	uint16_t __ticks;
+	__tmp = ((F_CPU) / 4e3) * __ms;
+	if (__tmp < 1.0)
+		__ticks = 1;
+ 13a:	61 e0       	ldi	r22, 0x01	; 1
+ 13c:	70 e0       	ldi	r23, 0x00	; 0
+ 13e:	cb 01       	movw	r24, r22
+ 140:	01 97       	sbiw	r24, 0x01	; 1
+ 142:	f1 f7       	brne	.-4      	; 0x140 <__EEPROM_REGION_LENGTH__+0x40>
+// 	_delay_ms(delay_2);
+// 	G0_MCU_set_level(true);
+// 	_delay_ms(delay_2);
+// 	G0_MCU_set_level(false);
+// 	_delay_ms(delay_2);
+}
+ 144:	ff 90       	pop	r15
+ 146:	ef 90       	pop	r14
+ 148:	df 90       	pop	r13
+ 14a:	cf 90       	pop	r12
+ 14c:	bf 90       	pop	r11
+ 14e:	af 90       	pop	r10
+ 150:	9f 90       	pop	r9
+ 152:	8f 90       	pop	r8
+ 154:	08 95       	ret
+
+00000156 <led_ON>:
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+ 156:	88 23       	and	r24, r24
+ 158:	21 f0       	breq	.+8      	; 0x162 <led_ON+0xc>
+		VPORTA.OUT |= (1 << pin);
+ 15a:	81 b1       	in	r24, 0x01	; 1
+ 15c:	88 60       	ori	r24, 0x08	; 8
+ 15e:	81 b9       	out	0x01, r24	; 1
+ 160:	03 c0       	rjmp	.+6      	; 0x168 <led_ON+0x12>
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 162:	81 b1       	in	r24, 0x01	; 1
+ 164:	87 7f       	andi	r24, 0xF7	; 247
+ 166:	81 b9       	out	0x01, r24	; 1
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+ 168:	66 23       	and	r22, r22
+ 16a:	21 f0       	breq	.+8      	; 0x174 <led_ON+0x1e>
+		VPORTD.OUT |= (1 << pin);
+ 16c:	8d b1       	in	r24, 0x0d	; 13
+ 16e:	81 60       	ori	r24, 0x01	; 1
+ 170:	8d b9       	out	0x0d, r24	; 13
+ 172:	03 c0       	rjmp	.+6      	; 0x17a <led_ON+0x24>
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 174:	8d b1       	in	r24, 0x0d	; 13
+ 176:	8e 7f       	andi	r24, 0xFE	; 254
+ 178:	8d b9       	out	0x0d, r24	; 13
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+ 17a:	44 23       	and	r20, r20
+ 17c:	21 f0       	breq	.+8      	; 0x186 <led_ON+0x30>
+		VPORTD.OUT |= (1 << pin);
+ 17e:	8d b1       	in	r24, 0x0d	; 13
+ 180:	82 60       	ori	r24, 0x02	; 2
+ 182:	8d b9       	out	0x0d, r24	; 13
+ 184:	03 c0       	rjmp	.+6      	; 0x18c <led_ON+0x36>
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 186:	8d b1       	in	r24, 0x0d	; 13
+ 188:	8d 7f       	andi	r24, 0xFD	; 253
+ 18a:	8d b9       	out	0x0d, r24	; 13
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+ 18c:	22 23       	and	r18, r18
+ 18e:	21 f0       	breq	.+8      	; 0x198 <led_ON+0x42>
+		VPORTD.OUT |= (1 << pin);
+ 190:	8d b1       	in	r24, 0x0d	; 13
+ 192:	84 60       	ori	r24, 0x04	; 4
+ 194:	8d b9       	out	0x0d, r24	; 13
+ 196:	08 95       	ret
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 198:	8d b1       	in	r24, 0x0d	; 13
+ 19a:	8b 7f       	andi	r24, 0xFB	; 251
+ 19c:	8d b9       	out	0x0d, r24	; 13
+ 19e:	08 95       	ret
+
+000001a0 <main>:
+#include "func.h"
+
+int main(void)
+{
+	/* Initializes MCU, drivers and middleware */
+	atmel_start_init();
+ 1a0:	0e 94 54 00 	call	0xa8	; 0xa8 <atmel_start_init>
+	/* Replace with your application code */
+	led_on(1);
+ 1a4:	81 e0       	ldi	r24, 0x01	; 1
+ 1a6:	90 e0       	ldi	r25, 0x00	; 0
+ 1a8:	0e 94 57 00 	call	0xae	; 0xae <led_on>
+	while (1) 
+	{
+		led_ON(1,1,0,1);
+ 1ac:	21 e0       	ldi	r18, 0x01	; 1
+ 1ae:	40 e0       	ldi	r20, 0x00	; 0
+ 1b0:	61 e0       	ldi	r22, 0x01	; 1
+ 1b2:	81 e0       	ldi	r24, 0x01	; 1
+ 1b4:	0e 94 ab 00 	call	0x156	; 0x156 <led_ON>
+ 1b8:	f9 cf       	rjmp	.-14     	; 0x1ac <main+0xc>
+
+000001ba <BOD_init>:
+	//		 | BOD_VLMCFG_BELOW_gc; /* Interrupt when supply goes below VLM level */
+
+	// BOD.VLMCTRLA = BOD_VLMLVL_5ABOVE_gc; /* VLM threshold 5% above BOD level */
+
+	return 0;
+}
+ 1ba:	80 e0       	ldi	r24, 0x00	; 0
+ 1bc:	08 95       	ret
+
+000001be <CLKCTRL_init>:
+	//		 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+
+	// ccp_write_io((void*)&(CLKCTRL.MCLKLOCK),0 << CLKCTRL_LOCKEN_bp /* lock enable: disabled */);
+
+	return 0;
+}
+ 1be:	80 e0       	ldi	r24, 0x00	; 0
+ 1c0:	08 95       	ret
+
+000001c2 <CPUINT_init>:
+	// CPUINT.LVL0PRI = 0x0 << CPUINT_LVL0PRI_gp; /* Interrupt Level Priority: 0x0 */
+
+	// CPUINT.LVL1VEC = 0x0 << CPUINT_LVL1VEC_gp; /* Interrupt Vector with High Priority: 0x0 */
+
+	return 0;
+}
+ 1c2:	80 e0       	ldi	r24, 0x00	; 0
+ 1c4:	08 95       	ret
+
+000001c6 <mcu_init>:
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 1c6:	80 e0       	ldi	r24, 0x00	; 0
+ 1c8:	08 c0       	rjmp	.+16     	; 0x1da <mcu_init+0x14>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 1ca:	e8 2f       	mov	r30, r24
+ 1cc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ce:	e0 5f       	subi	r30, 0xF0	; 240
+ 1d0:	fb 4f       	sbci	r31, 0xFB	; 251
+ 1d2:	90 81       	ld	r25, Z
+ 1d4:	98 60       	ori	r25, 0x08	; 8
+ 1d6:	90 83       	st	Z, r25
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 1d8:	8f 5f       	subi	r24, 0xFF	; 255
+ 1da:	88 30       	cpi	r24, 0x08	; 8
+ 1dc:	b0 f3       	brcs	.-20     	; 0x1ca <mcu_init+0x4>
+ 1de:	80 e0       	ldi	r24, 0x00	; 0
+ 1e0:	08 c0       	rjmp	.+16     	; 0x1f2 <mcu_init+0x2c>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 1e2:	e8 2f       	mov	r30, r24
+ 1e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e6:	e0 5d       	subi	r30, 0xD0	; 208
+ 1e8:	fb 4f       	sbci	r31, 0xFB	; 251
+ 1ea:	90 81       	ld	r25, Z
+ 1ec:	98 60       	ori	r25, 0x08	; 8
+ 1ee:	90 83       	st	Z, r25
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 1f0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1f2:	88 30       	cpi	r24, 0x08	; 8
+ 1f4:	b0 f3       	brcs	.-20     	; 0x1e2 <mcu_init+0x1c>
+ 1f6:	80 e0       	ldi	r24, 0x00	; 0
+ 1f8:	08 c0       	rjmp	.+16     	; 0x20a <mcu_init+0x44>
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 1fa:	e8 2f       	mov	r30, r24
+ 1fc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1fe:	e0 5b       	subi	r30, 0xB0	; 176
+ 200:	fb 4f       	sbci	r31, 0xFB	; 251
+ 202:	90 81       	ld	r25, Z
+ 204:	98 60       	ori	r25, 0x08	; 8
+ 206:	90 83       	st	Z, r25
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 208:	8f 5f       	subi	r24, 0xFF	; 255
+ 20a:	88 30       	cpi	r24, 0x08	; 8
+ 20c:	b0 f3       	brcs	.-20     	; 0x1fa <mcu_init+0x34>
+ 20e:	80 e0       	ldi	r24, 0x00	; 0
+ 210:	08 c0       	rjmp	.+16     	; 0x222 <mcu_init+0x5c>
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 212:	e8 2f       	mov	r30, r24
+ 214:	f0 e0       	ldi	r31, 0x00	; 0
+ 216:	e0 59       	subi	r30, 0x90	; 144
+ 218:	fb 4f       	sbci	r31, 0xFB	; 251
+ 21a:	90 81       	ld	r25, Z
+ 21c:	98 60       	ori	r25, 0x08	; 8
+ 21e:	90 83       	st	Z, r25
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 220:	8f 5f       	subi	r24, 0xFF	; 255
+ 222:	88 30       	cpi	r24, 0x08	; 8
+ 224:	b0 f3       	brcs	.-20     	; 0x212 <mcu_init+0x4c>
+ 226:	80 e0       	ldi	r24, 0x00	; 0
+ 228:	08 c0       	rjmp	.+16     	; 0x23a <mcu_init+0x74>
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 22a:	e8 2f       	mov	r30, r24
+ 22c:	f0 e0       	ldi	r31, 0x00	; 0
+ 22e:	e0 57       	subi	r30, 0x70	; 112
+ 230:	fb 4f       	sbci	r31, 0xFB	; 251
+ 232:	90 81       	ld	r25, Z
+ 234:	98 60       	ori	r25, 0x08	; 8
+ 236:	90 83       	st	Z, r25
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 238:	8f 5f       	subi	r24, 0xFF	; 255
+ 23a:	88 30       	cpi	r24, 0x08	; 8
+ 23c:	b0 f3       	brcs	.-20     	; 0x22a <mcu_init+0x64>
+ 23e:	80 e0       	ldi	r24, 0x00	; 0
+ 240:	08 c0       	rjmp	.+16     	; 0x252 <mcu_init+0x8c>
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 242:	e8 2f       	mov	r30, r24
+ 244:	f0 e0       	ldi	r31, 0x00	; 0
+ 246:	e0 55       	subi	r30, 0x50	; 80
+ 248:	fb 4f       	sbci	r31, 0xFB	; 251
+ 24a:	90 81       	ld	r25, Z
+ 24c:	98 60       	ori	r25, 0x08	; 8
+ 24e:	90 83       	st	Z, r25
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 250:	8f 5f       	subi	r24, 0xFF	; 255
+ 252:	88 30       	cpi	r24, 0x08	; 8
+ 254:	b0 f3       	brcs	.-20     	; 0x242 <mcu_init+0x7c>
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+}
+ 256:	08 95       	ret
+
+00000258 <system_init>:
+/**
+ * \brief System initialization
+ */
+void system_init()
+{
+	mcu_init();
+ 258:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <mcu_init>
+ */
+static inline void PORTA_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+ 25c:	80 b1       	in	r24, 0x00	; 0
+ 25e:	8e 7f       	andi	r24, 0xFE	; 254
+ 260:	80 b9       	out	0x00, r24	; 0
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTA + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 262:	e0 e1       	ldi	r30, 0x10	; 16
+ 264:	f4 e0       	ldi	r31, 0x04	; 4
+ 266:	80 81       	ld	r24, Z
+ 268:	87 7f       	andi	r24, 0xF7	; 247
+ 26a:	80 83       	st	Z, r24
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 26c:	81 b1       	in	r24, 0x01	; 1
+ 26e:	8b 7f       	andi	r24, 0xFB	; 251
+ 270:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 272:	80 b1       	in	r24, 0x00	; 0
+ 274:	84 60       	ori	r24, 0x04	; 4
+ 276:	80 b9       	out	0x00, r24	; 0
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 278:	81 b1       	in	r24, 0x01	; 1
+ 27a:	87 7f       	andi	r24, 0xF7	; 247
+ 27c:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 27e:	80 b1       	in	r24, 0x00	; 0
+ 280:	88 60       	ori	r24, 0x08	; 8
+ 282:	80 b9       	out	0x00, r24	; 0
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 284:	81 b1       	in	r24, 0x01	; 1
+ 286:	8f 7e       	andi	r24, 0xEF	; 239
+ 288:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 28a:	80 b1       	in	r24, 0x00	; 0
+ 28c:	80 61       	ori	r24, 0x10	; 16
+ 28e:	80 b9       	out	0x00, r24	; 0
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 290:	81 b1       	in	r24, 0x01	; 1
+ 292:	8f 7d       	andi	r24, 0xDF	; 223
+ 294:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 296:	80 b1       	in	r24, 0x00	; 0
+ 298:	80 62       	ori	r24, 0x20	; 32
+ 29a:	80 b9       	out	0x00, r24	; 0
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 29c:	81 b1       	in	r24, 0x01	; 1
+ 29e:	8f 7b       	andi	r24, 0xBF	; 191
+ 2a0:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 2a2:	80 b1       	in	r24, 0x00	; 0
+ 2a4:	80 64       	ori	r24, 0x40	; 64
+ 2a6:	80 b9       	out	0x00, r24	; 0
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 2a8:	81 b1       	in	r24, 0x01	; 1
+ 2aa:	8f 77       	andi	r24, 0x7F	; 127
+ 2ac:	81 b9       	out	0x01, r24	; 1
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 2ae:	80 b1       	in	r24, 0x00	; 0
+ 2b0:	80 68       	ori	r24, 0x80	; 128
+ 2b2:	80 b9       	out	0x00, r24	; 0
+static inline void PORTC_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTC.OUT |= (1 << pin);
+	} else {
+		VPORTC.OUT &= ~(1 << pin);
+ 2b4:	89 b1       	in	r24, 0x09	; 9
+ 2b6:	8e 7f       	andi	r24, 0xFE	; 254
+ 2b8:	89 b9       	out	0x09, r24	; 9
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTC.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTC.DIR |= (1 << pin);
+ 2ba:	88 b1       	in	r24, 0x08	; 8
+ 2bc:	81 60       	ori	r24, 0x01	; 1
+ 2be:	88 b9       	out	0x08, r24	; 8
+ */
+static inline void PORTC_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTC.DIR &= ~(1 << pin);
+ 2c0:	88 b1       	in	r24, 0x08	; 8
+ 2c2:	8d 7f       	andi	r24, 0xFD	; 253
+ 2c4:	88 b9       	out	0x08, r24	; 8
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTC + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 2c6:	e1 e5       	ldi	r30, 0x51	; 81
+ 2c8:	f4 e0       	ldi	r31, 0x04	; 4
+ 2ca:	80 81       	ld	r24, Z
+ 2cc:	87 7f       	andi	r24, 0xF7	; 247
+ 2ce:	80 83       	st	Z, r24
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 2d0:	8d b1       	in	r24, 0x0d	; 13
+ 2d2:	8e 7f       	andi	r24, 0xFE	; 254
+ 2d4:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 2d6:	8c b1       	in	r24, 0x0c	; 12
+ 2d8:	81 60       	ori	r24, 0x01	; 1
+ 2da:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 2dc:	8d b1       	in	r24, 0x0d	; 13
+ 2de:	8d 7f       	andi	r24, 0xFD	; 253
+ 2e0:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 2e2:	8c b1       	in	r24, 0x0c	; 12
+ 2e4:	82 60       	ori	r24, 0x02	; 2
+ 2e6:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 2e8:	8d b1       	in	r24, 0x0d	; 13
+ 2ea:	8b 7f       	andi	r24, 0xFB	; 251
+ 2ec:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 2ee:	8c b1       	in	r24, 0x0c	; 12
+ 2f0:	84 60       	ori	r24, 0x04	; 4
+ 2f2:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 2f4:	8d b1       	in	r24, 0x0d	; 13
+ 2f6:	87 7f       	andi	r24, 0xF7	; 247
+ 2f8:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 2fa:	8c b1       	in	r24, 0x0c	; 12
+ 2fc:	88 60       	ori	r24, 0x08	; 8
+ 2fe:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 300:	8d b1       	in	r24, 0x0d	; 13
+ 302:	8f 7e       	andi	r24, 0xEF	; 239
+ 304:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 306:	8c b1       	in	r24, 0x0c	; 12
+ 308:	80 61       	ori	r24, 0x10	; 16
+ 30a:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 30c:	8d b1       	in	r24, 0x0d	; 13
+ 30e:	8f 7d       	andi	r24, 0xDF	; 223
+ 310:	8d b9       	out	0x0d, r24	; 13
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 312:	8c b1       	in	r24, 0x0c	; 12
+ 314:	80 62       	ori	r24, 0x20	; 32
+ 316:	8c b9       	out	0x0c, r24	; 12
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 318:	85 b3       	in	r24, 0x15	; 21
+ 31a:	8e 7f       	andi	r24, 0xFE	; 254
+ 31c:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 31e:	84 b3       	in	r24, 0x14	; 20
+ 320:	81 60       	ori	r24, 0x01	; 1
+ 322:	84 bb       	out	0x14, r24	; 20
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 324:	85 b3       	in	r24, 0x15	; 21
+ 326:	8d 7f       	andi	r24, 0xFD	; 253
+ 328:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 32a:	84 b3       	in	r24, 0x14	; 20
+ 32c:	82 60       	ori	r24, 0x02	; 2
+ 32e:	84 bb       	out	0x14, r24	; 20
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 330:	85 b3       	in	r24, 0x15	; 21
+ 332:	8b 7f       	andi	r24, 0xFB	; 251
+ 334:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 336:	84 b3       	in	r24, 0x14	; 20
+ 338:	84 60       	ori	r24, 0x04	; 4
+ 33a:	84 bb       	out	0x14, r24	; 20
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 33c:	85 b3       	in	r24, 0x15	; 21
+ 33e:	87 7f       	andi	r24, 0xF7	; 247
+ 340:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 342:	84 b3       	in	r24, 0x14	; 20
+ 344:	88 60       	ori	r24, 0x08	; 8
+ 346:	84 bb       	out	0x14, r24	; 20
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 348:	85 b3       	in	r24, 0x15	; 21
+ 34a:	8f 7e       	andi	r24, 0xEF	; 239
+ 34c:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 34e:	84 b3       	in	r24, 0x14	; 20
+ 350:	80 61       	ori	r24, 0x10	; 16
+ 352:	84 bb       	out	0x14, r24	; 20
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 354:	85 b3       	in	r24, 0x15	; 21
+ 356:	8f 7d       	andi	r24, 0xDF	; 223
+ 358:	85 bb       	out	0x15, r24	; 21
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+		break;
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 35a:	84 b3       	in	r24, 0x14	; 20
+ 35c:	80 62       	ori	r24, 0x20	; 32
+ 35e:	84 bb       	out	0x14, r24	; 20
+ */
+static inline void PORTF_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+ 360:	84 b3       	in	r24, 0x14	; 20
+ 362:	8f 7b       	andi	r24, 0xBF	; 191
+ 364:	84 bb       	out	0x14, r24	; 20
+	volatile uint8_t *port_pin_ctrl = ((uint8_t *)&PORTF + 0x10 + pin);
+
+	if (pull_mode == PORT_PULL_UP) {
+		*port_pin_ctrl |= PORT_PULLUPEN_bm;
+	} else if (pull_mode == PORT_PULL_OFF) {
+		*port_pin_ctrl &= ~PORT_PULLUPEN_bm;
+ 366:	e6 eb       	ldi	r30, 0xB6	; 182
+ 368:	f4 e0       	ldi	r31, 0x04	; 4
+ 36a:	80 81       	ld	r24, Z
+ 36c:	87 7f       	andi	r24, 0xF7	; 247
+ 36e:	80 83       	st	Z, r24
+	    // <id> pad_pull_config
+	    // <PORT_PULL_OFF"> Off
+	    // <PORT_PULL_UP"> Pull-up
+	    PORT_PULL_OFF);
+
+	CLKCTRL_init();
+ 370:	0e 94 df 00 	call	0x1be	; 0x1be <CLKCTRL_init>
+
+	CPUINT_init();
+ 374:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <CPUINT_init>
+
+	SLPCTRL_init();
+ 378:	0e 94 c1 01 	call	0x382	; 0x382 <SLPCTRL_init>
+
+	BOD_init();
+ 37c:	0e 94 dd 00 	call	0x1ba	; 0x1ba <BOD_init>
+ 380:	08 95       	ret
+
+00000382 <SLPCTRL_init>:
+
+	// SLPCTRL.CTRLA = 0 << SLPCTRL_SEN_bp /* Sleep enable: disabled */
+	//		 | SLPCTRL_SMODE_IDLE_gc; /* Idle mode */
+
+	return 0;
+}
+ 382:	80 e0       	ldi	r24, 0x00	; 0
+ 384:	08 95       	ret
+
+00000386 <__cmpsf2>:
+ 386:	0e 94 34 02 	call	0x468	; 0x468 <__fp_cmp>
+ 38a:	08 f4       	brcc	.+2      	; 0x38e <__cmpsf2+0x8>
+ 38c:	81 e0       	ldi	r24, 0x01	; 1
+ 38e:	08 95       	ret
+
+00000390 <__fixunssfsi>:
+ 390:	0e 94 60 02 	call	0x4c0	; 0x4c0 <__fp_splitA>
+ 394:	88 f0       	brcs	.+34     	; 0x3b8 <__fixunssfsi+0x28>
+ 396:	9f 57       	subi	r25, 0x7F	; 127
+ 398:	98 f0       	brcs	.+38     	; 0x3c0 <__fixunssfsi+0x30>
+ 39a:	b9 2f       	mov	r27, r25
+ 39c:	99 27       	eor	r25, r25
+ 39e:	b7 51       	subi	r27, 0x17	; 23
+ 3a0:	b0 f0       	brcs	.+44     	; 0x3ce <__fixunssfsi+0x3e>
+ 3a2:	e1 f0       	breq	.+56     	; 0x3dc <__fixunssfsi+0x4c>
+ 3a4:	66 0f       	add	r22, r22
+ 3a6:	77 1f       	adc	r23, r23
+ 3a8:	88 1f       	adc	r24, r24
+ 3aa:	99 1f       	adc	r25, r25
+ 3ac:	1a f0       	brmi	.+6      	; 0x3b4 <__fixunssfsi+0x24>
+ 3ae:	ba 95       	dec	r27
+ 3b0:	c9 f7       	brne	.-14     	; 0x3a4 <__fixunssfsi+0x14>
+ 3b2:	14 c0       	rjmp	.+40     	; 0x3dc <__fixunssfsi+0x4c>
+ 3b4:	b1 30       	cpi	r27, 0x01	; 1
+ 3b6:	91 f0       	breq	.+36     	; 0x3dc <__fixunssfsi+0x4c>
+ 3b8:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <__fp_zero>
+ 3bc:	b1 e0       	ldi	r27, 0x01	; 1
+ 3be:	08 95       	ret
+ 3c0:	0c 94 7a 02 	jmp	0x4f4	; 0x4f4 <__fp_zero>
+ 3c4:	67 2f       	mov	r22, r23
+ 3c6:	78 2f       	mov	r23, r24
+ 3c8:	88 27       	eor	r24, r24
+ 3ca:	b8 5f       	subi	r27, 0xF8	; 248
+ 3cc:	39 f0       	breq	.+14     	; 0x3dc <__fixunssfsi+0x4c>
+ 3ce:	b9 3f       	cpi	r27, 0xF9	; 249
+ 3d0:	cc f3       	brlt	.-14     	; 0x3c4 <__fixunssfsi+0x34>
+ 3d2:	86 95       	lsr	r24
+ 3d4:	77 95       	ror	r23
+ 3d6:	67 95       	ror	r22
+ 3d8:	b3 95       	inc	r27
+ 3da:	d9 f7       	brne	.-10     	; 0x3d2 <__fixunssfsi+0x42>
+ 3dc:	3e f4       	brtc	.+14     	; 0x3ec <__fixunssfsi+0x5c>
+ 3de:	90 95       	com	r25
+ 3e0:	80 95       	com	r24
+ 3e2:	70 95       	com	r23
+ 3e4:	61 95       	neg	r22
+ 3e6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3e8:	8f 4f       	sbci	r24, 0xFF	; 255
+ 3ea:	9f 4f       	sbci	r25, 0xFF	; 255
+ 3ec:	08 95       	ret
+
+000003ee <__floatunsisf>:
+ 3ee:	e8 94       	clt
+ 3f0:	09 c0       	rjmp	.+18     	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
+
+000003f2 <__floatsisf>:
+ 3f2:	97 fb       	bst	r25, 7
+ 3f4:	3e f4       	brtc	.+14     	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
+ 3f6:	90 95       	com	r25
+ 3f8:	80 95       	com	r24
+ 3fa:	70 95       	com	r23
+ 3fc:	61 95       	neg	r22
+ 3fe:	7f 4f       	sbci	r23, 0xFF	; 255
+ 400:	8f 4f       	sbci	r24, 0xFF	; 255
+ 402:	9f 4f       	sbci	r25, 0xFF	; 255
+ 404:	99 23       	and	r25, r25
+ 406:	a9 f0       	breq	.+42     	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 408:	f9 2f       	mov	r31, r25
+ 40a:	96 e9       	ldi	r25, 0x96	; 150
+ 40c:	bb 27       	eor	r27, r27
+ 40e:	93 95       	inc	r25
+ 410:	f6 95       	lsr	r31
+ 412:	87 95       	ror	r24
+ 414:	77 95       	ror	r23
+ 416:	67 95       	ror	r22
+ 418:	b7 95       	ror	r27
+ 41a:	f1 11       	cpse	r31, r1
+ 41c:	f8 cf       	rjmp	.-16     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+ 41e:	fa f4       	brpl	.+62     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+ 420:	bb 0f       	add	r27, r27
+ 422:	11 f4       	brne	.+4      	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+ 424:	60 ff       	sbrs	r22, 0
+ 426:	1b c0       	rjmp	.+54     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+ 428:	6f 5f       	subi	r22, 0xFF	; 255
+ 42a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 42c:	8f 4f       	sbci	r24, 0xFF	; 255
+ 42e:	9f 4f       	sbci	r25, 0xFF	; 255
+ 430:	16 c0       	rjmp	.+44     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+ 432:	88 23       	and	r24, r24
+ 434:	11 f0       	breq	.+4      	; 0x43a <__LOCK_REGION_LENGTH__+0x3a>
+ 436:	96 e9       	ldi	r25, 0x96	; 150
+ 438:	11 c0       	rjmp	.+34     	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+ 43a:	77 23       	and	r23, r23
+ 43c:	21 f0       	breq	.+8      	; 0x446 <__LOCK_REGION_LENGTH__+0x46>
+ 43e:	9e e8       	ldi	r25, 0x8E	; 142
+ 440:	87 2f       	mov	r24, r23
+ 442:	76 2f       	mov	r23, r22
+ 444:	05 c0       	rjmp	.+10     	; 0x450 <__LOCK_REGION_LENGTH__+0x50>
+ 446:	66 23       	and	r22, r22
+ 448:	71 f0       	breq	.+28     	; 0x466 <__LOCK_REGION_LENGTH__+0x66>
+ 44a:	96 e8       	ldi	r25, 0x86	; 134
+ 44c:	86 2f       	mov	r24, r22
+ 44e:	70 e0       	ldi	r23, 0x00	; 0
+ 450:	60 e0       	ldi	r22, 0x00	; 0
+ 452:	2a f0       	brmi	.+10     	; 0x45e <__LOCK_REGION_LENGTH__+0x5e>
+ 454:	9a 95       	dec	r25
+ 456:	66 0f       	add	r22, r22
+ 458:	77 1f       	adc	r23, r23
+ 45a:	88 1f       	adc	r24, r24
+ 45c:	da f7       	brpl	.-10     	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+ 45e:	88 0f       	add	r24, r24
+ 460:	96 95       	lsr	r25
+ 462:	87 95       	ror	r24
+ 464:	97 f9       	bld	r25, 7
+ 466:	08 95       	ret
+
+00000468 <__fp_cmp>:
+ 468:	99 0f       	add	r25, r25
+ 46a:	00 08       	sbc	r0, r0
+ 46c:	55 0f       	add	r21, r21
+ 46e:	aa 0b       	sbc	r26, r26
+ 470:	e0 e8       	ldi	r30, 0x80	; 128
+ 472:	fe ef       	ldi	r31, 0xFE	; 254
+ 474:	16 16       	cp	r1, r22
+ 476:	17 06       	cpc	r1, r23
+ 478:	e8 07       	cpc	r30, r24
+ 47a:	f9 07       	cpc	r31, r25
+ 47c:	c0 f0       	brcs	.+48     	; 0x4ae <__fp_cmp+0x46>
+ 47e:	12 16       	cp	r1, r18
+ 480:	13 06       	cpc	r1, r19
+ 482:	e4 07       	cpc	r30, r20
+ 484:	f5 07       	cpc	r31, r21
+ 486:	98 f0       	brcs	.+38     	; 0x4ae <__fp_cmp+0x46>
+ 488:	62 1b       	sub	r22, r18
+ 48a:	73 0b       	sbc	r23, r19
+ 48c:	84 0b       	sbc	r24, r20
+ 48e:	95 0b       	sbc	r25, r21
+ 490:	39 f4       	brne	.+14     	; 0x4a0 <__fp_cmp+0x38>
+ 492:	0a 26       	eor	r0, r26
+ 494:	61 f0       	breq	.+24     	; 0x4ae <__fp_cmp+0x46>
+ 496:	23 2b       	or	r18, r19
+ 498:	24 2b       	or	r18, r20
+ 49a:	25 2b       	or	r18, r21
+ 49c:	21 f4       	brne	.+8      	; 0x4a6 <__fp_cmp+0x3e>
+ 49e:	08 95       	ret
+ 4a0:	0a 26       	eor	r0, r26
+ 4a2:	09 f4       	brne	.+2      	; 0x4a6 <__fp_cmp+0x3e>
+ 4a4:	a1 40       	sbci	r26, 0x01	; 1
+ 4a6:	a6 95       	lsr	r26
+ 4a8:	8f ef       	ldi	r24, 0xFF	; 255
+ 4aa:	81 1d       	adc	r24, r1
+ 4ac:	81 1d       	adc	r24, r1
+ 4ae:	08 95       	ret
+
+000004b0 <__fp_split3>:
+ 4b0:	57 fd       	sbrc	r21, 7
+ 4b2:	90 58       	subi	r25, 0x80	; 128
+ 4b4:	44 0f       	add	r20, r20
+ 4b6:	55 1f       	adc	r21, r21
+ 4b8:	59 f0       	breq	.+22     	; 0x4d0 <__fp_splitA+0x10>
+ 4ba:	5f 3f       	cpi	r21, 0xFF	; 255
+ 4bc:	71 f0       	breq	.+28     	; 0x4da <__fp_splitA+0x1a>
+ 4be:	47 95       	ror	r20
+
+000004c0 <__fp_splitA>:
+ 4c0:	88 0f       	add	r24, r24
+ 4c2:	97 fb       	bst	r25, 7
+ 4c4:	99 1f       	adc	r25, r25
+ 4c6:	61 f0       	breq	.+24     	; 0x4e0 <__fp_splitA+0x20>
+ 4c8:	9f 3f       	cpi	r25, 0xFF	; 255
+ 4ca:	79 f0       	breq	.+30     	; 0x4ea <__fp_splitA+0x2a>
+ 4cc:	87 95       	ror	r24
+ 4ce:	08 95       	ret
+ 4d0:	12 16       	cp	r1, r18
+ 4d2:	13 06       	cpc	r1, r19
+ 4d4:	14 06       	cpc	r1, r20
+ 4d6:	55 1f       	adc	r21, r21
+ 4d8:	f2 cf       	rjmp	.-28     	; 0x4be <__fp_split3+0xe>
+ 4da:	46 95       	lsr	r20
+ 4dc:	f1 df       	rcall	.-30     	; 0x4c0 <__fp_splitA>
+ 4de:	08 c0       	rjmp	.+16     	; 0x4f0 <__fp_splitA+0x30>
+ 4e0:	16 16       	cp	r1, r22
+ 4e2:	17 06       	cpc	r1, r23
+ 4e4:	18 06       	cpc	r1, r24
+ 4e6:	99 1f       	adc	r25, r25
+ 4e8:	f1 cf       	rjmp	.-30     	; 0x4cc <__fp_splitA+0xc>
+ 4ea:	86 95       	lsr	r24
+ 4ec:	71 05       	cpc	r23, r1
+ 4ee:	61 05       	cpc	r22, r1
+ 4f0:	08 94       	sec
+ 4f2:	08 95       	ret
+
+000004f4 <__fp_zero>:
+ 4f4:	e8 94       	clt
+
+000004f6 <__fp_szero>:
+ 4f6:	bb 27       	eor	r27, r27
+ 4f8:	66 27       	eor	r22, r22
+ 4fa:	77 27       	eor	r23, r23
+ 4fc:	cb 01       	movw	r24, r22
+ 4fe:	97 f9       	bld	r25, 7
+ 500:	08 95       	ret
+
+00000502 <__gesf2>:
+ 502:	0e 94 34 02 	call	0x468	; 0x468 <__fp_cmp>
+ 506:	08 f4       	brcc	.+2      	; 0x50a <__gesf2+0x8>
+ 508:	8f ef       	ldi	r24, 0xFF	; 255
+ 50a:	08 95       	ret
+
+0000050c <__mulsf3>:
+ 50c:	0e 94 99 02 	call	0x532	; 0x532 <__mulsf3x>
+ 510:	0c 94 0a 03 	jmp	0x614	; 0x614 <__fp_round>
+ 514:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <__fp_pscA>
+ 518:	38 f0       	brcs	.+14     	; 0x528 <__mulsf3+0x1c>
+ 51a:	0e 94 03 03 	call	0x606	; 0x606 <__fp_pscB>
+ 51e:	20 f0       	brcs	.+8      	; 0x528 <__mulsf3+0x1c>
+ 520:	95 23       	and	r25, r21
+ 522:	11 f0       	breq	.+4      	; 0x528 <__mulsf3+0x1c>
+ 524:	0c 94 f3 02 	jmp	0x5e6	; 0x5e6 <__fp_inf>
+ 528:	0c 94 f9 02 	jmp	0x5f2	; 0x5f2 <__fp_nan>
+ 52c:	11 24       	eor	r1, r1
+ 52e:	0c 94 7b 02 	jmp	0x4f6	; 0x4f6 <__fp_szero>
+
+00000532 <__mulsf3x>:
+ 532:	0e 94 58 02 	call	0x4b0	; 0x4b0 <__fp_split3>
+ 536:	70 f3       	brcs	.-36     	; 0x514 <__mulsf3+0x8>
+
+00000538 <__mulsf3_pse>:
+ 538:	95 9f       	mul	r25, r21
+ 53a:	c1 f3       	breq	.-16     	; 0x52c <__mulsf3+0x20>
+ 53c:	95 0f       	add	r25, r21
+ 53e:	50 e0       	ldi	r21, 0x00	; 0
+ 540:	55 1f       	adc	r21, r21
+ 542:	62 9f       	mul	r22, r18
+ 544:	f0 01       	movw	r30, r0
+ 546:	72 9f       	mul	r23, r18
+ 548:	bb 27       	eor	r27, r27
+ 54a:	f0 0d       	add	r31, r0
+ 54c:	b1 1d       	adc	r27, r1
+ 54e:	63 9f       	mul	r22, r19
+ 550:	aa 27       	eor	r26, r26
+ 552:	f0 0d       	add	r31, r0
+ 554:	b1 1d       	adc	r27, r1
+ 556:	aa 1f       	adc	r26, r26
+ 558:	64 9f       	mul	r22, r20
+ 55a:	66 27       	eor	r22, r22
+ 55c:	b0 0d       	add	r27, r0
+ 55e:	a1 1d       	adc	r26, r1
+ 560:	66 1f       	adc	r22, r22
+ 562:	82 9f       	mul	r24, r18
+ 564:	22 27       	eor	r18, r18
+ 566:	b0 0d       	add	r27, r0
+ 568:	a1 1d       	adc	r26, r1
+ 56a:	62 1f       	adc	r22, r18
+ 56c:	73 9f       	mul	r23, r19
+ 56e:	b0 0d       	add	r27, r0
+ 570:	a1 1d       	adc	r26, r1
+ 572:	62 1f       	adc	r22, r18
+ 574:	83 9f       	mul	r24, r19
+ 576:	a0 0d       	add	r26, r0
+ 578:	61 1d       	adc	r22, r1
+ 57a:	22 1f       	adc	r18, r18
+ 57c:	74 9f       	mul	r23, r20
+ 57e:	33 27       	eor	r19, r19
+ 580:	a0 0d       	add	r26, r0
+ 582:	61 1d       	adc	r22, r1
+ 584:	23 1f       	adc	r18, r19
+ 586:	84 9f       	mul	r24, r20
+ 588:	60 0d       	add	r22, r0
+ 58a:	21 1d       	adc	r18, r1
+ 58c:	82 2f       	mov	r24, r18
+ 58e:	76 2f       	mov	r23, r22
+ 590:	6a 2f       	mov	r22, r26
+ 592:	11 24       	eor	r1, r1
+ 594:	9f 57       	subi	r25, 0x7F	; 127
+ 596:	50 40       	sbci	r21, 0x00	; 0
+ 598:	9a f0       	brmi	.+38     	; 0x5c0 <__mulsf3_pse+0x88>
+ 59a:	f1 f0       	breq	.+60     	; 0x5d8 <__mulsf3_pse+0xa0>
+ 59c:	88 23       	and	r24, r24
+ 59e:	4a f0       	brmi	.+18     	; 0x5b2 <__mulsf3_pse+0x7a>
+ 5a0:	ee 0f       	add	r30, r30
+ 5a2:	ff 1f       	adc	r31, r31
+ 5a4:	bb 1f       	adc	r27, r27
+ 5a6:	66 1f       	adc	r22, r22
+ 5a8:	77 1f       	adc	r23, r23
+ 5aa:	88 1f       	adc	r24, r24
+ 5ac:	91 50       	subi	r25, 0x01	; 1
+ 5ae:	50 40       	sbci	r21, 0x00	; 0
+ 5b0:	a9 f7       	brne	.-22     	; 0x59c <__mulsf3_pse+0x64>
+ 5b2:	9e 3f       	cpi	r25, 0xFE	; 254
+ 5b4:	51 05       	cpc	r21, r1
+ 5b6:	80 f0       	brcs	.+32     	; 0x5d8 <__mulsf3_pse+0xa0>
+ 5b8:	0c 94 f3 02 	jmp	0x5e6	; 0x5e6 <__fp_inf>
+ 5bc:	0c 94 7b 02 	jmp	0x4f6	; 0x4f6 <__fp_szero>
+ 5c0:	5f 3f       	cpi	r21, 0xFF	; 255
+ 5c2:	e4 f3       	brlt	.-8      	; 0x5bc <__mulsf3_pse+0x84>
+ 5c4:	98 3e       	cpi	r25, 0xE8	; 232
+ 5c6:	d4 f3       	brlt	.-12     	; 0x5bc <__mulsf3_pse+0x84>
+ 5c8:	86 95       	lsr	r24
+ 5ca:	77 95       	ror	r23
+ 5cc:	67 95       	ror	r22
+ 5ce:	b7 95       	ror	r27
+ 5d0:	f7 95       	ror	r31
+ 5d2:	e7 95       	ror	r30
+ 5d4:	9f 5f       	subi	r25, 0xFF	; 255
+ 5d6:	c1 f7       	brne	.-16     	; 0x5c8 <__mulsf3_pse+0x90>
+ 5d8:	fe 2b       	or	r31, r30
+ 5da:	88 0f       	add	r24, r24
+ 5dc:	91 1d       	adc	r25, r1
+ 5de:	96 95       	lsr	r25
+ 5e0:	87 95       	ror	r24
+ 5e2:	97 f9       	bld	r25, 7
+ 5e4:	08 95       	ret
+
+000005e6 <__fp_inf>:
+ 5e6:	97 f9       	bld	r25, 7
+ 5e8:	9f 67       	ori	r25, 0x7F	; 127
+ 5ea:	80 e8       	ldi	r24, 0x80	; 128
+ 5ec:	70 e0       	ldi	r23, 0x00	; 0
+ 5ee:	60 e0       	ldi	r22, 0x00	; 0
+ 5f0:	08 95       	ret
+
+000005f2 <__fp_nan>:
+ 5f2:	9f ef       	ldi	r25, 0xFF	; 255
+ 5f4:	80 ec       	ldi	r24, 0xC0	; 192
+ 5f6:	08 95       	ret
+
+000005f8 <__fp_pscA>:
+ 5f8:	00 24       	eor	r0, r0
+ 5fa:	0a 94       	dec	r0
+ 5fc:	16 16       	cp	r1, r22
+ 5fe:	17 06       	cpc	r1, r23
+ 600:	18 06       	cpc	r1, r24
+ 602:	09 06       	cpc	r0, r25
+ 604:	08 95       	ret
+
+00000606 <__fp_pscB>:
+ 606:	00 24       	eor	r0, r0
+ 608:	0a 94       	dec	r0
+ 60a:	12 16       	cp	r1, r18
+ 60c:	13 06       	cpc	r1, r19
+ 60e:	14 06       	cpc	r1, r20
+ 610:	05 06       	cpc	r0, r21
+ 612:	08 95       	ret
+
+00000614 <__fp_round>:
+ 614:	09 2e       	mov	r0, r25
+ 616:	03 94       	inc	r0
+ 618:	00 0c       	add	r0, r0
+ 61a:	11 f4       	brne	.+4      	; 0x620 <__fp_round+0xc>
+ 61c:	88 23       	and	r24, r24
+ 61e:	52 f0       	brmi	.+20     	; 0x634 <__fp_round+0x20>
+ 620:	bb 0f       	add	r27, r27
+ 622:	40 f4       	brcc	.+16     	; 0x634 <__fp_round+0x20>
+ 624:	bf 2b       	or	r27, r31
+ 626:	11 f4       	brne	.+4      	; 0x62c <__fp_round+0x18>
+ 628:	60 ff       	sbrs	r22, 0
+ 62a:	04 c0       	rjmp	.+8      	; 0x634 <__fp_round+0x20>
+ 62c:	6f 5f       	subi	r22, 0xFF	; 255
+ 62e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 630:	8f 4f       	sbci	r24, 0xFF	; 255
+ 632:	9f 4f       	sbci	r25, 0xFF	; 255
+ 634:	08 95       	ret
+
+00000636 <_exit>:
+ 636:	f8 94       	cli
+
+00000638 <__stop_program>:
+ 638:	ff cf       	rjmp	.-2      	; 0x638 <__stop_program>
