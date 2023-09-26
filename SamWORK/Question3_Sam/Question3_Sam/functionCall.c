@@ -34,12 +34,16 @@ void functionCall(bool r,bool g,bool b,uint32_t *delay_R,uint32_t *delay_B,uint3
 	if(count_G>0)
 	{
 		
-		*delay_G=abs((*delay *count_R)- *delay_G);
+		*delay_G=abs((*delay_R * count_R) - *delay_G);
 		_delay_ms(*delay_G);
 		G0_MCU_toggle_level();
 	}
 	if(count_B>0)
 	{
+		if(count_R>0 || count_G>0)
+		{
+			*delay_B=abs( ((*delay_R * count_R) + (*delay_G * count_G))- *delay_B);
+		}
 		_delay_ms(*delay_B);
 		G0_MCU_toggle_level();
 	}

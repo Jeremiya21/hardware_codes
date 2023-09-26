@@ -6,8 +6,8 @@
  */ 
 #include "functionCall.h"
 
-void ToggleRed(uint32_t *delay_R)
+void ToggleRed(bool r)
 {
 	R0_MCU_toggle_level();
-	_delay_ms(*delay_R);
+	//_delay_ms(*delay_R);
 }

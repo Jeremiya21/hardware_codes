@@ -1,4 +1,3 @@
-
 #include "functionCall.h"
 
 int main(void)
@@ -11,10 +10,12 @@ int main(void)
 	delay_B=100;
 	delay_G=150;
 	delay_R=200;
+	bool r,g,b;
+	r=0;b=1;g=0;
 	while (1) 
 	{
 		/* Replace with your application code */
-		functionCall(&delay_R,&delay_G,&delay_B);
+		functionCall(r,g,b,&delay_R,&delay_G,&delay_B);
 	}
 	return 0;
 }
