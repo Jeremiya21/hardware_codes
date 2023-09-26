@@ -8,7 +8,7 @@
 #include "functionCall.h"
 #include <stdlib.h>
 
-void functionCall(bool *r,bool *g,bool *b,uint32_t *delay_R,uint32_t *delay_B,uint32_t *delay_G)
+void functionCall(bool *r,bool *g,bool *b,uint16_t delay_R,uint16_t delay_B,uint16_t delay_G)
 {
 	int count_R=0,count_G=0,count_B=0;
 	if(*r)
@@ -28,23 +28,23 @@ void functionCall(bool *r,bool *g,bool *b,uint32_t *delay_R,uint32_t *delay_B,ui
 	}
 	if(count_R>0)
 	{
-		_delay_ms(*delay_R);
+		_delay_ms(delay_R);
 		R0_MCU_toggle_level();
 	}
 	if(count_G>0)
 	{
 		
-		*delay_G=abs((*delay_R * count_R) - *delay_G);
-		_delay_ms(*delay_G);
+		delay_G=abs((delay_R * count_R) - delay_G);
+		_delay_ms(delay_G);
 		G0_MCU_toggle_level();
 	}
 	if(count_B>0)
 	{
 		if(count_R>0 || count_G>0)
 		{
-			*delay_B=abs( ((*delay_R * count_R) + (*delay_G * count_G))- *delay_B);
+			delay_B=abs( ((delay_R * count_R) + (delay_G * count_G))- delay_B);
 		}
-		_delay_ms(*delay_B);
+		_delay_ms(delay_B);
 		G0_MCU_toggle_level();
 	}
 	
