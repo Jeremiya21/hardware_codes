@@ -1,0 +1,30 @@
+Q1.
+Write a function to turn on R, G, B or W of the LED strip. 
+You should be able to turn them on individually or in a group.
+ (R, G, B, W, RG, GB, RW etc.). Call the function in main() and demonstrate.
+ Cut and paste your function below..
+
+Q2.
+Use toggle function available with GPIO to blink a selected LED with a specified delay between them. 
+The implementation must be done in a function. 
+Function argument should be the LED you need to turn on and the delay in microseconds between blinking. 
+Once you develop, the function, call this function in the main and study how you can dim the LED by pulsing it with longer delay.
+
+Cut and past the function below. Demonstrate the code to your instructor.
+
+Q3.
+Write a function that takes 3 delay parameters. One each for R, G and B. Then toggle respective LED with specified delay. 
+Call this function in main and create various combination of colors by mixing R, G and B.
+Demonstrate to your instructor.
+Cut and paste the function below.
+
+Q4.
+
+There is a connector on the PCB (J13). Pin 1 of the connector is connected to port PA2. 
+Add this pin to the program and configure this pin as input.
+Write a function to return logic level (True or False) on this pin with pull up enabled or disabled. 
+Call this function in main to see the logic level on this pin with pull up enabled. Ensure logic high is received.
+Pull this pin to ground or apply 0V to this pin. Read the logic level and ensure it is low.
+Disable the pull up and apply 3.3V to this pin and ensure logic high is received. 
+Demonstrate to the instructor.
+Cut and paste the function below.
