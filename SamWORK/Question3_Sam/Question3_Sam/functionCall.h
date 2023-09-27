@@ -12,11 +12,12 @@
 
 
 #include <atmel_start.h>
+#define __DELAY_BACKWARD_COMPATIBLE__
 #include <stdbool.h>
 #include <stdint.h>
 #include <util/delay.h>
 
-void functionCall(bool *r,bool *g,bool *b,uint16_t delay_R,uint16_t delay_B,uint16_t delay_G);
+void functionCall(uint16_t delay_R,uint16_t delay_B,uint16_t delay_G);
 
 
 

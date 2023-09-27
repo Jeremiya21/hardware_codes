@@ -410,14 +410,14 @@ int main(void)
 
 	/* Replace with your application code */
 	bool R,G,B,W;
-	R=true;
+	R=1;
  266:	81 e0       	ldi	r24, 0x01	; 1
  268:	89 83       	std	Y+1, r24	; 0x01
-	G=false;
+	G=0;
  26a:	1a 82       	std	Y+2, r1	; 0x02
-	B=false;
+	B=0;
  26c:	1b 82       	std	Y+3, r1	; 0x03
-	W=false;
+	W=0;
  26e:	1c 82       	std	Y+4, r1	; 0x04
 	
 	LedOnFunction(R,G,B,W);

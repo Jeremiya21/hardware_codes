@@ -7,10 +7,10 @@ int main(void)
 
 	/* Replace with your application code */
 	bool R,G,B,W;
-	R=true;
-	G=false;
-	B=false;
-	W=false;
+	R=1;
+	G=0;
+	B=0;
+	W=0;
 	
 	LedOnFunction(R,G,B,W);
 	

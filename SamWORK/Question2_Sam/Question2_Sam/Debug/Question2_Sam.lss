@@ -1090,20 +1090,20 @@ int main(void)
 
 	/* Replace with your application code */
 	bool R,G,B,W;
-	uint16_t uSdelay=500;
- 6de:	84 ef       	ldi	r24, 0xF4	; 244
- 6e0:	91 e0       	ldi	r25, 0x01	; 1
+	uint16_t uSdelay=100;
+ 6de:	84 e6       	ldi	r24, 0x64	; 100
+ 6e0:	90 e0       	ldi	r25, 0x00	; 0
  6e2:	89 83       	std	Y+1, r24	; 0x01
  6e4:	9a 83       	std	Y+2, r25	; 0x02
 	
-	R=true;
+	R=1;
  6e6:	81 e0       	ldi	r24, 0x01	; 1
  6e8:	8b 83       	std	Y+3, r24	; 0x03
-	G=false;
+	G=0;
  6ea:	1c 82       	std	Y+4, r1	; 0x04
-	B=false;
+	B=0;
  6ec:	1d 82       	std	Y+5, r1	; 0x05
-	W=false;
+	W=0;
  6ee:	1e 82       	std	Y+6, r1	; 0x06
 	
 	while (1) {
