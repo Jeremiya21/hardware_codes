@@ -14,7 +14,8 @@ int main(void)
 	B=0;
 	W=0;
 	
-	while (1) {
+	while (1) 
+	{
 		LedToggle(R,G,B,W,uSdelay);
 	}
 	

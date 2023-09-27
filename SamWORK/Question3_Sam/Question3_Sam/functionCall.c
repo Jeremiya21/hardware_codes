@@ -14,7 +14,7 @@ void functionCall(uint16_t delay_R,uint16_t delay_B,uint16_t delay_G)
 	ToggleGreen(delay_G);
 	ToggleBlue(delay_B);
 	
-	/*
+	
 	R0_MCU_set_level(true);
 	B0_MCU_set_level(true);
 	G0_MCU_set_level(true);  //RBG is on
@@ -27,6 +27,6 @@ void functionCall(uint16_t delay_R,uint16_t delay_B,uint16_t delay_G)
 	B0_MCU_set_level(false);
 	G0_MCU_set_level(true); //RG is on
 	_delay_ms(delay_G);	
-	*/	
+	
 	
 }

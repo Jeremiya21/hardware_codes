@@ -8,10 +8,13 @@
 
  #include "functionCall.h"
  
- void ToggleGreen(uint32_t delay_G)
+ void ToggleGreen(uint16_t delay_G)
 {
 	
- 	G0_MCU_toggle_level();
+ 	G0_MCU_set_level(true);
 	 _delay_ms(delay_G);
+	G0_MCU_set_level(false);
+	_delay_ms(delay_G);
+	 	
  
 }

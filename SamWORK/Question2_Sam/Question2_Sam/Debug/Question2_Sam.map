@@ -695,24 +695,24 @@ END GROUP
  .debug_frame   0x00000210      0x1d4 src/driver_init.o
  .debug_frame   0x000003e4       0x54 src/slpctrl.o
 
-.debug_str      0x00000000     0x13ca
+.debug_str      0x00000000     0x13d2
  *(.debug_str)
  .debug_str     0x00000000      0xecd C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega4808/avrxmega3/crtatmega4808.o
  .debug_str     0x00000ecd      0x161 atmel_start.o
                                 0x195 (size before relaxing)
  .debug_str     0x0000102e      0x12e LedToggle.o
                                 0x2a5 (size before relaxing)
- .debug_str     0x0000115c       0x11 main.o
+ .debug_str     0x0000115c       0x19 main.o
                                 0x199 (size before relaxing)
- .debug_str     0x0000116d       0x16 src/bod.o
+ .debug_str     0x00001175       0x16 src/bod.o
                                 0x18e (size before relaxing)
- .debug_str     0x00001183       0x1e src/clkctrl.o
+ .debug_str     0x0000118b       0x1e src/clkctrl.o
                                 0x196 (size before relaxing)
- .debug_str     0x000011a1       0x1c src/cpuint.o
+ .debug_str     0x000011a9       0x1c src/cpuint.o
                                 0x194 (size before relaxing)
- .debug_str     0x000011bd      0x14a src/driver_init.o
+ .debug_str     0x000011c5      0x14a src/driver_init.o
                                 0x378 (size before relaxing)
- .debug_str     0x00001307       0xc3 src/slpctrl.o
+ .debug_str     0x0000130f       0xc3 src/slpctrl.o
                                 0x25a (size before relaxing)
 
 .debug_loc      0x00000000      0x7c4

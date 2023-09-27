@@ -21,11 +21,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_frame  00000438  00000000  00000000  00007828  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000013ca  00000000  00000000  00007c60  2**0
+  9 .debug_str    000013d2  00000000  00000000  00007c60  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000007c4  00000000  00000000  0000902a  2**0
+ 10 .debug_loc    000007c4  00000000  00000000  00009032  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000138  00000000  00000000  000097ee  2**0
+ 11 .debug_ranges 00000138  00000000  00000000  000097f6  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -361,7 +361,7 @@ static inline void B0_MCU_set_level(const bool level)
  *  Author: samsunny
  */ 
 #include "LedToggle.h"
-void LedToggle(bool R,bool G,bool B,bool W,uint16_t uSdelay)
+void LedToggle(bool R,bool G,bool B,bool W,uint16_t mSdelay)
 {
  21c:	0f 93       	push	r16
  21e:	1f 93       	push	r17
@@ -427,7 +427,7 @@ void LedToggle(bool R,bool G,bool B,bool W,uint16_t uSdelay)
  294:	80 81       	ld	r24, Z
  296:	0e 94 d2 00 	call	0x1a4	; 0x1a4 <W0_MCU_set_level>
 	
-	_delay_us(uSdelay);
+	_delay_us(mSdelay);
  29a:	ce 01       	movw	r24, r28
  29c:	8b 5b       	subi	r24, 0xBB	; 187
  29e:	9f 4f       	sbci	r25, 0xFF	; 255
@@ -756,7 +756,7 @@ _delay_loop_1(uint8_t __count)
  4ba:	80 e0       	ldi	r24, 0x00	; 0
  4bc:	0e 94 d2 00 	call	0x1a4	; 0x1a4 <W0_MCU_set_level>
 	
-	_delay_us(uSdelay);
+	_delay_us(mSdelay);
  4c0:	ce 01       	movw	r24, r28
  4c2:	8b 5b       	subi	r24, 0xBB	; 187
  4c4:	9f 4f       	sbci	r25, 0xFF	; 255

@@ -13,7 +13,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <util/delay.h>
-void LedToggle(bool R,bool G,bool B,bool W,uint16_t uSdelay);
+void LedToggle(bool R,bool G,bool B,bool W,uint16_t mSdelay);
 
 
 

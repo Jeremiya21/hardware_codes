@@ -8,6 +8,8 @@
 
 void ToggleRed(uint16_t delay_R)
 {
-	R0_MCU_toggle_level();
+	R0_MCU_set_level(true);
+	_delay_ms(delay_R);
+	R0_MCU_set_level(false);
 	_delay_ms(delay_R);
 }
