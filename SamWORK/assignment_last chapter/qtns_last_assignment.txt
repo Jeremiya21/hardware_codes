@@ -1,0 +1,20 @@
+1.
+Use TCB to generate a PWM signal with 0 to 255 levels. Use this PWM signal on pin G3_MCU (PF4). Write a function that takes an integer between 0 to 255 and adjust the brightness of the G3 LED strip.
+	i.Develop function.
+	ii.Call it in main with various inputs.
+	iii.Demonstrate to the instructor.
+	iv.Cut and past the code below.
+
+
+2
+ Write a function that takes three integers between 0 to 255. First integer determines the R0 brightness (Use TCA), Second one determines the brightness of G3, and last one determines brightness of B3.
+	i.Develop function.
+	ii.Call it in main with various inputs.
+	iii.Connect RGB to one strip of LED and demonstrate various colors to the instructor.
+	iv.Cut and past the code below.
+
+
+3.
+Write a function that takes the frequency as input and produces a tone on BUZZER. Use TCB.
+Demonstrate to the instructor.
+Cut and paste the code.
