@@ -59,7 +59,7 @@ int8_t CLKCTRL_init()
 
 	ccp_write_io((void *)&(CLKCTRL.MCLKCTRLA),
 	             CLKCTRL_CLKSEL_EXTCLK_gc /* External Clock (EXTCLK) */
-	                 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+	                 | 1 << CLKCTRL_CLKOUT_bp /* System clock out: enabled */);
 
 	/* wait for system oscillator changing to finish */
 	while (CLKCTRL.MCLKSTATUS & CLKCTRL_SOSC_bm) {
