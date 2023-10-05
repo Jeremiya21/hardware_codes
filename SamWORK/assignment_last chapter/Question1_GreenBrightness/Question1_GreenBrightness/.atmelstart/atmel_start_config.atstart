@@ -78,10 +78,10 @@ drivers:
     api: Drivers:TCB:Init
     configuration:
       inc_isr_harness: false
-      tcb_ccmp: 0
+      tcb_ccmp: 255
       tcb_cnt: 0
       tcb_ctrla_clksel: CLK_PER (No Prescaling)
-      tcb_ctrla_enable: false
+      tcb_ctrla_enable: true
       tcb_ctrla_runstdby: false
       tcb_ctrla_syncupd: false
       tcb_ctrlb_async: false

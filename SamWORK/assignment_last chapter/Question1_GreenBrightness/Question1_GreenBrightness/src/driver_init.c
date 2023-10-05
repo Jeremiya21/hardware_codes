@@ -105,7 +105,7 @@ void system_init()
 
 	CLKCTRL_init();
 
-	//TIMER_TCB_GREEN_initialization();
+	TIMER_TCB_GREEN_initialization();
 
 	CPUINT_init();
 

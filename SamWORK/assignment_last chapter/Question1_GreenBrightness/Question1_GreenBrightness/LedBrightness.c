@@ -10,6 +10,4 @@ void  LedBrightness(uint8_t duty_cycle)
 {
 	TCB0.CCMPL=255;
 	TCB0.CCMPH=duty_cycle;
-	TIMER_TCB_GREEN_init();
-	
 }

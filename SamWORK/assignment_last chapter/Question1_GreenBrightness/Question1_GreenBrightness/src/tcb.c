@@ -43,7 +43,7 @@
 int8_t TIMER_TCB_GREEN_init()
 {
 
-	// TCB0.CCMP = 0x0; /* Compare or Capture: 0x0 */
+	TCB0.CCMP = 0xff; /* Compare or Capture: 0xff */
 
 	// TCB0.CNT = 0x0; /* Count: 0x0 */
 
@@ -60,10 +60,10 @@ int8_t TIMER_TCB_GREEN_init()
 
 	// TCB0.INTCTRL = 0 << TCB_CAPT_bp /* Capture or Timeout: disabled */;
 
-	// TCB0.CTRLA = TCB_CLKSEL_CLKDIV1_gc /* CLK_PER (No Prescaling) */
-	//		 | 0 << TCB_ENABLE_bp /* Enable: disabled */
-	//		 | 0 << TCB_RUNSTDBY_bp /* Run Standby: disabled */
-	//		 | 0 << TCB_SYNCUPD_bp; /* Synchronize Update: disabled */
+	TCB0.CTRLA = TCB_CLKSEL_CLKDIV1_gc  /* CLK_PER (No Prescaling) */
+	             | 1 << TCB_ENABLE_bp   /* Enable: enabled */
+	             | 0 << TCB_RUNSTDBY_bp /* Run Standby: disabled */
+	             | 0 << TCB_SYNCUPD_bp; /* Synchronize Update: disabled */
 
 	return 0;
 }
