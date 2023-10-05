@@ -57,8 +57,9 @@ int8_t CLKCTRL_init()
 	             CLKCTRL_PDIV_4X_gc /* 4 */
 	                 | 1 << CLKCTRL_PEN_bp /* Prescaler enable: enabled */);
 
-	// ccp_write_io((void*)&(CLKCTRL.MCLKCTRLA),CLKCTRL_CLKSEL_OSC20M_gc /* 16MHz Internal Oscillator (OSC16M) */
-	//		 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+	ccp_write_io((void *)&(CLKCTRL.MCLKCTRLA),
+	             CLKCTRL_CLKSEL_OSC20M_gc /* 16MHz Internal Oscillator (OSC16M) */
+	                 | 1 << CLKCTRL_CLKOUT_bp /* System clock out: enabled */);
 
 	// ccp_write_io((void*)&(CLKCTRL.MCLKLOCK),0 << CLKCTRL_LOCKEN_bp /* lock enable: disabled */);
 

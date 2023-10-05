@@ -26,15 +26,15 @@ drivers:
     functionality: System
     api: Drivers:CLKCTRL:Init
     configuration:
-      $input: 16000000
-      $input_id: 16MHz Internal Oscillator (OSC16M)
-      RESERVED_InputFreq: 16000000
-      RESERVED_InputFreq_id: 16MHz Internal Oscillator (OSC16M)
+      $input: 32768
+      $input_id: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
+      RESERVED_InputFreq: 32768
+      RESERVED_InputFreq_id: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
       _$freq_output_32KHz divided by 32: 1024
-      _$freq_output_External Clock (EXTCLK): '32768'
+      _$freq_output_External Clock (EXTCLK): 32768
       _$freq_output_Main Clock (CLK_MAIN): 4000000
       clkctrl_mclkctrla_cksel: 16MHz Internal Oscillator (OSC16M)
-      clkctrl_mclkctrla_clkout: false
+      clkctrl_mclkctrla_clkout: true
       clkctrl_mclkctrlb_pdiv: '4'
       clkctrl_mclkctrlb_pen: true
       clkctrl_mclklock_locken: false
@@ -138,17 +138,17 @@ toolchain_options:
     linker_config:
       avrgcc_linker_miscellaneous_LinkerFlags: ''
 - definition:
-    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.xc8:7.0.0
-  configuration:
-    compiler_config:
-      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
-    linker_config:
-      xc8_linker_miscellaneous_LinkerFlags: ''
-- definition:
     identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Atmel.Studio:7.0.0
   configuration:
     compiler_config:
       avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
     linker_config:
       avrgcc_linker_miscellaneous_LinkerFlags: ''
+- definition:
+    identifier: Atmel:ATmega4809_drivers:1.0.0::ATmega4808-AFR::environment_definition::All:Microchip.Studio.xc8:7.0.0
+  configuration:
+    compiler_config:
+      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
+    linker_config:
+      xc8_linker_miscellaneous_LinkerFlags: ''
 static_files: []
