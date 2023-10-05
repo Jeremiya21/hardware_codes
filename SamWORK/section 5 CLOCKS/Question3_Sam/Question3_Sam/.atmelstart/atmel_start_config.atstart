@@ -31,10 +31,10 @@ drivers:
       RESERVED_InputFreq: 32768
       RESERVED_InputFreq_id: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
       _$freq_output_32KHz divided by 32: 1024
-      _$freq_output_External Clock (EXTCLK): '32768'
+      _$freq_output_External Clock (EXTCLK): 32768
       _$freq_output_Main Clock (CLK_MAIN): 32768
       clkctrl_mclkctrla_cksel: 32KHz Internal Ultra Low Power Oscillator (OSCULP32K)
-      clkctrl_mclkctrla_clkout: false
+      clkctrl_mclkctrla_clkout: true
       clkctrl_mclkctrlb_pdiv: '6'
       clkctrl_mclkctrlb_pen: false
       clkctrl_mclklock_locken: false

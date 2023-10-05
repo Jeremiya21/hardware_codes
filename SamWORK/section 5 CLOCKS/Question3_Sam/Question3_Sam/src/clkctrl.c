@@ -59,7 +59,7 @@ int8_t CLKCTRL_init()
 
 	ccp_write_io((void *)&(CLKCTRL.MCLKCTRLA),
 	             CLKCTRL_CLKSEL_OSCULP32K_gc /* 32KHz Internal Ultra Low Power Oscillator (OSCULP32K) */
-	                 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+	                 | 1 << CLKCTRL_CLKOUT_bp /* System clock out: enabled */);
 
 	/* wait for system oscillator changing to finish */
 	while (CLKCTRL.MCLKSTATUS & CLKCTRL_SOSC_bm) {

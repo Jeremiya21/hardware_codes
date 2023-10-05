@@ -6,6 +6,7 @@ int main(void)
 	atmel_start_init();
 
 	/* Replace with your application code */
-	while (1) {
+	while (1) 
+	{
 	}
 }
