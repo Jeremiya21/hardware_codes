@@ -1,0 +1,1763 @@
+
+LED_BLINKING.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00802800  00802800  000009a4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000950  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000009a4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000009d4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000001e8  00000000  00000000  00000a14  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00003cc0  00000000  00000000  00000bfc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000026fd  00000000  00000000  000048bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000dd6  00000000  00000000  00006fb9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000508  00000000  00000000  00007d90  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000017d8  00000000  00000000  00008298  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000092c  00000000  00000000  00009a70  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000148  00000000  00000000  0000a39c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 48 00 	jmp	0x90	; 0x90 <__ctors_end>
+   4:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   8:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+   c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  10:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  14:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  18:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  1c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  20:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  24:	0c 94 5e 00 	jmp	0xbc	; 0xbc <__vector_9>
+  28:	0c 94 80 00 	jmp	0x100	; 0x100 <__vector_10>
+  2c:	0c 94 a2 00 	jmp	0x144	; 0x144 <__vector_11>
+  30:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  34:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  38:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  3c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  40:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  44:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  48:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  4c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  50:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  54:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  58:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  5c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  60:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  64:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  68:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  6c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  70:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  74:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  78:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  7c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  80:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  84:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  88:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+  8c:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__bad_interrupt>
+
+00000090 <__ctors_end>:
+  90:	11 24       	eor	r1, r1
+  92:	1f be       	out	0x3f, r1	; 63
+  94:	cf ef       	ldi	r28, 0xFF	; 255
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	df e3       	ldi	r29, 0x3F	; 63
+  9a:	de bf       	out	0x3e, r29	; 62
+  9c:	0e 94 c4 00 	call	0x188	; 0x188 <main>
+  a0:	0c 94 a6 04 	jmp	0x94c	; 0x94c <_exit>
+
+000000a4 <__bad_interrupt>:
+  a4:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a8 <atmel_start_init>:
+
+/**
+ * Initializes MCU, drivers and middleware in the project
+ **/
+void atmel_start_init(void)
+{
+  a8:	cf 93       	push	r28
+  aa:	df 93       	push	r29
+  ac:	cd b7       	in	r28, 0x3d	; 61
+  ae:	de b7       	in	r29, 0x3e	; 62
+	system_init();
+  b0:	0e 94 52 04 	call	0x8a4	; 0x8a4 <system_init>
+}
+  b4:	00 00       	nop
+  b6:	df 91       	pop	r29
+  b8:	cf 91       	pop	r28
+  ba:	08 95       	ret
+
+000000bc <__vector_9>:
+
+#include <driver_init.h>
+#include <compiler.h>
+
+ISR(TCA0_CMP0_vect)
+{
+  bc:	1f 92       	push	r1
+  be:	0f 92       	push	r0
+  c0:	00 90 3f 00 	lds	r0, 0x003F	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+  c4:	0f 92       	push	r0
+  c6:	11 24       	eor	r1, r1
+  c8:	2f 93       	push	r18
+  ca:	8f 93       	push	r24
+  cc:	9f 93       	push	r25
+  ce:	ef 93       	push	r30
+  d0:	ff 93       	push	r31
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+  d6:	cd b7       	in	r28, 0x3d	; 61
+  d8:	de b7       	in	r29, 0x3e	; 62
+	/* Insert your TCA Compare 0 Interrupt handling code here */
+
+	/* The interrupt flag has to be cleared manually */
+	TCA0.SINGLE.INTFLAGS = TCA_SINGLE_CMP0_bm;
+  da:	80 e0       	ldi	r24, 0x00	; 0
+  dc:	9a e0       	ldi	r25, 0x0A	; 10
+  de:	20 e1       	ldi	r18, 0x10	; 16
+  e0:	fc 01       	movw	r30, r24
+  e2:	23 87       	std	Z+11, r18	; 0x0b
+}
+  e4:	00 00       	nop
+  e6:	df 91       	pop	r29
+  e8:	cf 91       	pop	r28
+  ea:	ff 91       	pop	r31
+  ec:	ef 91       	pop	r30
+  ee:	9f 91       	pop	r25
+  f0:	8f 91       	pop	r24
+  f2:	2f 91       	pop	r18
+  f4:	0f 90       	pop	r0
+  f6:	00 92 3f 00 	sts	0x003F, r0	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+  fa:	0f 90       	pop	r0
+  fc:	1f 90       	pop	r1
+  fe:	18 95       	reti
+
+00000100 <__vector_10>:
+
+ISR(TCA0_CMP1_vect)
+{
+ 100:	1f 92       	push	r1
+ 102:	0f 92       	push	r0
+ 104:	00 90 3f 00 	lds	r0, 0x003F	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+ 108:	0f 92       	push	r0
+ 10a:	11 24       	eor	r1, r1
+ 10c:	2f 93       	push	r18
+ 10e:	8f 93       	push	r24
+ 110:	9f 93       	push	r25
+ 112:	ef 93       	push	r30
+ 114:	ff 93       	push	r31
+ 116:	cf 93       	push	r28
+ 118:	df 93       	push	r29
+ 11a:	cd b7       	in	r28, 0x3d	; 61
+ 11c:	de b7       	in	r29, 0x3e	; 62
+	/* Insert your TCA Compare 1 Interrupt handling code here */
+
+	/* The interrupt flag has to be cleared manually */
+	TCA0.SINGLE.INTFLAGS = TCA_SINGLE_CMP1_bm;
+ 11e:	80 e0       	ldi	r24, 0x00	; 0
+ 120:	9a e0       	ldi	r25, 0x0A	; 10
+ 122:	20 e2       	ldi	r18, 0x20	; 32
+ 124:	fc 01       	movw	r30, r24
+ 126:	23 87       	std	Z+11, r18	; 0x0b
+}
+ 128:	00 00       	nop
+ 12a:	df 91       	pop	r29
+ 12c:	cf 91       	pop	r28
+ 12e:	ff 91       	pop	r31
+ 130:	ef 91       	pop	r30
+ 132:	9f 91       	pop	r25
+ 134:	8f 91       	pop	r24
+ 136:	2f 91       	pop	r18
+ 138:	0f 90       	pop	r0
+ 13a:	00 92 3f 00 	sts	0x003F, r0	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+ 13e:	0f 90       	pop	r0
+ 140:	1f 90       	pop	r1
+ 142:	18 95       	reti
+
+00000144 <__vector_11>:
+
+ISR(TCA0_CMP2_vect)
+{
+ 144:	1f 92       	push	r1
+ 146:	0f 92       	push	r0
+ 148:	00 90 3f 00 	lds	r0, 0x003F	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+ 14c:	0f 92       	push	r0
+ 14e:	11 24       	eor	r1, r1
+ 150:	2f 93       	push	r18
+ 152:	8f 93       	push	r24
+ 154:	9f 93       	push	r25
+ 156:	ef 93       	push	r30
+ 158:	ff 93       	push	r31
+ 15a:	cf 93       	push	r28
+ 15c:	df 93       	push	r29
+ 15e:	cd b7       	in	r28, 0x3d	; 61
+ 160:	de b7       	in	r29, 0x3e	; 62
+	/* Insert your TCA Compare 2 Interrupt handling code here */
+
+	/* The interrupt flag has to be cleared manually */
+	TCA0.SINGLE.INTFLAGS = TCA_SINGLE_CMP2_bm;
+ 162:	80 e0       	ldi	r24, 0x00	; 0
+ 164:	9a e0       	ldi	r25, 0x0A	; 10
+ 166:	20 e4       	ldi	r18, 0x40	; 64
+ 168:	fc 01       	movw	r30, r24
+ 16a:	23 87       	std	Z+11, r18	; 0x0b
+}
+ 16c:	00 00       	nop
+ 16e:	df 91       	pop	r29
+ 170:	cf 91       	pop	r28
+ 172:	ff 91       	pop	r31
+ 174:	ef 91       	pop	r30
+ 176:	9f 91       	pop	r25
+ 178:	8f 91       	pop	r24
+ 17a:	2f 91       	pop	r18
+ 17c:	0f 90       	pop	r0
+ 17e:	00 92 3f 00 	sts	0x003F, r0	; 0x80003f <__TEXT_REGION_LENGTH__+0x7f403f>
+ 182:	0f 90       	pop	r0
+ 184:	1f 90       	pop	r1
+ 186:	18 95       	reti
+
+00000188 <main>:
+#include <atmel_start.h>
+#include "led_function.h"
+
+int main(void)
+{
+ 188:	cf 93       	push	r28
+ 18a:	df 93       	push	r29
+ 18c:	cd b7       	in	r28, 0x3d	; 61
+ 18e:	de b7       	in	r29, 0x3e	; 62
+	/* Initializes MCU, drivers and middleware */
+	atmel_start_init();
+ 190:	0e 94 54 00 	call	0xa8	; 0xa8 <atmel_start_init>
+
+	/* Replace with your application code */
+	while (1) {
+		
+		RGB_brightness(128,128,128);
+ 194:	40 e8       	ldi	r20, 0x80	; 128
+ 196:	60 e8       	ldi	r22, 0x80	; 128
+ 198:	80 e8       	ldi	r24, 0x80	; 128
+ 19a:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <RGB_brightness>
+	}
+ 19e:	fa cf       	rjmp	.-12     	; 0x194 <main+0xc>
+
+000001a0 <RGB_brightness>:
+ *
+ * Created: 30-09-2023 15:40:29
+ *  Author: nevil
+ */ 
+#include "led_function.h"
+void RGB_brightness(uint8_t R,uint8_t G, uint8_t B){
+ 1a0:	cf 93       	push	r28
+ 1a2:	df 93       	push	r29
+ 1a4:	00 d0       	rcall	.+0      	; 0x1a6 <RGB_brightness+0x6>
+ 1a6:	1f 92       	push	r1
+ 1a8:	cd b7       	in	r28, 0x3d	; 61
+ 1aa:	de b7       	in	r29, 0x3e	; 62
+ 1ac:	89 83       	std	Y+1, r24	; 0x01
+ 1ae:	6a 83       	std	Y+2, r22	; 0x02
+ 1b0:	4b 83       	std	Y+3, r20	; 0x03
+	      TCA0_SINGLE_CMP0BUF = R;
+ 1b2:	88 e3       	ldi	r24, 0x38	; 56
+ 1b4:	9a e0       	ldi	r25, 0x0A	; 10
+ 1b6:	29 81       	ldd	r18, Y+1	; 0x01
+ 1b8:	22 2f       	mov	r18, r18
+ 1ba:	30 e0       	ldi	r19, 0x00	; 0
+ 1bc:	fc 01       	movw	r30, r24
+ 1be:	20 83       	st	Z, r18
+ 1c0:	31 83       	std	Z+1, r19	; 0x01
+	      TCA0_SINGLE_CMP1BUF = G;
+ 1c2:	8a e3       	ldi	r24, 0x3A	; 58
+ 1c4:	9a e0       	ldi	r25, 0x0A	; 10
+ 1c6:	2a 81       	ldd	r18, Y+2	; 0x02
+ 1c8:	22 2f       	mov	r18, r18
+ 1ca:	30 e0       	ldi	r19, 0x00	; 0
+ 1cc:	fc 01       	movw	r30, r24
+ 1ce:	20 83       	st	Z, r18
+ 1d0:	31 83       	std	Z+1, r19	; 0x01
+	      TCA0_SINGLE_CMP2BUF = B;
+ 1d2:	8c e3       	ldi	r24, 0x3C	; 60
+ 1d4:	9a e0       	ldi	r25, 0x0A	; 10
+ 1d6:	2b 81       	ldd	r18, Y+3	; 0x03
+ 1d8:	22 2f       	mov	r18, r18
+ 1da:	30 e0       	ldi	r19, 0x00	; 0
+ 1dc:	fc 01       	movw	r30, r24
+ 1de:	20 83       	st	Z, r18
+ 1e0:	31 83       	std	Z+1, r19	; 0x01
+		  TCA0_SINGLE_CMP0 |= TCA0_SINGLE_CMP0BUF;
+ 1e2:	88 e3       	ldi	r24, 0x38	; 56
+ 1e4:	9a e0       	ldi	r25, 0x0A	; 10
+ 1e6:	fc 01       	movw	r30, r24
+ 1e8:	20 81       	ld	r18, Z
+ 1ea:	31 81       	ldd	r19, Z+1	; 0x01
+ 1ec:	88 e2       	ldi	r24, 0x28	; 40
+ 1ee:	9a e0       	ldi	r25, 0x0A	; 10
+ 1f0:	48 e2       	ldi	r20, 0x28	; 40
+ 1f2:	5a e0       	ldi	r21, 0x0A	; 10
+ 1f4:	fa 01       	movw	r30, r20
+ 1f6:	40 81       	ld	r20, Z
+ 1f8:	51 81       	ldd	r21, Z+1	; 0x01
+ 1fa:	24 2b       	or	r18, r20
+ 1fc:	35 2b       	or	r19, r21
+ 1fe:	fc 01       	movw	r30, r24
+ 200:	20 83       	st	Z, r18
+ 202:	31 83       	std	Z+1, r19	; 0x01
+   		  TCA0_SINGLE_CMP1 |= TCA0_SINGLE_CMP1BUF;
+ 204:	8a e3       	ldi	r24, 0x3A	; 58
+ 206:	9a e0       	ldi	r25, 0x0A	; 10
+ 208:	fc 01       	movw	r30, r24
+ 20a:	20 81       	ld	r18, Z
+ 20c:	31 81       	ldd	r19, Z+1	; 0x01
+ 20e:	8a e2       	ldi	r24, 0x2A	; 42
+ 210:	9a e0       	ldi	r25, 0x0A	; 10
+ 212:	4a e2       	ldi	r20, 0x2A	; 42
+ 214:	5a e0       	ldi	r21, 0x0A	; 10
+ 216:	fa 01       	movw	r30, r20
+ 218:	40 81       	ld	r20, Z
+ 21a:	51 81       	ldd	r21, Z+1	; 0x01
+ 21c:	24 2b       	or	r18, r20
+ 21e:	35 2b       	or	r19, r21
+ 220:	fc 01       	movw	r30, r24
+ 222:	20 83       	st	Z, r18
+ 224:	31 83       	std	Z+1, r19	; 0x01
+   		  TCA0_SINGLE_CMP2 |= TCA0_SINGLE_CMP2BUF;
+ 226:	8c e3       	ldi	r24, 0x3C	; 60
+ 228:	9a e0       	ldi	r25, 0x0A	; 10
+ 22a:	fc 01       	movw	r30, r24
+ 22c:	20 81       	ld	r18, Z
+ 22e:	31 81       	ldd	r19, Z+1	; 0x01
+ 230:	8c e2       	ldi	r24, 0x2C	; 44
+ 232:	9a e0       	ldi	r25, 0x0A	; 10
+ 234:	4c e2       	ldi	r20, 0x2C	; 44
+ 236:	5a e0       	ldi	r21, 0x0A	; 10
+ 238:	fa 01       	movw	r30, r20
+ 23a:	40 81       	ld	r20, Z
+ 23c:	51 81       	ldd	r21, Z+1	; 0x01
+ 23e:	24 2b       	or	r18, r20
+ 240:	35 2b       	or	r19, r21
+ 242:	fc 01       	movw	r30, r24
+ 244:	20 83       	st	Z, r18
+ 246:	31 83       	std	Z+1, r19	; 0x01
+   		  	
+         }
+ 248:	00 00       	nop
+ 24a:	23 96       	adiw	r28, 0x03	; 3
+ 24c:	cd bf       	out	0x3d, r28	; 61
+ 24e:	de bf       	out	0x3e, r29	; 62
+ 250:	df 91       	pop	r29
+ 252:	cf 91       	pop	r28
+ 254:	08 95       	ret
+
+00000256 <BOD_init>:
+ * \brief Initialize Brownout Detector
+ *
+ * \return Initialization status.
+ */
+int8_t BOD_init()
+{
+ 256:	cf 93       	push	r28
+ 258:	df 93       	push	r29
+ 25a:	cd b7       	in	r28, 0x3d	; 61
+ 25c:	de b7       	in	r29, 0x3e	; 62
+	// BOD.INTCTRL = 0 << BOD_VLMIE_bp /* voltage level monitor interrrupt enable: disabled */
+	//		 | BOD_VLMCFG_BELOW_gc; /* Interrupt when supply goes below VLM level */
+
+	// BOD.VLMCTRLA = BOD_VLMLVL_5ABOVE_gc; /* VLM threshold 5% above BOD level */
+
+	return 0;
+ 25e:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 260:	df 91       	pop	r29
+ 262:	cf 91       	pop	r28
+ 264:	08 95       	ret
+
+00000266 <CLKCTRL_init>:
+ * \brief Initialize clkctrl interface
+ *
+ * \return Initialization status.
+ */
+int8_t CLKCTRL_init()
+{
+ 266:	cf 93       	push	r28
+ 268:	df 93       	push	r29
+ 26a:	cd b7       	in	r28, 0x3d	; 61
+ 26c:	de b7       	in	r29, 0x3e	; 62
+	// ccp_write_io((void*)&(CLKCTRL.MCLKCTRLA),CLKCTRL_CLKSEL_OSC20M_gc /* 20MHz Internal Oscillator (OSC20M) */
+	//		 | 0 << CLKCTRL_CLKOUT_bp /* System clock out: disabled */);
+
+	// ccp_write_io((void*)&(CLKCTRL.MCLKLOCK),0 << CLKCTRL_LOCKEN_bp /* lock enable: disabled */);
+
+	return 0;
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 270:	df 91       	pop	r29
+ 272:	cf 91       	pop	r28
+ 274:	08 95       	ret
+
+00000276 <CPUINT_init>:
+ * \brief Initialize cpuint interface
+ *
+ * \return Initialization status
+ */
+int8_t CPUINT_init()
+{
+ 276:	cf 93       	push	r28
+ 278:	df 93       	push	r29
+ 27a:	cd b7       	in	r28, 0x3d	; 61
+ 27c:	de b7       	in	r29, 0x3e	; 62
+
+	// CPUINT.LVL0PRI = 0x0 << CPUINT_LVL0PRI_gp; /* Interrupt Level Priority: 0x0 */
+
+	// CPUINT.LVL1VEC = 0x0 << CPUINT_LVL1VEC_gp; /* Interrupt Vector with High Priority: 0x0 */
+
+	return 0;
+ 27e:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 280:	df 91       	pop	r29
+ 282:	cf 91       	pop	r28
+ 284:	08 95       	ret
+
+00000286 <PORTA_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTA_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 286:	cf 93       	push	r28
+ 288:	df 93       	push	r29
+ 28a:	00 d0       	rcall	.+0      	; 0x28c <PORTA_set_pin_dir+0x6>
+ 28c:	cd b7       	in	r28, 0x3d	; 61
+ 28e:	de b7       	in	r29, 0x3e	; 62
+ 290:	89 83       	std	Y+1, r24	; 0x01
+ 292:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 294:	8a 81       	ldd	r24, Y+2	; 0x02
+ 296:	88 2f       	mov	r24, r24
+ 298:	90 e0       	ldi	r25, 0x00	; 0
+ 29a:	81 30       	cpi	r24, 0x01	; 1
+ 29c:	91 05       	cpc	r25, r1
+ 29e:	e1 f0       	breq	.+56     	; 0x2d8 <PORTA_set_pin_dir+0x52>
+ 2a0:	82 30       	cpi	r24, 0x02	; 2
+ 2a2:	91 05       	cpc	r25, r1
+ 2a4:	71 f1       	breq	.+92     	; 0x302 <PORTA_set_pin_dir+0x7c>
+ 2a6:	89 2b       	or	r24, r25
+ 2a8:	09 f0       	breq	.+2      	; 0x2ac <PORTA_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTA + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 2aa:	3b c0       	rjmp	.+118    	; 0x322 <PORTA_set_pin_dir+0x9c>
+ */
+static inline void PORTA_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTA.DIR &= ~(1 << pin);
+ 2ac:	20 e0       	ldi	r18, 0x00	; 0
+ 2ae:	30 e0       	ldi	r19, 0x00	; 0
+ 2b0:	80 e0       	ldi	r24, 0x00	; 0
+ 2b2:	90 e0       	ldi	r25, 0x00	; 0
+ 2b4:	fc 01       	movw	r30, r24
+ 2b6:	80 81       	ld	r24, Z
+ 2b8:	68 2f       	mov	r22, r24
+ 2ba:	89 81       	ldd	r24, Y+1	; 0x01
+ 2bc:	48 2f       	mov	r20, r24
+ 2be:	50 e0       	ldi	r21, 0x00	; 0
+ 2c0:	81 e0       	ldi	r24, 0x01	; 1
+ 2c2:	90 e0       	ldi	r25, 0x00	; 0
+ 2c4:	02 c0       	rjmp	.+4      	; 0x2ca <PORTA_set_pin_dir+0x44>
+ 2c6:	88 0f       	add	r24, r24
+ 2c8:	99 1f       	adc	r25, r25
+ 2ca:	4a 95       	dec	r20
+ 2cc:	e2 f7       	brpl	.-8      	; 0x2c6 <PORTA_set_pin_dir+0x40>
+ 2ce:	80 95       	com	r24
+ 2d0:	86 23       	and	r24, r22
+ 2d2:	f9 01       	movw	r30, r18
+ 2d4:	80 83       	st	Z, r24
+		break;
+ 2d6:	25 c0       	rjmp	.+74     	; 0x322 <PORTA_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTA.DIR |= (1 << pin);
+ 2d8:	20 e0       	ldi	r18, 0x00	; 0
+ 2da:	30 e0       	ldi	r19, 0x00	; 0
+ 2dc:	80 e0       	ldi	r24, 0x00	; 0
+ 2de:	90 e0       	ldi	r25, 0x00	; 0
+ 2e0:	fc 01       	movw	r30, r24
+ 2e2:	80 81       	ld	r24, Z
+ 2e4:	68 2f       	mov	r22, r24
+ 2e6:	89 81       	ldd	r24, Y+1	; 0x01
+ 2e8:	48 2f       	mov	r20, r24
+ 2ea:	50 e0       	ldi	r21, 0x00	; 0
+ 2ec:	81 e0       	ldi	r24, 0x01	; 1
+ 2ee:	90 e0       	ldi	r25, 0x00	; 0
+ 2f0:	02 c0       	rjmp	.+4      	; 0x2f6 <PORTA_set_pin_dir+0x70>
+ 2f2:	88 0f       	add	r24, r24
+ 2f4:	99 1f       	adc	r25, r25
+ 2f6:	4a 95       	dec	r20
+ 2f8:	e2 f7       	brpl	.-8      	; 0x2f2 <PORTA_set_pin_dir+0x6c>
+ 2fa:	86 2b       	or	r24, r22
+ 2fc:	f9 01       	movw	r30, r18
+ 2fe:	80 83       	st	Z, r24
+		break;
+ 300:	10 c0       	rjmp	.+32     	; 0x322 <PORTA_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTA + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 302:	89 81       	ldd	r24, Y+1	; 0x01
+ 304:	88 2f       	mov	r24, r24
+ 306:	90 e0       	ldi	r25, 0x00	; 0
+ 308:	80 5f       	subi	r24, 0xF0	; 240
+ 30a:	9b 4f       	sbci	r25, 0xFB	; 251
+ 30c:	29 81       	ldd	r18, Y+1	; 0x01
+ 30e:	22 2f       	mov	r18, r18
+ 310:	30 e0       	ldi	r19, 0x00	; 0
+ 312:	20 5f       	subi	r18, 0xF0	; 240
+ 314:	3b 4f       	sbci	r19, 0xFB	; 251
+ 316:	f9 01       	movw	r30, r18
+ 318:	20 81       	ld	r18, Z
+ 31a:	28 60       	ori	r18, 0x08	; 8
+ 31c:	fc 01       	movw	r30, r24
+ 31e:	20 83       	st	Z, r18
+		break;
+ 320:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 322:	00 00       	nop
+ 324:	0f 90       	pop	r0
+ 326:	0f 90       	pop	r0
+ 328:	df 91       	pop	r29
+ 32a:	cf 91       	pop	r28
+ 32c:	08 95       	ret
+
+0000032e <PORTA_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+ 32e:	cf 93       	push	r28
+ 330:	df 93       	push	r29
+ 332:	00 d0       	rcall	.+0      	; 0x334 <PORTA_set_pin_level+0x6>
+ 334:	cd b7       	in	r28, 0x3d	; 61
+ 336:	de b7       	in	r29, 0x3e	; 62
+ 338:	89 83       	std	Y+1, r24	; 0x01
+ 33a:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 33c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 33e:	88 23       	and	r24, r24
+ 340:	a9 f0       	breq	.+42     	; 0x36c <PORTA_set_pin_level+0x3e>
+		VPORTA.OUT |= (1 << pin);
+ 342:	20 e0       	ldi	r18, 0x00	; 0
+ 344:	30 e0       	ldi	r19, 0x00	; 0
+ 346:	80 e0       	ldi	r24, 0x00	; 0
+ 348:	90 e0       	ldi	r25, 0x00	; 0
+ 34a:	fc 01       	movw	r30, r24
+ 34c:	81 81       	ldd	r24, Z+1	; 0x01
+ 34e:	68 2f       	mov	r22, r24
+ 350:	89 81       	ldd	r24, Y+1	; 0x01
+ 352:	48 2f       	mov	r20, r24
+ 354:	50 e0       	ldi	r21, 0x00	; 0
+ 356:	81 e0       	ldi	r24, 0x01	; 1
+ 358:	90 e0       	ldi	r25, 0x00	; 0
+ 35a:	02 c0       	rjmp	.+4      	; 0x360 <PORTA_set_pin_level+0x32>
+ 35c:	88 0f       	add	r24, r24
+ 35e:	99 1f       	adc	r25, r25
+ 360:	4a 95       	dec	r20
+ 362:	e2 f7       	brpl	.-8      	; 0x35c <PORTA_set_pin_level+0x2e>
+ 364:	86 2b       	or	r24, r22
+ 366:	f9 01       	movw	r30, r18
+ 368:	81 83       	std	Z+1, r24	; 0x01
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+	}
+}
+ 36a:	15 c0       	rjmp	.+42     	; 0x396 <PORTA_set_pin_level+0x68>
+static inline void PORTA_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTA.OUT |= (1 << pin);
+	} else {
+		VPORTA.OUT &= ~(1 << pin);
+ 36c:	20 e0       	ldi	r18, 0x00	; 0
+ 36e:	30 e0       	ldi	r19, 0x00	; 0
+ 370:	80 e0       	ldi	r24, 0x00	; 0
+ 372:	90 e0       	ldi	r25, 0x00	; 0
+ 374:	fc 01       	movw	r30, r24
+ 376:	81 81       	ldd	r24, Z+1	; 0x01
+ 378:	68 2f       	mov	r22, r24
+ 37a:	89 81       	ldd	r24, Y+1	; 0x01
+ 37c:	48 2f       	mov	r20, r24
+ 37e:	50 e0       	ldi	r21, 0x00	; 0
+ 380:	81 e0       	ldi	r24, 0x01	; 1
+ 382:	90 e0       	ldi	r25, 0x00	; 0
+ 384:	02 c0       	rjmp	.+4      	; 0x38a <PORTA_set_pin_level+0x5c>
+ 386:	88 0f       	add	r24, r24
+ 388:	99 1f       	adc	r25, r25
+ 38a:	4a 95       	dec	r20
+ 38c:	e2 f7       	brpl	.-8      	; 0x386 <PORTA_set_pin_level+0x58>
+ 38e:	80 95       	com	r24
+ 390:	86 23       	and	r24, r22
+ 392:	f9 01       	movw	r30, r18
+ 394:	81 83       	std	Z+1, r24	; 0x01
+	}
+}
+ 396:	00 00       	nop
+ 398:	0f 90       	pop	r0
+ 39a:	0f 90       	pop	r0
+ 39c:	df 91       	pop	r29
+ 39e:	cf 91       	pop	r28
+ 3a0:	08 95       	ret
+
+000003a2 <PORTD_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTD_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 3a2:	cf 93       	push	r28
+ 3a4:	df 93       	push	r29
+ 3a6:	00 d0       	rcall	.+0      	; 0x3a8 <PORTD_set_pin_dir+0x6>
+ 3a8:	cd b7       	in	r28, 0x3d	; 61
+ 3aa:	de b7       	in	r29, 0x3e	; 62
+ 3ac:	89 83       	std	Y+1, r24	; 0x01
+ 3ae:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 3b0:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3b2:	88 2f       	mov	r24, r24
+ 3b4:	90 e0       	ldi	r25, 0x00	; 0
+ 3b6:	81 30       	cpi	r24, 0x01	; 1
+ 3b8:	91 05       	cpc	r25, r1
+ 3ba:	e1 f0       	breq	.+56     	; 0x3f4 <PORTD_set_pin_dir+0x52>
+ 3bc:	82 30       	cpi	r24, 0x02	; 2
+ 3be:	91 05       	cpc	r25, r1
+ 3c0:	71 f1       	breq	.+92     	; 0x41e <__LOCK_REGION_LENGTH__+0x1e>
+ 3c2:	89 2b       	or	r24, r25
+ 3c4:	09 f0       	breq	.+2      	; 0x3c8 <PORTD_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTD + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 3c6:	3b c0       	rjmp	.+118    	; 0x43e <__LOCK_REGION_LENGTH__+0x3e>
+ */
+static inline void PORTD_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTD.DIR &= ~(1 << pin);
+ 3c8:	8c e0       	ldi	r24, 0x0C	; 12
+ 3ca:	90 e0       	ldi	r25, 0x00	; 0
+ 3cc:	2c e0       	ldi	r18, 0x0C	; 12
+ 3ce:	30 e0       	ldi	r19, 0x00	; 0
+ 3d0:	f9 01       	movw	r30, r18
+ 3d2:	20 81       	ld	r18, Z
+ 3d4:	62 2f       	mov	r22, r18
+ 3d6:	29 81       	ldd	r18, Y+1	; 0x01
+ 3d8:	42 2f       	mov	r20, r18
+ 3da:	50 e0       	ldi	r21, 0x00	; 0
+ 3dc:	21 e0       	ldi	r18, 0x01	; 1
+ 3de:	30 e0       	ldi	r19, 0x00	; 0
+ 3e0:	02 c0       	rjmp	.+4      	; 0x3e6 <PORTD_set_pin_dir+0x44>
+ 3e2:	22 0f       	add	r18, r18
+ 3e4:	33 1f       	adc	r19, r19
+ 3e6:	4a 95       	dec	r20
+ 3e8:	e2 f7       	brpl	.-8      	; 0x3e2 <PORTD_set_pin_dir+0x40>
+ 3ea:	20 95       	com	r18
+ 3ec:	26 23       	and	r18, r22
+ 3ee:	fc 01       	movw	r30, r24
+ 3f0:	20 83       	st	Z, r18
+		break;
+ 3f2:	25 c0       	rjmp	.+74     	; 0x43e <__LOCK_REGION_LENGTH__+0x3e>
+	case PORT_DIR_OUT:
+		VPORTD.DIR |= (1 << pin);
+ 3f4:	8c e0       	ldi	r24, 0x0C	; 12
+ 3f6:	90 e0       	ldi	r25, 0x00	; 0
+ 3f8:	2c e0       	ldi	r18, 0x0C	; 12
+ 3fa:	30 e0       	ldi	r19, 0x00	; 0
+ 3fc:	f9 01       	movw	r30, r18
+ 3fe:	20 81       	ld	r18, Z
+ 400:	62 2f       	mov	r22, r18
+ 402:	29 81       	ldd	r18, Y+1	; 0x01
+ 404:	42 2f       	mov	r20, r18
+ 406:	50 e0       	ldi	r21, 0x00	; 0
+ 408:	21 e0       	ldi	r18, 0x01	; 1
+ 40a:	30 e0       	ldi	r19, 0x00	; 0
+ 40c:	02 c0       	rjmp	.+4      	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+ 40e:	22 0f       	add	r18, r18
+ 410:	33 1f       	adc	r19, r19
+ 412:	4a 95       	dec	r20
+ 414:	e2 f7       	brpl	.-8      	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+ 416:	26 2b       	or	r18, r22
+ 418:	fc 01       	movw	r30, r24
+ 41a:	20 83       	st	Z, r18
+		break;
+ 41c:	10 c0       	rjmp	.+32     	; 0x43e <__LOCK_REGION_LENGTH__+0x3e>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTD + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 41e:	89 81       	ldd	r24, Y+1	; 0x01
+ 420:	88 2f       	mov	r24, r24
+ 422:	90 e0       	ldi	r25, 0x00	; 0
+ 424:	80 59       	subi	r24, 0x90	; 144
+ 426:	9b 4f       	sbci	r25, 0xFB	; 251
+ 428:	29 81       	ldd	r18, Y+1	; 0x01
+ 42a:	22 2f       	mov	r18, r18
+ 42c:	30 e0       	ldi	r19, 0x00	; 0
+ 42e:	20 59       	subi	r18, 0x90	; 144
+ 430:	3b 4f       	sbci	r19, 0xFB	; 251
+ 432:	f9 01       	movw	r30, r18
+ 434:	20 81       	ld	r18, Z
+ 436:	28 60       	ori	r18, 0x08	; 8
+ 438:	fc 01       	movw	r30, r24
+ 43a:	20 83       	st	Z, r18
+		break;
+ 43c:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 43e:	00 00       	nop
+ 440:	0f 90       	pop	r0
+ 442:	0f 90       	pop	r0
+ 444:	df 91       	pop	r29
+ 446:	cf 91       	pop	r28
+ 448:	08 95       	ret
+
+0000044a <PORTD_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+ 44a:	cf 93       	push	r28
+ 44c:	df 93       	push	r29
+ 44e:	00 d0       	rcall	.+0      	; 0x450 <PORTD_set_pin_level+0x6>
+ 450:	cd b7       	in	r28, 0x3d	; 61
+ 452:	de b7       	in	r29, 0x3e	; 62
+ 454:	89 83       	std	Y+1, r24	; 0x01
+ 456:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 458:	8a 81       	ldd	r24, Y+2	; 0x02
+ 45a:	88 23       	and	r24, r24
+ 45c:	a9 f0       	breq	.+42     	; 0x488 <PORTD_set_pin_level+0x3e>
+		VPORTD.OUT |= (1 << pin);
+ 45e:	8c e0       	ldi	r24, 0x0C	; 12
+ 460:	90 e0       	ldi	r25, 0x00	; 0
+ 462:	2c e0       	ldi	r18, 0x0C	; 12
+ 464:	30 e0       	ldi	r19, 0x00	; 0
+ 466:	f9 01       	movw	r30, r18
+ 468:	21 81       	ldd	r18, Z+1	; 0x01
+ 46a:	62 2f       	mov	r22, r18
+ 46c:	29 81       	ldd	r18, Y+1	; 0x01
+ 46e:	42 2f       	mov	r20, r18
+ 470:	50 e0       	ldi	r21, 0x00	; 0
+ 472:	21 e0       	ldi	r18, 0x01	; 1
+ 474:	30 e0       	ldi	r19, 0x00	; 0
+ 476:	02 c0       	rjmp	.+4      	; 0x47c <PORTD_set_pin_level+0x32>
+ 478:	22 0f       	add	r18, r18
+ 47a:	33 1f       	adc	r19, r19
+ 47c:	4a 95       	dec	r20
+ 47e:	e2 f7       	brpl	.-8      	; 0x478 <PORTD_set_pin_level+0x2e>
+ 480:	26 2b       	or	r18, r22
+ 482:	fc 01       	movw	r30, r24
+ 484:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+	}
+}
+ 486:	15 c0       	rjmp	.+42     	; 0x4b2 <PORTD_set_pin_level+0x68>
+static inline void PORTD_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTD.OUT |= (1 << pin);
+	} else {
+		VPORTD.OUT &= ~(1 << pin);
+ 488:	8c e0       	ldi	r24, 0x0C	; 12
+ 48a:	90 e0       	ldi	r25, 0x00	; 0
+ 48c:	2c e0       	ldi	r18, 0x0C	; 12
+ 48e:	30 e0       	ldi	r19, 0x00	; 0
+ 490:	f9 01       	movw	r30, r18
+ 492:	21 81       	ldd	r18, Z+1	; 0x01
+ 494:	62 2f       	mov	r22, r18
+ 496:	29 81       	ldd	r18, Y+1	; 0x01
+ 498:	42 2f       	mov	r20, r18
+ 49a:	50 e0       	ldi	r21, 0x00	; 0
+ 49c:	21 e0       	ldi	r18, 0x01	; 1
+ 49e:	30 e0       	ldi	r19, 0x00	; 0
+ 4a0:	02 c0       	rjmp	.+4      	; 0x4a6 <PORTD_set_pin_level+0x5c>
+ 4a2:	22 0f       	add	r18, r18
+ 4a4:	33 1f       	adc	r19, r19
+ 4a6:	4a 95       	dec	r20
+ 4a8:	e2 f7       	brpl	.-8      	; 0x4a2 <PORTD_set_pin_level+0x58>
+ 4aa:	20 95       	com	r18
+ 4ac:	26 23       	and	r18, r22
+ 4ae:	fc 01       	movw	r30, r24
+ 4b0:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 4b2:	00 00       	nop
+ 4b4:	0f 90       	pop	r0
+ 4b6:	0f 90       	pop	r0
+ 4b8:	df 91       	pop	r29
+ 4ba:	cf 91       	pop	r28
+ 4bc:	08 95       	ret
+
+000004be <PORTF_set_pin_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void PORTF_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+ 4be:	cf 93       	push	r28
+ 4c0:	df 93       	push	r29
+ 4c2:	00 d0       	rcall	.+0      	; 0x4c4 <PORTF_set_pin_dir+0x6>
+ 4c4:	cd b7       	in	r28, 0x3d	; 61
+ 4c6:	de b7       	in	r29, 0x3e	; 62
+ 4c8:	89 83       	std	Y+1, r24	; 0x01
+ 4ca:	6a 83       	std	Y+2, r22	; 0x02
+	switch (dir) {
+ 4cc:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4ce:	88 2f       	mov	r24, r24
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	81 30       	cpi	r24, 0x01	; 1
+ 4d4:	91 05       	cpc	r25, r1
+ 4d6:	e1 f0       	breq	.+56     	; 0x510 <PORTF_set_pin_dir+0x52>
+ 4d8:	82 30       	cpi	r24, 0x02	; 2
+ 4da:	91 05       	cpc	r25, r1
+ 4dc:	71 f1       	breq	.+92     	; 0x53a <PORTF_set_pin_dir+0x7c>
+ 4de:	89 2b       	or	r24, r25
+ 4e0:	09 f0       	breq	.+2      	; 0x4e4 <PORTF_set_pin_dir+0x26>
+		break;
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTF + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+		break;
+	default:
+		break;
+ 4e2:	3b c0       	rjmp	.+118    	; 0x55a <PORTF_set_pin_dir+0x9c>
+ */
+static inline void PORTF_set_pin_dir(const uint8_t pin, const enum port_dir dir)
+{
+	switch (dir) {
+	case PORT_DIR_IN:
+		VPORTF.DIR &= ~(1 << pin);
+ 4e4:	84 e1       	ldi	r24, 0x14	; 20
+ 4e6:	90 e0       	ldi	r25, 0x00	; 0
+ 4e8:	24 e1       	ldi	r18, 0x14	; 20
+ 4ea:	30 e0       	ldi	r19, 0x00	; 0
+ 4ec:	f9 01       	movw	r30, r18
+ 4ee:	20 81       	ld	r18, Z
+ 4f0:	62 2f       	mov	r22, r18
+ 4f2:	29 81       	ldd	r18, Y+1	; 0x01
+ 4f4:	42 2f       	mov	r20, r18
+ 4f6:	50 e0       	ldi	r21, 0x00	; 0
+ 4f8:	21 e0       	ldi	r18, 0x01	; 1
+ 4fa:	30 e0       	ldi	r19, 0x00	; 0
+ 4fc:	02 c0       	rjmp	.+4      	; 0x502 <PORTF_set_pin_dir+0x44>
+ 4fe:	22 0f       	add	r18, r18
+ 500:	33 1f       	adc	r19, r19
+ 502:	4a 95       	dec	r20
+ 504:	e2 f7       	brpl	.-8      	; 0x4fe <PORTF_set_pin_dir+0x40>
+ 506:	20 95       	com	r18
+ 508:	26 23       	and	r18, r22
+ 50a:	fc 01       	movw	r30, r24
+ 50c:	20 83       	st	Z, r18
+		break;
+ 50e:	25 c0       	rjmp	.+74     	; 0x55a <PORTF_set_pin_dir+0x9c>
+	case PORT_DIR_OUT:
+		VPORTF.DIR |= (1 << pin);
+ 510:	84 e1       	ldi	r24, 0x14	; 20
+ 512:	90 e0       	ldi	r25, 0x00	; 0
+ 514:	24 e1       	ldi	r18, 0x14	; 20
+ 516:	30 e0       	ldi	r19, 0x00	; 0
+ 518:	f9 01       	movw	r30, r18
+ 51a:	20 81       	ld	r18, Z
+ 51c:	62 2f       	mov	r22, r18
+ 51e:	29 81       	ldd	r18, Y+1	; 0x01
+ 520:	42 2f       	mov	r20, r18
+ 522:	50 e0       	ldi	r21, 0x00	; 0
+ 524:	21 e0       	ldi	r18, 0x01	; 1
+ 526:	30 e0       	ldi	r19, 0x00	; 0
+ 528:	02 c0       	rjmp	.+4      	; 0x52e <PORTF_set_pin_dir+0x70>
+ 52a:	22 0f       	add	r18, r18
+ 52c:	33 1f       	adc	r19, r19
+ 52e:	4a 95       	dec	r20
+ 530:	e2 f7       	brpl	.-8      	; 0x52a <PORTF_set_pin_dir+0x6c>
+ 532:	26 2b       	or	r18, r22
+ 534:	fc 01       	movw	r30, r24
+ 536:	20 83       	st	Z, r18
+		break;
+ 538:	10 c0       	rjmp	.+32     	; 0x55a <PORTF_set_pin_dir+0x9c>
+	case PORT_DIR_OFF:
+		*((uint8_t *)&PORTF + 0x10 + pin) |= 1 << PORT_PULLUPEN_bp;
+ 53a:	89 81       	ldd	r24, Y+1	; 0x01
+ 53c:	88 2f       	mov	r24, r24
+ 53e:	90 e0       	ldi	r25, 0x00	; 0
+ 540:	80 55       	subi	r24, 0x50	; 80
+ 542:	9b 4f       	sbci	r25, 0xFB	; 251
+ 544:	29 81       	ldd	r18, Y+1	; 0x01
+ 546:	22 2f       	mov	r18, r18
+ 548:	30 e0       	ldi	r19, 0x00	; 0
+ 54a:	20 55       	subi	r18, 0x50	; 80
+ 54c:	3b 4f       	sbci	r19, 0xFB	; 251
+ 54e:	f9 01       	movw	r30, r18
+ 550:	20 81       	ld	r18, Z
+ 552:	28 60       	ori	r18, 0x08	; 8
+ 554:	fc 01       	movw	r30, r24
+ 556:	20 83       	st	Z, r18
+		break;
+ 558:	00 00       	nop
+	default:
+		break;
+	}
+}
+ 55a:	00 00       	nop
+ 55c:	0f 90       	pop	r0
+ 55e:	0f 90       	pop	r0
+ 560:	df 91       	pop	r29
+ 562:	cf 91       	pop	r28
+ 564:	08 95       	ret
+
+00000566 <PORTF_set_pin_level>:
+ * \param[in] pin       The pin number within port
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+ 566:	cf 93       	push	r28
+ 568:	df 93       	push	r29
+ 56a:	00 d0       	rcall	.+0      	; 0x56c <PORTF_set_pin_level+0x6>
+ 56c:	cd b7       	in	r28, 0x3d	; 61
+ 56e:	de b7       	in	r29, 0x3e	; 62
+ 570:	89 83       	std	Y+1, r24	; 0x01
+ 572:	6a 83       	std	Y+2, r22	; 0x02
+	if (level == true) {
+ 574:	8a 81       	ldd	r24, Y+2	; 0x02
+ 576:	88 23       	and	r24, r24
+ 578:	a9 f0       	breq	.+42     	; 0x5a4 <PORTF_set_pin_level+0x3e>
+		VPORTF.OUT |= (1 << pin);
+ 57a:	84 e1       	ldi	r24, 0x14	; 20
+ 57c:	90 e0       	ldi	r25, 0x00	; 0
+ 57e:	24 e1       	ldi	r18, 0x14	; 20
+ 580:	30 e0       	ldi	r19, 0x00	; 0
+ 582:	f9 01       	movw	r30, r18
+ 584:	21 81       	ldd	r18, Z+1	; 0x01
+ 586:	62 2f       	mov	r22, r18
+ 588:	29 81       	ldd	r18, Y+1	; 0x01
+ 58a:	42 2f       	mov	r20, r18
+ 58c:	50 e0       	ldi	r21, 0x00	; 0
+ 58e:	21 e0       	ldi	r18, 0x01	; 1
+ 590:	30 e0       	ldi	r19, 0x00	; 0
+ 592:	02 c0       	rjmp	.+4      	; 0x598 <PORTF_set_pin_level+0x32>
+ 594:	22 0f       	add	r18, r18
+ 596:	33 1f       	adc	r19, r19
+ 598:	4a 95       	dec	r20
+ 59a:	e2 f7       	brpl	.-8      	; 0x594 <PORTF_set_pin_level+0x2e>
+ 59c:	26 2b       	or	r18, r22
+ 59e:	fc 01       	movw	r30, r24
+ 5a0:	21 83       	std	Z+1, r18	; 0x01
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+	}
+}
+ 5a2:	15 c0       	rjmp	.+42     	; 0x5ce <PORTF_set_pin_level+0x68>
+static inline void PORTF_set_pin_level(const uint8_t pin, const bool level)
+{
+	if (level == true) {
+		VPORTF.OUT |= (1 << pin);
+	} else {
+		VPORTF.OUT &= ~(1 << pin);
+ 5a4:	84 e1       	ldi	r24, 0x14	; 20
+ 5a6:	90 e0       	ldi	r25, 0x00	; 0
+ 5a8:	24 e1       	ldi	r18, 0x14	; 20
+ 5aa:	30 e0       	ldi	r19, 0x00	; 0
+ 5ac:	f9 01       	movw	r30, r18
+ 5ae:	21 81       	ldd	r18, Z+1	; 0x01
+ 5b0:	62 2f       	mov	r22, r18
+ 5b2:	29 81       	ldd	r18, Y+1	; 0x01
+ 5b4:	42 2f       	mov	r20, r18
+ 5b6:	50 e0       	ldi	r21, 0x00	; 0
+ 5b8:	21 e0       	ldi	r18, 0x01	; 1
+ 5ba:	30 e0       	ldi	r19, 0x00	; 0
+ 5bc:	02 c0       	rjmp	.+4      	; 0x5c2 <PORTF_set_pin_level+0x5c>
+ 5be:	22 0f       	add	r18, r18
+ 5c0:	33 1f       	adc	r19, r19
+ 5c2:	4a 95       	dec	r20
+ 5c4:	e2 f7       	brpl	.-8      	; 0x5be <PORTF_set_pin_level+0x58>
+ 5c6:	20 95       	com	r18
+ 5c8:	26 23       	and	r18, r22
+ 5ca:	fc 01       	movw	r30, r24
+ 5cc:	21 83       	std	Z+1, r18	; 0x01
+	}
+}
+ 5ce:	00 00       	nop
+ 5d0:	0f 90       	pop	r0
+ 5d2:	0f 90       	pop	r0
+ 5d4:	df 91       	pop	r29
+ 5d6:	cf 91       	pop	r28
+ 5d8:	08 95       	ret
+
+000005da <W0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void W0_MCU_set_dir(const enum port_dir dir)
+{
+ 5da:	cf 93       	push	r28
+ 5dc:	df 93       	push	r29
+ 5de:	1f 92       	push	r1
+ 5e0:	cd b7       	in	r28, 0x3d	; 61
+ 5e2:	de b7       	in	r29, 0x3e	; 62
+ 5e4:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_dir(3, dir);
+ 5e6:	69 81       	ldd	r22, Y+1	; 0x01
+ 5e8:	83 e0       	ldi	r24, 0x03	; 3
+ 5ea:	0e 94 43 01 	call	0x286	; 0x286 <PORTA_set_pin_dir>
+}
+ 5ee:	00 00       	nop
+ 5f0:	0f 90       	pop	r0
+ 5f2:	df 91       	pop	r29
+ 5f4:	cf 91       	pop	r28
+ 5f6:	08 95       	ret
+
+000005f8 <W0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void W0_MCU_set_level(const bool level)
+{
+ 5f8:	cf 93       	push	r28
+ 5fa:	df 93       	push	r29
+ 5fc:	1f 92       	push	r1
+ 5fe:	cd b7       	in	r28, 0x3d	; 61
+ 600:	de b7       	in	r29, 0x3e	; 62
+ 602:	89 83       	std	Y+1, r24	; 0x01
+	PORTA_set_pin_level(3, level);
+ 604:	69 81       	ldd	r22, Y+1	; 0x01
+ 606:	83 e0       	ldi	r24, 0x03	; 3
+ 608:	0e 94 97 01 	call	0x32e	; 0x32e <PORTA_set_pin_level>
+}
+ 60c:	00 00       	nop
+ 60e:	0f 90       	pop	r0
+ 610:	df 91       	pop	r29
+ 612:	cf 91       	pop	r28
+ 614:	08 95       	ret
+
+00000616 <R0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R0_MCU_set_dir(const enum port_dir dir)
+{
+ 616:	cf 93       	push	r28
+ 618:	df 93       	push	r29
+ 61a:	1f 92       	push	r1
+ 61c:	cd b7       	in	r28, 0x3d	; 61
+ 61e:	de b7       	in	r29, 0x3e	; 62
+ 620:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(0, dir);
+ 622:	69 81       	ldd	r22, Y+1	; 0x01
+ 624:	80 e0       	ldi	r24, 0x00	; 0
+ 626:	0e 94 d1 01 	call	0x3a2	; 0x3a2 <PORTD_set_pin_dir>
+}
+ 62a:	00 00       	nop
+ 62c:	0f 90       	pop	r0
+ 62e:	df 91       	pop	r29
+ 630:	cf 91       	pop	r28
+ 632:	08 95       	ret
+
+00000634 <R0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R0_MCU_set_level(const bool level)
+{
+ 634:	cf 93       	push	r28
+ 636:	df 93       	push	r29
+ 638:	1f 92       	push	r1
+ 63a:	cd b7       	in	r28, 0x3d	; 61
+ 63c:	de b7       	in	r29, 0x3e	; 62
+ 63e:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(0, level);
+ 640:	69 81       	ldd	r22, Y+1	; 0x01
+ 642:	80 e0       	ldi	r24, 0x00	; 0
+ 644:	0e 94 25 02 	call	0x44a	; 0x44a <PORTD_set_pin_level>
+}
+ 648:	00 00       	nop
+ 64a:	0f 90       	pop	r0
+ 64c:	df 91       	pop	r29
+ 64e:	cf 91       	pop	r28
+ 650:	08 95       	ret
+
+00000652 <G0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void G0_MCU_set_dir(const enum port_dir dir)
+{
+ 652:	cf 93       	push	r28
+ 654:	df 93       	push	r29
+ 656:	1f 92       	push	r1
+ 658:	cd b7       	in	r28, 0x3d	; 61
+ 65a:	de b7       	in	r29, 0x3e	; 62
+ 65c:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(1, dir);
+ 65e:	69 81       	ldd	r22, Y+1	; 0x01
+ 660:	81 e0       	ldi	r24, 0x01	; 1
+ 662:	0e 94 d1 01 	call	0x3a2	; 0x3a2 <PORTD_set_pin_dir>
+}
+ 666:	00 00       	nop
+ 668:	0f 90       	pop	r0
+ 66a:	df 91       	pop	r29
+ 66c:	cf 91       	pop	r28
+ 66e:	08 95       	ret
+
+00000670 <G0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void G0_MCU_set_level(const bool level)
+{
+ 670:	cf 93       	push	r28
+ 672:	df 93       	push	r29
+ 674:	1f 92       	push	r1
+ 676:	cd b7       	in	r28, 0x3d	; 61
+ 678:	de b7       	in	r29, 0x3e	; 62
+ 67a:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(1, level);
+ 67c:	69 81       	ldd	r22, Y+1	; 0x01
+ 67e:	81 e0       	ldi	r24, 0x01	; 1
+ 680:	0e 94 25 02 	call	0x44a	; 0x44a <PORTD_set_pin_level>
+}
+ 684:	00 00       	nop
+ 686:	0f 90       	pop	r0
+ 688:	df 91       	pop	r29
+ 68a:	cf 91       	pop	r28
+ 68c:	08 95       	ret
+
+0000068e <B0_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void B0_MCU_set_dir(const enum port_dir dir)
+{
+ 68e:	cf 93       	push	r28
+ 690:	df 93       	push	r29
+ 692:	1f 92       	push	r1
+ 694:	cd b7       	in	r28, 0x3d	; 61
+ 696:	de b7       	in	r29, 0x3e	; 62
+ 698:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_dir(2, dir);
+ 69a:	69 81       	ldd	r22, Y+1	; 0x01
+ 69c:	82 e0       	ldi	r24, 0x02	; 2
+ 69e:	0e 94 d1 01 	call	0x3a2	; 0x3a2 <PORTD_set_pin_dir>
+}
+ 6a2:	00 00       	nop
+ 6a4:	0f 90       	pop	r0
+ 6a6:	df 91       	pop	r29
+ 6a8:	cf 91       	pop	r28
+ 6aa:	08 95       	ret
+
+000006ac <B0_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void B0_MCU_set_level(const bool level)
+{
+ 6ac:	cf 93       	push	r28
+ 6ae:	df 93       	push	r29
+ 6b0:	1f 92       	push	r1
+ 6b2:	cd b7       	in	r28, 0x3d	; 61
+ 6b4:	de b7       	in	r29, 0x3e	; 62
+ 6b6:	89 83       	std	Y+1, r24	; 0x01
+	PORTD_set_pin_level(2, level);
+ 6b8:	69 81       	ldd	r22, Y+1	; 0x01
+ 6ba:	82 e0       	ldi	r24, 0x02	; 2
+ 6bc:	0e 94 25 02 	call	0x44a	; 0x44a <PORTD_set_pin_level>
+}
+ 6c0:	00 00       	nop
+ 6c2:	0f 90       	pop	r0
+ 6c4:	df 91       	pop	r29
+ 6c6:	cf 91       	pop	r28
+ 6c8:	08 95       	ret
+
+000006ca <R3_MCU_set_dir>:
+ *                      PORT_DIR_OUT = Data direction out
+ *                      PORT_DIR_OFF = Disables the pin
+ *                      (low power state)
+ */
+static inline void R3_MCU_set_dir(const enum port_dir dir)
+{
+ 6ca:	cf 93       	push	r28
+ 6cc:	df 93       	push	r29
+ 6ce:	1f 92       	push	r1
+ 6d0:	cd b7       	in	r28, 0x3d	; 61
+ 6d2:	de b7       	in	r29, 0x3e	; 62
+ 6d4:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_dir(3, dir);
+ 6d6:	69 81       	ldd	r22, Y+1	; 0x01
+ 6d8:	83 e0       	ldi	r24, 0x03	; 3
+ 6da:	0e 94 5f 02 	call	0x4be	; 0x4be <PORTF_set_pin_dir>
+}
+ 6de:	00 00       	nop
+ 6e0:	0f 90       	pop	r0
+ 6e2:	df 91       	pop	r29
+ 6e4:	cf 91       	pop	r28
+ 6e6:	08 95       	ret
+
+000006e8 <R3_MCU_set_level>:
+ *
+ * \param[in] level true  = Pin level set to "high" state
+ *                  false = Pin level set to "low" state
+ */
+static inline void R3_MCU_set_level(const bool level)
+{
+ 6e8:	cf 93       	push	r28
+ 6ea:	df 93       	push	r29
+ 6ec:	1f 92       	push	r1
+ 6ee:	cd b7       	in	r28, 0x3d	; 61
+ 6f0:	de b7       	in	r29, 0x3e	; 62
+ 6f2:	89 83       	std	Y+1, r24	; 0x01
+	PORTF_set_pin_level(3, level);
+ 6f4:	69 81       	ldd	r22, Y+1	; 0x01
+ 6f6:	83 e0       	ldi	r24, 0x03	; 3
+ 6f8:	0e 94 b3 02 	call	0x566	; 0x566 <PORTF_set_pin_level>
+}
+ 6fc:	00 00       	nop
+ 6fe:	0f 90       	pop	r0
+ 700:	df 91       	pop	r29
+ 702:	cf 91       	pop	r28
+ 704:	08 95       	ret
+
+00000706 <mcu_init>:
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void mcu_init(void)
+{
+ 706:	cf 93       	push	r28
+ 708:	df 93       	push	r29
+ 70a:	cd b7       	in	r28, 0x3d	; 61
+ 70c:	de b7       	in	r29, 0x3e	; 62
+ 70e:	26 97       	sbiw	r28, 0x06	; 6
+ 710:	cd bf       	out	0x3d, r28	; 61
+ 712:	de bf       	out	0x3e, r29	; 62
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 714:	19 82       	std	Y+1, r1	; 0x01
+ 716:	12 c0       	rjmp	.+36     	; 0x73c <mcu_init+0x36>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 718:	89 81       	ldd	r24, Y+1	; 0x01
+ 71a:	88 2f       	mov	r24, r24
+ 71c:	90 e0       	ldi	r25, 0x00	; 0
+ 71e:	80 5f       	subi	r24, 0xF0	; 240
+ 720:	9b 4f       	sbci	r25, 0xFB	; 251
+ 722:	29 81       	ldd	r18, Y+1	; 0x01
+ 724:	22 2f       	mov	r18, r18
+ 726:	30 e0       	ldi	r19, 0x00	; 0
+ 728:	20 5f       	subi	r18, 0xF0	; 240
+ 72a:	3b 4f       	sbci	r19, 0xFB	; 251
+ 72c:	f9 01       	movw	r30, r18
+ 72e:	20 81       	ld	r18, Z
+ 730:	28 60       	ori	r18, 0x08	; 8
+ 732:	fc 01       	movw	r30, r24
+ 734:	20 83       	st	Z, r18
+	 * disables all peripherals to save power. Driver shall enable
+	 * peripheral if used */
+
+	/* Set all pins to low power mode */
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 736:	89 81       	ldd	r24, Y+1	; 0x01
+ 738:	8f 5f       	subi	r24, 0xFF	; 255
+ 73a:	89 83       	std	Y+1, r24	; 0x01
+ 73c:	89 81       	ldd	r24, Y+1	; 0x01
+ 73e:	88 30       	cpi	r24, 0x08	; 8
+ 740:	58 f3       	brcs	.-42     	; 0x718 <mcu_init+0x12>
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 742:	1a 82       	std	Y+2, r1	; 0x02
+ 744:	12 c0       	rjmp	.+36     	; 0x76a <mcu_init+0x64>
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 746:	8a 81       	ldd	r24, Y+2	; 0x02
+ 748:	88 2f       	mov	r24, r24
+ 74a:	90 e0       	ldi	r25, 0x00	; 0
+ 74c:	80 5d       	subi	r24, 0xD0	; 208
+ 74e:	9b 4f       	sbci	r25, 0xFB	; 251
+ 750:	2a 81       	ldd	r18, Y+2	; 0x02
+ 752:	22 2f       	mov	r18, r18
+ 754:	30 e0       	ldi	r19, 0x00	; 0
+ 756:	20 5d       	subi	r18, 0xD0	; 208
+ 758:	3b 4f       	sbci	r19, 0xFB	; 251
+ 75a:	f9 01       	movw	r30, r18
+ 75c:	20 81       	ld	r18, Z
+ 75e:	28 60       	ori	r18, 0x08	; 8
+ 760:	fc 01       	movw	r30, r24
+ 762:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 764:	8a 81       	ldd	r24, Y+2	; 0x02
+ 766:	8f 5f       	subi	r24, 0xFF	; 255
+ 768:	8a 83       	std	Y+2, r24	; 0x02
+ 76a:	8a 81       	ldd	r24, Y+2	; 0x02
+ 76c:	88 30       	cpi	r24, 0x08	; 8
+ 76e:	58 f3       	brcs	.-42     	; 0x746 <mcu_init+0x40>
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 770:	1b 82       	std	Y+3, r1	; 0x03
+ 772:	12 c0       	rjmp	.+36     	; 0x798 <mcu_init+0x92>
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 774:	8b 81       	ldd	r24, Y+3	; 0x03
+ 776:	88 2f       	mov	r24, r24
+ 778:	90 e0       	ldi	r25, 0x00	; 0
+ 77a:	80 5b       	subi	r24, 0xB0	; 176
+ 77c:	9b 4f       	sbci	r25, 0xFB	; 251
+ 77e:	2b 81       	ldd	r18, Y+3	; 0x03
+ 780:	22 2f       	mov	r18, r18
+ 782:	30 e0       	ldi	r19, 0x00	; 0
+ 784:	20 5b       	subi	r18, 0xB0	; 176
+ 786:	3b 4f       	sbci	r19, 0xFB	; 251
+ 788:	f9 01       	movw	r30, r18
+ 78a:	20 81       	ld	r18, Z
+ 78c:	28 60       	ori	r18, 0x08	; 8
+ 78e:	fc 01       	movw	r30, r24
+ 790:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 792:	8b 81       	ldd	r24, Y+3	; 0x03
+ 794:	8f 5f       	subi	r24, 0xFF	; 255
+ 796:	8b 83       	std	Y+3, r24	; 0x03
+ 798:	8b 81       	ldd	r24, Y+3	; 0x03
+ 79a:	88 30       	cpi	r24, 0x08	; 8
+ 79c:	58 f3       	brcs	.-42     	; 0x774 <mcu_init+0x6e>
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 79e:	1c 82       	std	Y+4, r1	; 0x04
+ 7a0:	12 c0       	rjmp	.+36     	; 0x7c6 <mcu_init+0xc0>
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 7a2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 7a4:	88 2f       	mov	r24, r24
+ 7a6:	90 e0       	ldi	r25, 0x00	; 0
+ 7a8:	80 59       	subi	r24, 0x90	; 144
+ 7aa:	9b 4f       	sbci	r25, 0xFB	; 251
+ 7ac:	2c 81       	ldd	r18, Y+4	; 0x04
+ 7ae:	22 2f       	mov	r18, r18
+ 7b0:	30 e0       	ldi	r19, 0x00	; 0
+ 7b2:	20 59       	subi	r18, 0x90	; 144
+ 7b4:	3b 4f       	sbci	r19, 0xFB	; 251
+ 7b6:	f9 01       	movw	r30, r18
+ 7b8:	20 81       	ld	r18, Z
+ 7ba:	28 60       	ori	r18, 0x08	; 8
+ 7bc:	fc 01       	movw	r30, r24
+ 7be:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTC + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 7c0:	8c 81       	ldd	r24, Y+4	; 0x04
+ 7c2:	8f 5f       	subi	r24, 0xFF	; 255
+ 7c4:	8c 83       	std	Y+4, r24	; 0x04
+ 7c6:	8c 81       	ldd	r24, Y+4	; 0x04
+ 7c8:	88 30       	cpi	r24, 0x08	; 8
+ 7ca:	58 f3       	brcs	.-42     	; 0x7a2 <mcu_init+0x9c>
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 7cc:	1d 82       	std	Y+5, r1	; 0x05
+ 7ce:	12 c0       	rjmp	.+36     	; 0x7f4 <mcu_init+0xee>
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 7d0:	8d 81       	ldd	r24, Y+5	; 0x05
+ 7d2:	88 2f       	mov	r24, r24
+ 7d4:	90 e0       	ldi	r25, 0x00	; 0
+ 7d6:	80 57       	subi	r24, 0x70	; 112
+ 7d8:	9b 4f       	sbci	r25, 0xFB	; 251
+ 7da:	2d 81       	ldd	r18, Y+5	; 0x05
+ 7dc:	22 2f       	mov	r18, r18
+ 7de:	30 e0       	ldi	r19, 0x00	; 0
+ 7e0:	20 57       	subi	r18, 0x70	; 112
+ 7e2:	3b 4f       	sbci	r19, 0xFB	; 251
+ 7e4:	f9 01       	movw	r30, r18
+ 7e6:	20 81       	ld	r18, Z
+ 7e8:	28 60       	ori	r18, 0x08	; 8
+ 7ea:	fc 01       	movw	r30, r24
+ 7ec:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTD + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 7ee:	8d 81       	ldd	r24, Y+5	; 0x05
+ 7f0:	8f 5f       	subi	r24, 0xFF	; 255
+ 7f2:	8d 83       	std	Y+5, r24	; 0x05
+ 7f4:	8d 81       	ldd	r24, Y+5	; 0x05
+ 7f6:	88 30       	cpi	r24, 0x08	; 8
+ 7f8:	58 f3       	brcs	.-42     	; 0x7d0 <mcu_init+0xca>
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 7fa:	1e 82       	std	Y+6, r1	; 0x06
+ 7fc:	12 c0       	rjmp	.+36     	; 0x822 <mcu_init+0x11c>
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+ 7fe:	8e 81       	ldd	r24, Y+6	; 0x06
+ 800:	88 2f       	mov	r24, r24
+ 802:	90 e0       	ldi	r25, 0x00	; 0
+ 804:	80 55       	subi	r24, 0x50	; 80
+ 806:	9b 4f       	sbci	r25, 0xFB	; 251
+ 808:	2e 81       	ldd	r18, Y+6	; 0x06
+ 80a:	22 2f       	mov	r18, r18
+ 80c:	30 e0       	ldi	r19, 0x00	; 0
+ 80e:	20 55       	subi	r18, 0x50	; 80
+ 810:	3b 4f       	sbci	r19, 0xFB	; 251
+ 812:	f9 01       	movw	r30, r18
+ 814:	20 81       	ld	r18, Z
+ 816:	28 60       	ori	r18, 0x08	; 8
+ 818:	fc 01       	movw	r30, r24
+ 81a:	20 83       	st	Z, r18
+
+	for (uint8_t i = 0; i < 8; i++) {
+		*((uint8_t *)&PORTE + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+
+	for (uint8_t i = 0; i < 8; i++) {
+ 81c:	8e 81       	ldd	r24, Y+6	; 0x06
+ 81e:	8f 5f       	subi	r24, 0xFF	; 255
+ 820:	8e 83       	std	Y+6, r24	; 0x06
+ 822:	8e 81       	ldd	r24, Y+6	; 0x06
+ 824:	88 30       	cpi	r24, 0x08	; 8
+ 826:	58 f3       	brcs	.-42     	; 0x7fe <mcu_init+0xf8>
+		*((uint8_t *)&PORTF + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
+	}
+}
+ 828:	00 00       	nop
+ 82a:	26 96       	adiw	r28, 0x06	; 6
+ 82c:	cd bf       	out	0x3d, r28	; 61
+ 82e:	de bf       	out	0x3e, r29	; 62
+ 830:	df 91       	pop	r29
+ 832:	cf 91       	pop	r28
+ 834:	08 95       	ret
+
+00000836 <TIMER_0_initialization>:
+
+#include "driver_init.h"
+#include <system.h>
+
+void TIMER_0_initialization(void)
+{
+ 836:	cf 93       	push	r28
+ 838:	df 93       	push	r29
+ 83a:	cd b7       	in	r28, 0x3d	; 61
+ 83c:	de b7       	in	r29, 0x3e	; 62
+
+	// Set pin direction to output
+
+	R0_MCU_set_level(
+ 83e:	80 e0       	ldi	r24, 0x00	; 0
+ 840:	0e 94 1a 03 	call	0x634	; 0x634 <R0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R0_MCU_set_dir(PORT_DIR_OUT);
+ 844:	81 e0       	ldi	r24, 0x01	; 1
+ 846:	0e 94 0b 03 	call	0x616	; 0x616 <R0_MCU_set_dir>
+
+	/* set the alternate pin mux */
+
+	PORTMUX.TCAROUTEA |= (PORTMUX_TCA00_bm | PORTMUX_TCA01_bm);
+ 84a:	80 ee       	ldi	r24, 0xE0	; 224
+ 84c:	95 e0       	ldi	r25, 0x05	; 5
+ 84e:	20 ee       	ldi	r18, 0xE0	; 224
+ 850:	35 e0       	ldi	r19, 0x05	; 5
+ 852:	f9 01       	movw	r30, r18
+ 854:	24 81       	ldd	r18, Z+4	; 0x04
+ 856:	23 60       	ori	r18, 0x03	; 3
+ 858:	fc 01       	movw	r30, r24
+ 85a:	24 83       	std	Z+4, r18	; 0x04
+
+	// Set pin direction to output
+
+	G0_MCU_set_level(
+ 85c:	80 e0       	ldi	r24, 0x00	; 0
+ 85e:	0e 94 38 03 	call	0x670	; 0x670 <G0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	G0_MCU_set_dir(PORT_DIR_OUT);
+ 862:	81 e0       	ldi	r24, 0x01	; 1
+ 864:	0e 94 29 03 	call	0x652	; 0x652 <G0_MCU_set_dir>
+
+	/* set the alternate pin mux */
+
+	PORTMUX.TCAROUTEA |= (PORTMUX_TCA00_bm | PORTMUX_TCA01_bm);
+ 868:	80 ee       	ldi	r24, 0xE0	; 224
+ 86a:	95 e0       	ldi	r25, 0x05	; 5
+ 86c:	20 ee       	ldi	r18, 0xE0	; 224
+ 86e:	35 e0       	ldi	r19, 0x05	; 5
+ 870:	f9 01       	movw	r30, r18
+ 872:	24 81       	ldd	r18, Z+4	; 0x04
+ 874:	23 60       	ori	r18, 0x03	; 3
+ 876:	fc 01       	movw	r30, r24
+ 878:	24 83       	std	Z+4, r18	; 0x04
+
+	// Set pin direction to output
+
+	B0_MCU_set_level(
+ 87a:	80 e0       	ldi	r24, 0x00	; 0
+ 87c:	0e 94 56 03 	call	0x6ac	; 0x6ac <B0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	B0_MCU_set_dir(PORT_DIR_OUT);
+ 880:	81 e0       	ldi	r24, 0x01	; 1
+ 882:	0e 94 47 03 	call	0x68e	; 0x68e <B0_MCU_set_dir>
+
+	/* set the alternate pin mux */
+
+	PORTMUX.TCAROUTEA |= (PORTMUX_TCA00_bm | PORTMUX_TCA01_bm);
+ 886:	80 ee       	ldi	r24, 0xE0	; 224
+ 888:	95 e0       	ldi	r25, 0x05	; 5
+ 88a:	20 ee       	ldi	r18, 0xE0	; 224
+ 88c:	35 e0       	ldi	r19, 0x05	; 5
+ 88e:	f9 01       	movw	r30, r18
+ 890:	24 81       	ldd	r18, Z+4	; 0x04
+ 892:	23 60       	ori	r18, 0x03	; 3
+ 894:	fc 01       	movw	r30, r24
+ 896:	24 83       	std	Z+4, r18	; 0x04
+
+	TIMER_0_init();
+ 898:	0e 94 7a 04 	call	0x8f4	; 0x8f4 <TIMER_0_init>
+}
+ 89c:	00 00       	nop
+ 89e:	df 91       	pop	r29
+ 8a0:	cf 91       	pop	r28
+ 8a2:	08 95       	ret
+
+000008a4 <system_init>:
+
+/**
+ * \brief System initialization
+ */
+void system_init()
+{
+ 8a4:	cf 93       	push	r28
+ 8a6:	df 93       	push	r29
+ 8a8:	cd b7       	in	r28, 0x3d	; 61
+ 8aa:	de b7       	in	r29, 0x3e	; 62
+	mcu_init();
+ 8ac:	0e 94 83 03 	call	0x706	; 0x706 <mcu_init>
+
+	/* PORT setting on PA3 */
+
+	// Set pin direction to output
+
+	W0_MCU_set_level(
+ 8b0:	80 e0       	ldi	r24, 0x00	; 0
+ 8b2:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <W0_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	W0_MCU_set_dir(PORT_DIR_OUT);
+ 8b6:	81 e0       	ldi	r24, 0x01	; 1
+ 8b8:	0e 94 ed 02 	call	0x5da	; 0x5da <W0_MCU_set_dir>
+
+	/* PORT setting on PF3 */
+
+	// Set pin direction to output
+
+	R3_MCU_set_level(
+ 8bc:	80 e0       	ldi	r24, 0x00	; 0
+ 8be:	0e 94 74 03 	call	0x6e8	; 0x6e8 <R3_MCU_set_level>
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	R3_MCU_set_dir(PORT_DIR_OUT);
+ 8c2:	81 e0       	ldi	r24, 0x01	; 1
+ 8c4:	0e 94 65 03 	call	0x6ca	; 0x6ca <R3_MCU_set_dir>
+
+	CLKCTRL_init();
+ 8c8:	0e 94 33 01 	call	0x266	; 0x266 <CLKCTRL_init>
+
+	TIMER_0_initialization();
+ 8cc:	0e 94 1b 04 	call	0x836	; 0x836 <TIMER_0_initialization>
+
+	CPUINT_init();
+ 8d0:	0e 94 3b 01 	call	0x276	; 0x276 <CPUINT_init>
+
+	SLPCTRL_init();
+ 8d4:	0e 94 72 04 	call	0x8e4	; 0x8e4 <SLPCTRL_init>
+
+	BOD_init();
+ 8d8:	0e 94 2b 01 	call	0x256	; 0x256 <BOD_init>
+}
+ 8dc:	00 00       	nop
+ 8de:	df 91       	pop	r29
+ 8e0:	cf 91       	pop	r28
+ 8e2:	08 95       	ret
+
+000008e4 <SLPCTRL_init>:
+ * \brief Initialize Sleep Controller
+ *
+ * \return Initialization status.
+ */
+int8_t SLPCTRL_init()
+{
+ 8e4:	cf 93       	push	r28
+ 8e6:	df 93       	push	r29
+ 8e8:	cd b7       	in	r28, 0x3d	; 61
+ 8ea:	de b7       	in	r29, 0x3e	; 62
+
+	// SLPCTRL.CTRLA = 0 << SLPCTRL_SEN_bp /* Sleep enable: disabled */
+	//		 | SLPCTRL_SMODE_IDLE_gc; /* Idle mode */
+
+	return 0;
+ 8ec:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 8ee:	df 91       	pop	r29
+ 8f0:	cf 91       	pop	r28
+ 8f2:	08 95       	ret
+
+000008f4 <TIMER_0_init>:
+ * \brief Initialize tca interface
+ *
+ * \return Initialization status.
+ */
+int8_t TIMER_0_init()
+{
+ 8f4:	cf 93       	push	r28
+ 8f6:	df 93       	push	r29
+ 8f8:	cd b7       	in	r28, 0x3d	; 61
+ 8fa:	de b7       	in	r29, 0x3e	; 62
+
+	TCA0.SINGLE.CMP0 = 0xff; /* Compare Register 0: 0xff */
+ 8fc:	80 e0       	ldi	r24, 0x00	; 0
+ 8fe:	9a e0       	ldi	r25, 0x0A	; 10
+ 900:	2f ef       	ldi	r18, 0xFF	; 255
+ 902:	30 e0       	ldi	r19, 0x00	; 0
+ 904:	fc 01       	movw	r30, r24
+ 906:	20 a7       	std	Z+40, r18	; 0x28
+ 908:	31 a7       	std	Z+41, r19	; 0x29
+
+	TCA0.SINGLE.CMP1 = 0xff; /* Compare Register 1: 0xff */
+ 90a:	80 e0       	ldi	r24, 0x00	; 0
+ 90c:	9a e0       	ldi	r25, 0x0A	; 10
+ 90e:	2f ef       	ldi	r18, 0xFF	; 255
+ 910:	30 e0       	ldi	r19, 0x00	; 0
+ 912:	fc 01       	movw	r30, r24
+ 914:	22 a7       	std	Z+42, r18	; 0x2a
+ 916:	33 a7       	std	Z+43, r19	; 0x2b
+
+	TCA0.SINGLE.CMP2 = 0xff; /* Compare Register 2: 0xff */
+ 918:	80 e0       	ldi	r24, 0x00	; 0
+ 91a:	9a e0       	ldi	r25, 0x0A	; 10
+ 91c:	2f ef       	ldi	r18, 0xFF	; 255
+ 91e:	30 e0       	ldi	r19, 0x00	; 0
+ 920:	fc 01       	movw	r30, r24
+ 922:	24 a7       	std	Z+44, r18	; 0x2c
+ 924:	35 a7       	std	Z+45, r19	; 0x2d
+
+	// TCA0.SINGLE.CNT = 0x0; /* Count: 0x0 */
+
+	TCA0.SINGLE.CTRLB = 0 << TCA_SINGLE_ALUPD_bp            /* Auto Lock Update: disabled */
+ 926:	80 e0       	ldi	r24, 0x00	; 0
+ 928:	9a e0       	ldi	r25, 0x0A	; 10
+ 92a:	23 e7       	ldi	r18, 0x73	; 115
+ 92c:	fc 01       	movw	r30, r24
+ 92e:	21 83       	std	Z+1, r18	; 0x01
+	// TCA0.SINGLE.DBGCTRL = 0 << TCA_SINGLE_DBGRUN_bp; /* Debug Run: disabled */
+
+	// TCA0.SINGLE.EVCTRL = 0 << TCA_SINGLE_CNTEI_bp /* Count on Event Input: disabled */
+	//		 | TCA_SINGLE_EVACT_POSEDGE_gc /* Count on positive edge event */;
+
+	TCA0.SINGLE.INTCTRL = 1 << TCA_SINGLE_CMP0_bp   /* Compare 0 Interrupt: enabled */
+ 930:	80 e0       	ldi	r24, 0x00	; 0
+ 932:	9a e0       	ldi	r25, 0x0A	; 10
+ 934:	20 e7       	ldi	r18, 0x70	; 112
+ 936:	fc 01       	movw	r30, r24
+ 938:	22 87       	std	Z+10, r18	; 0x0a
+	                      | 1 << TCA_SINGLE_CMP2_bp /* Compare 2 Interrupt: enabled */
+	                      | 0 << TCA_SINGLE_OVF_bp; /* Overflow Interrupt: disabled */
+
+	// TCA0.SINGLE.PER = 0xffff; /* Period: 0xffff */
+
+	TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV1_gc /* System Clock */
+ 93a:	80 e0       	ldi	r24, 0x00	; 0
+ 93c:	9a e0       	ldi	r25, 0x0A	; 10
+ 93e:	21 e0       	ldi	r18, 0x01	; 1
+ 940:	fc 01       	movw	r30, r24
+ 942:	20 83       	st	Z, r18
+	                    | 1 << TCA_SINGLE_ENABLE_bp /* Module Enable: enabled */;
+
+	return 0;
+ 944:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 946:	df 91       	pop	r29
+ 948:	cf 91       	pop	r28
+ 94a:	08 95       	ret
+
+0000094c <_exit>:
+ 94c:	f8 94       	cli
+
+0000094e <__stop_program>:
+ 94e:	ff cf       	rjmp	.-2      	; 0x94e <__stop_program>
