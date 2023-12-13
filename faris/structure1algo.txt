@@ -1,0 +1,14 @@
+1)here we use structure to do so
+2)first initialise structure as
+  struct info{
+    char first_name[10],last_name[10];
+    int joining_date;
+    float salary;
+    
+  };
+3)here we have one employee e1
+4)enter the details of the employee e1 in the order first name,lastname,joiningdate,salary
+5)store to structure as
+  scanf("%s %s %d %f",e1.first_name,e1.last_name,&e1.joining_date,&e1.salary);
+6)access the data and print as below
+  printf("the employee %s %s joined the company on %d with salary %f",e1.first_name,e1.last_name,e1.joining_date,e1.salary);
